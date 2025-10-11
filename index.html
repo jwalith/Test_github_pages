@@ -36,6 +36,30 @@
                     </div>
                 </div>
                 
+                <div class="proximity-section">
+                    <h3>📍 Proximity Search</h3>
+                    <div class="proximity-controls">
+                        <div class="filter-group">
+                            <label for="radiusSelect">Search Radius:</label>
+                            <select id="radiusSelect">
+                                <option value="5">5 miles</option>
+                                <option value="10" selected>10 miles</option>
+                                <option value="15">15 miles</option>
+                                <option value="25">25 miles</option>
+                                <option value="50">50 miles</option>
+                            </select>
+                        </div>
+                        <div class="proximity-buttons">
+                            <button id="proximitySearchBtn" class="proximity-btn">
+                                📍 Find Near Me
+                            </button>
+                            <button id="proximitySearchByZipBtn" class="proximity-btn">
+                                📍 Find Near Zip Code
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="filter-actions">
                     <button id="clearFiltersBtn">Clear Filters</button>
                     <button id="searchWithFiltersBtn">Search with Filters</button>
