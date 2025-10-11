@@ -262,18 +262,33 @@ function handleSearchWithFilters() {
 
 // Handle proximity search using current location
 async function handleProximitySearch() {
+    console.log('Proximity search button clicked');
+    
     if (!isDataLoaded) {
         alert('Data is still loading. Please wait a moment and try again.');
         return;
     }
     
     const radiusSelect = document.getElementById('radiusSelect');
+    if (!radiusSelect) {
+        console.error('Radius select element not found');
+        alert('Error: Radius selector not found');
+        return;
+    }
+    
     const radiusMiles = parseInt(radiusSelect.value);
+    console.log('Selected radius:', radiusMiles);
     
     try {
         showLoading();
+        console.log('Getting current location...');
         const location = await getCurrentLocation();
+        console.log('Location obtained:', location);
+        
+        console.log('Searching organizations with coordinates...');
         const results = searchByProximity(location.latitude, location.longitude, radiusMiles);
+        console.log('Found results:', results.length);
+        
         displayResults(results);
     } catch (error) {
         console.error('Error getting location:', error);
@@ -284,6 +299,8 @@ async function handleProximitySearch() {
 
 // Handle proximity search using zip code
 async function handleProximitySearchByZip() {
+    console.log('Proximity search by zip button clicked');
+    
     if (!isDataLoaded) {
         alert('Data is still loading. Please wait a moment and try again.');
         return;
@@ -291,7 +308,16 @@ async function handleProximitySearchByZip() {
     
     const zipCode = zipInput.value.trim();
     const radiusSelect = document.getElementById('radiusSelect');
+    
+    if (!radiusSelect) {
+        console.error('Radius select element not found');
+        alert('Error: Radius selector not found');
+        return;
+    }
+    
     const radiusMiles = parseInt(radiusSelect.value);
+    console.log('Selected radius:', radiusMiles);
+    console.log('Zip code entered:', zipCode);
     
     if (!zipCode) {
         alert('Please enter a zip code for proximity search');
@@ -306,8 +332,14 @@ async function handleProximitySearchByZip() {
     
     try {
         showLoading();
+        console.log('Getting coordinates for zip code:', zipCode);
         const coords = await getCoordinatesFromZip(zipCode);
+        console.log('Coordinates obtained:', coords);
+        
+        console.log('Searching organizations with coordinates...');
         const results = searchByProximity(coords.latitude, coords.longitude, radiusMiles);
+        console.log('Found results:', results.length);
+        
         displayResults(results);
     } catch (error) {
         console.error('Error getting coordinates:', error);
