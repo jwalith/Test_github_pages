@@ -483,17 +483,17 @@ function getCurrentLocation() {
 // Convert zip code to coordinates using a free geocoding service
 async function getCoordinatesFromZip(zipCode) {
     try {
-        // Using a free geocoding API (you might want to use a more reliable service)
-        const response = await fetch(`https://api.zippopotam.us/us/${zipCode}`);
+        // Using Nominatim (OpenStreetMap) API - more reliable and CORS-friendly
+        const response = await fetch(`https://nominatim.openstreetmap.org/search?postalcode=${zipCode}&country=US&format=json&limit=1`);
         if (!response.ok) {
             throw new Error('Failed to get coordinates for zip code');
         }
         const data = await response.json();
         
-        if (data.places && data.places.length > 0) {
+        if (data && data.length > 0) {
             return {
-                latitude: parseFloat(data.places[0].latitude),
-                longitude: parseFloat(data.places[0].longitude)
+                latitude: parseFloat(data[0].lat),
+                longitude: parseFloat(data[0].lon)
             };
         }
         throw new Error('No coordinates found for zip code');
@@ -521,7 +521,7 @@ async function addCoordinatesToOrganizations() {
     organizationsWithCoords = [];
     
     // Process organizations in batches to avoid overwhelming the API
-    const batchSize = 10;
+    const batchSize = 5; // Reduced batch size to be more respectful to the API
     const uniqueZips = [...new Set(organizationsData.map(org => org.zip))];
     const zipCoordinates = {};
     
@@ -560,8 +560,8 @@ async function addCoordinatesToOrganizations() {
             progressFill.style.width = `${Math.min(progress, 100)}%`;
         }
         
-        // Small delay to be respectful to the API
-        await new Promise(resolve => setTimeout(resolve, 100));
+        // Longer delay to be respectful to the API
+        await new Promise(resolve => setTimeout(resolve, 1000));
     }
     
     // Add coordinates to organizations
