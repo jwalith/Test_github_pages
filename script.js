@@ -484,13 +484,19 @@ function getCurrentLocation() {
 async function getCoordinatesFromZip(zipCode) {
     try {
         // Using Nominatim (OpenStreetMap) API - more reliable and CORS-friendly
-        const response = await fetch(`https://nominatim.openstreetmap.org/search?postalcode=${zipCode}&country=US&format=json&limit=1`);
+        const response = await fetch(`https://nominatim.openstreetmap.org/search?postalcode=${zipCode}&country=US&format=json&limit=1`, {
+            headers: {
+                'User-Agent': 'OrganizationSearch/1.0' // Required by Nominatim
+            }
+        });
+        
         if (!response.ok) {
-            throw new Error('Failed to get coordinates for zip code');
+            throw new Error(`HTTP ${response.status}: Failed to get coordinates for zip code`);
         }
+        
         const data = await response.json();
         
-        if (data && data.length > 0) {
+        if (data && data.length > 0 && data[0].lat && data[0].lon) {
             return {
                 latitude: parseFloat(data[0].lat),
                 longitude: parseFloat(data[0].lon)
@@ -522,7 +528,13 @@ async function addCoordinatesToOrganizations() {
     
     // Process organizations in batches to avoid overwhelming the API
     const batchSize = 5; // Reduced batch size to be more respectful to the API
-    const uniqueZips = [...new Set(organizationsData.map(org => org.zip))];
+    
+    // Filter out invalid zip codes (only keep valid 5-digit zip codes)
+    const validZips = [...new Set(organizationsData.map(org => org.zip))]
+        .filter(zip => /^\d{5}$/.test(zip)); // Only 5-digit zip codes
+    
+    console.log(`Found ${validZips.length} valid zip codes out of ${[...new Set(organizationsData.map(org => org.zip))].length} total`);
+    
     const zipCoordinates = {};
     
     // Update loading message
@@ -530,16 +542,16 @@ async function addCoordinatesToOrganizations() {
     if (loadingElement) {
         loadingElement.innerHTML = `
             <div class="spinner"></div>
-            <p>Loading coordinates... (${uniqueZips.length} zip codes to process)</p>
+            <p>Loading coordinates... (${validZips.length} valid zip codes to process)</p>
             <div class="progress-bar">
                 <div class="progress-fill" id="progressFill"></div>
             </div>
         `;
     }
     
-    // Get coordinates for unique zip codes
-    for (let i = 0; i < uniqueZips.length; i += batchSize) {
-        const batch = uniqueZips.slice(i, i + batchSize);
+    // Get coordinates for valid zip codes only
+    for (let i = 0; i < validZips.length; i += batchSize) {
+        const batch = validZips.slice(i, i + batchSize);
         const promises = batch.map(async (zip) => {
             try {
                 const coords = await getCoordinatesFromZip(zip);
@@ -554,7 +566,7 @@ async function addCoordinatesToOrganizations() {
         await Promise.all(promises);
         
         // Update progress
-        const progress = ((i + batchSize) / uniqueZips.length) * 100;
+        const progress = ((i + batchSize) / validZips.length) * 100;
         const progressFill = document.getElementById('progressFill');
         if (progressFill) {
             progressFill.style.width = `${Math.min(progress, 100)}%`;
