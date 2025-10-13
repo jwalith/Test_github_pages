@@ -526,6 +526,34 @@ async function addCoordinatesToOrganizations() {
     console.log('Adding coordinates to organizations...');
     organizationsWithCoords = [];
     
+    // Check if we already have coordinates saved locally
+    const savedCoordinates = localStorage.getItem('zipCoordinates');
+    if (savedCoordinates) {
+        console.log('Found saved coordinates in localStorage, loading...');
+        const coordinates = JSON.parse(savedCoordinates);
+        console.log(`Loaded ${Object.keys(coordinates).length} saved coordinates`);
+        
+        // Add coordinates to organizations
+        organizationsData.forEach(org => {
+            const coords = coordinates[org.zip];
+            organizationsWithCoords.push({
+                ...org,
+                latitude: coords ? coords.latitude : null,
+                longitude: coords ? coords.longitude : null
+            });
+        });
+        
+        console.log(`Added coordinates to ${organizationsWithCoords.length} organizations`);
+        
+        // Show export button
+        const exportBtn = document.getElementById('exportCoordinatesBtn');
+        if (exportBtn) {
+            exportBtn.style.display = 'inline-block';
+        }
+        
+        return;
+    }
+    
     // Process organizations in batches to avoid overwhelming the API
     const batchSize = 5; // Reduced batch size to be more respectful to the API
     
@@ -576,6 +604,11 @@ async function addCoordinatesToOrganizations() {
         await new Promise(resolve => setTimeout(resolve, 1000));
     }
     
+    // Save coordinates to localStorage for future use
+    console.log('Saving coordinates to localStorage for future use...');
+    localStorage.setItem('zipCoordinates', JSON.stringify(zipCoordinates));
+    console.log(`Saved ${Object.keys(zipCoordinates).length} coordinates to localStorage`);
+    
     // Add coordinates to organizations
     organizationsData.forEach(org => {
         const coords = zipCoordinates[org.zip];
@@ -587,6 +620,41 @@ async function addCoordinatesToOrganizations() {
     });
     
     console.log(`Added coordinates to ${organizationsWithCoords.length} organizations`);
+    
+    // Show export button
+    const exportBtn = document.getElementById('exportCoordinatesBtn');
+    if (exportBtn) {
+        exportBtn.style.display = 'inline-block';
+    }
+}
+
+// Export coordinates to downloadable JSON file
+function exportCoordinates() {
+    const savedCoordinates = localStorage.getItem('zipCoordinates');
+    if (!savedCoordinates) {
+        alert('No coordinates found in localStorage. Please load the data first.');
+        return;
+    }
+    
+    const coordinates = JSON.parse(savedCoordinates);
+    const exportData = {
+        metadata: {
+            total_zips: Object.keys(coordinates).length,
+            exported_at: new Date().toISOString(),
+            source: 'Organization Search System'
+        },
+        coordinates: coordinates
+    };
+    
+    const dataStr = JSON.stringify(exportData, null, 2);
+    const dataBlob = new Blob([dataStr], {type: 'application/json'});
+    
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(dataBlob);
+    link.download = 'zip_coordinates_export.json';
+    link.click();
+    
+    console.log(`Exported ${Object.keys(coordinates).length} coordinates to zip_coordinates_export.json`);
 }
 
 // Search organizations within a certain radius

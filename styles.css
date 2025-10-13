@@ -248,6 +248,24 @@ header p {
     margin-top: 15px;
 }
 
+#exportCoordinatesBtn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#exportCoordinatesBtn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3);
+}
+
 /* Results section */
 .results-section {
     background: white;
