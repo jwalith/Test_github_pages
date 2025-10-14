@@ -160,7 +160,10 @@ function handleSearch() {
     }
     
     const results = searchByZipCode(zipCode);
-    displayResults(results);
+    displayResults(results, {
+        zipCode: zipCode,
+        searchType: 'zip'
+    });
 }
 
 function searchByZipCode(zipCode) {
@@ -258,7 +261,12 @@ function handleSearchWithFilters() {
     }
     
     const results = searchWithFilters();
-    displayResults(results);
+    displayResults(results, {
+        zipCode: zipInput.value.trim(),
+        state: stateSelect.value,
+        housingType: housingTypeSelect.value,
+        searchType: 'filters'
+    });
 }
 
 // Handle proximity search using current location
@@ -293,7 +301,11 @@ async function handleProximitySearch() {
         const results = searchByProximityWithFilters(location.latitude, location.longitude, radiusMiles, selectedHousingType);
         console.log('Found results:', results.length);
         
-        displayResults(results);
+        displayResults(results, {
+            housingType: selectedHousingType,
+            radius: radiusMiles,
+            searchType: 'proximity'
+        });
     } catch (error) {
         console.error('Error getting location:', error);
         alert('Unable to get your location. Please check your browser permissions or try searching by zip code instead.');
@@ -346,7 +358,12 @@ async function handleProximitySearchByZip() {
         const results = searchByProximityWithFilters(coords.latitude, coords.longitude, radiusMiles, selectedHousingType);
         console.log('Found results:', results.length);
         
-        displayResults(results);
+        displayResults(results, {
+            zipCode: zipCode,
+            housingType: selectedHousingType,
+            radius: radiusMiles,
+            searchType: 'proximity'
+        });
     } catch (error) {
         console.error('Error getting coordinates:', error);
         alert('Unable to get coordinates for that zip code. Please try a different zip code.');
@@ -354,11 +371,15 @@ async function handleProximitySearchByZip() {
     }
 }
 
-function displayResults(results) {
+function displayResults(results, searchContext = {}) {
     hideAllSections();
     
     if (results.length === 0) {
         noResults.style.display = 'block';
+        
+        // Generate specific "no results" message based on search context
+        const message = generateNoResultsMessage(searchContext);
+        noResults.innerHTML = `<p>${message}</p>`;
         return;
     }
     
@@ -371,6 +392,42 @@ function displayResults(results) {
         const resultCard = createResultCard(org);
         resultsContainer.appendChild(resultCard);
     });
+}
+
+function generateNoResultsMessage(searchContext) {
+    const { zipCode, state, housingType, radius, searchType } = searchContext;
+    
+    let message = "No organizations found";
+    
+    // Build the message based on applied filters
+    const filters = [];
+    
+    if (housingType) {
+        filters.push(`"${housingType}"`);
+    }
+    
+    if (searchType === 'proximity') {
+        if (radius) {
+            filters.push(`within ${radius} miles`);
+        }
+        if (zipCode) {
+            filters.push(`of zip code ${zipCode}`);
+        } else {
+            filters.push(`near your location`);
+        }
+    } else if (zipCode) {
+        filters.push(`in zip code ${zipCode}`);
+    }
+    
+    if (state) {
+        filters.push(`in ${state}`);
+    }
+    
+    if (filters.length > 0) {
+        message += ` ${filters.join(' ')}`;
+    }
+    
+    return message + ".";
 }
 
 function createResultCard(org) {
