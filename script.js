@@ -27,8 +27,9 @@ const error = document.getElementById('error');
 const resultsContainer = document.getElementById('resultsContainer');
 const resultCount = document.getElementById('resultCount');
 
-// CSV URL from your GitHub repository
+// URLs from your GitHub repository
 const CSV_URL = 'https://raw.githubusercontent.com/jwalith/Test_github_pages/main/01_master_all_states.csv';
+const COORDINATES_URL = 'https://raw.githubusercontent.com/jwalith/Test_github_pages/main/zip_coordinates.json';
 
 // Event listeners
 searchBtn.addEventListener('click', handleSearch);
@@ -69,8 +70,8 @@ async function loadDataFromCSV() {
         populateStateDropdown();
         populateHousingTypeDropdown();
         
-        // Add coordinates to organizations (this will take some time)
-        await addCoordinatesToOrganizations();
+        // Load coordinates from JSON file (instant)
+        await loadCoordinatesFromJSON();
         
         isDataLoaded = true;
         hideLoading();
@@ -521,7 +522,48 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
     return R * c; // Distance in miles
 }
 
-// Add coordinates to organization data
+// Load coordinates from JSON file (instant)
+async function loadCoordinatesFromJSON() {
+    console.log('Loading coordinates from JSON file...');
+    organizationsWithCoords = [];
+    
+    try {
+        const response = await fetch(COORDINATES_URL);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const coordinatesData = await response.json();
+        console.log('Coordinates loaded:', Object.keys(coordinatesData.coordinates).length, 'zip codes');
+        
+        // Add coordinates to organizations
+        organizationsData.forEach(org => {
+            const coords = coordinatesData.coordinates[org.zip];
+            organizationsWithCoords.push({
+                ...org,
+                latitude: coords ? coords.latitude : null,
+                longitude: coords ? coords.longitude : null
+            });
+        });
+        
+        console.log(`Added coordinates to ${organizationsWithCoords.length} organizations`);
+        
+        // Show export button
+        const exportBtn = document.getElementById('exportCoordinatesBtn');
+        if (exportBtn) {
+            exportBtn.style.display = 'inline-block';
+        }
+        
+    } catch (error) {
+        console.error('Error loading coordinates from JSON:', error);
+        console.log('Falling back to API-based coordinate loading...');
+        
+        // Fallback to the old method if JSON fails
+        await addCoordinatesToOrganizations();
+    }
+}
+
+// Add coordinates to organization data (fallback method)
 async function addCoordinatesToOrganizations() {
     console.log('Adding coordinates to organizations...');
     organizationsWithCoords = [];
