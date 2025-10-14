@@ -2,7 +2,6 @@
 let organizationsData = [];
 let isIframeMode = false;
 let isDataLoaded = false;
-let userLocation = null;
 let organizationsWithCoords = [];
 
 // Check if running in iframe
@@ -127,7 +126,6 @@ function parseCSV(csvText) {
                     type: org.housing_type || org.type || org.category || org['org type'] || 'Unknown',
                     zip: String(org.zip || org['zip code'] || org.zipcode || ''),
                     city: org.city || 'Unknown',
-                    county: org.county || org['county name'] || 'Unknown',
                     state: org.state || org['state code'] || 'Unknown',
                     phone: org.phone || '',
                     email: org.email || '',
@@ -140,11 +138,31 @@ function parseCSV(csvText) {
     return organizations;
 }
 
-function handleSearch() {
+// Helper functions
+function validateZipCode(zipCode) {
+    return /^\d{5}(-\d{4})?$/.test(zipCode);
+}
+
+function checkDataLoaded() {
     if (!isDataLoaded) {
         alert('Data is still loading. Please wait a moment and try again.');
-        return;
+        return false;
     }
+    return true;
+}
+
+function getRadiusSelect() {
+    const radiusSelect = document.getElementById('radiusSelect');
+    if (!radiusSelect) {
+        console.error('Radius select element not found');
+        alert('Error: Radius selector not found');
+        return null;
+    }
+    return radiusSelect;
+}
+
+function handleSearch() {
+    if (!checkDataLoaded()) return;
     
     const zipCode = zipInput.value.trim();
     
@@ -153,8 +171,7 @@ function handleSearch() {
         return;
     }
     
-    // Validate zip code format (basic validation)
-    if (!/^\d{5}(-\d{4})?$/.test(zipCode)) {
+    if (!validateZipCode(zipCode)) {
         alert('Please enter a valid zip code (e.g., 12345 or 12345-6789)');
         return;
     }
@@ -239,22 +256,17 @@ function clearFilters() {
 }
 
 function handleSearchWithFilters() {
-    if (!isDataLoaded) {
-        alert('Data is still loading. Please wait a moment and try again.');
-        return;
-    }
+    if (!checkDataLoaded()) return;
     
     const zipCode = zipInput.value.trim();
     const selectedState = stateSelect.value;
     const selectedHousingType = housingTypeSelect.value;
     
-    // Validate zip code if provided
-    if (zipCode && !/^\d{5}(-\d{4})?$/.test(zipCode)) {
+    if (zipCode && !validateZipCode(zipCode)) {
         alert('Please enter a valid zip code (e.g., 12345 or 12345-6789)');
         return;
     }
     
-    // Check if at least one filter is selected
     if (!zipCode && !selectedState && !selectedHousingType) {
         alert('Please select at least one filter (zip code, state, or housing type)');
         return;
@@ -262,44 +274,28 @@ function handleSearchWithFilters() {
     
     const results = searchWithFilters();
     displayResults(results, {
-        zipCode: zipInput.value.trim(),
-        state: stateSelect.value,
-        housingType: housingTypeSelect.value,
+        zipCode: zipCode,
+        state: selectedState,
+        housingType: selectedHousingType,
         searchType: 'filters'
     });
 }
 
 // Handle proximity search using current location
 async function handleProximitySearch() {
-    console.log('Proximity search button clicked');
+    if (!checkDataLoaded()) return;
     
-    if (!isDataLoaded) {
-        alert('Data is still loading. Please wait a moment and try again.');
-        return;
-    }
+    const radiusSelect = getRadiusSelect();
+    if (!radiusSelect) return;
     
-    const radiusSelect = document.getElementById('radiusSelect');
     const selectedHousingType = housingTypeSelect.value;
-    
-    if (!radiusSelect) {
-        console.error('Radius select element not found');
-        alert('Error: Radius selector not found');
-        return;
-    }
-    
     const radiusMiles = parseInt(radiusSelect.value);
-    console.log('Selected radius:', radiusMiles);
-    console.log('Selected housing type:', selectedHousingType || 'All Types');
     
     try {
         showLoading();
-        console.log('Getting current location...');
         const location = await getCurrentLocation();
-        console.log('Location obtained:', location);
         
-        console.log('Searching organizations with coordinates and filters...');
         const results = searchByProximityWithFilters(location.latitude, location.longitude, radiusMiles, selectedHousingType);
-        console.log('Found results:', results.length);
         
         displayResults(results, {
             housingType: selectedHousingType,
@@ -315,48 +311,30 @@ async function handleProximitySearch() {
 
 // Handle proximity search using zip code
 async function handleProximitySearchByZip() {
-    console.log('Proximity search by zip button clicked');
-    
-    if (!isDataLoaded) {
-        alert('Data is still loading. Please wait a moment and try again.');
-        return;
-    }
+    if (!checkDataLoaded()) return;
     
     const zipCode = zipInput.value.trim();
-    const radiusSelect = document.getElementById('radiusSelect');
+    const radiusSelect = getRadiusSelect();
+    if (!radiusSelect) return;
+    
     const selectedHousingType = housingTypeSelect.value;
-    
-    if (!radiusSelect) {
-        console.error('Radius select element not found');
-        alert('Error: Radius selector not found');
-        return;
-    }
-    
     const radiusMiles = parseInt(radiusSelect.value);
-    console.log('Selected radius:', radiusMiles);
-    console.log('Selected housing type:', selectedHousingType || 'All Types');
-    console.log('Zip code entered:', zipCode);
     
     if (!zipCode) {
         alert('Please enter a zip code for proximity search');
         return;
     }
     
-    // Validate zip code format
-    if (!/^\d{5}(-\d{4})?$/.test(zipCode)) {
+    if (!validateZipCode(zipCode)) {
         alert('Please enter a valid zip code (e.g., 12345 or 12345-6789)');
         return;
     }
     
     try {
         showLoading();
-        console.log('Getting coordinates for zip code:', zipCode);
         const coords = await getCoordinatesFromZip(zipCode);
-        console.log('Coordinates obtained:', coords);
         
-        console.log('Searching organizations with coordinates and filters...');
         const results = searchByProximityWithFilters(coords.latitude, coords.longitude, radiusMiles, selectedHousingType);
-        console.log('Found results:', results.length);
         
         displayResults(results, {
             zipCode: zipCode,
@@ -525,11 +503,10 @@ function getCurrentLocation() {
         
         navigator.geolocation.getCurrentPosition(
             (position) => {
-                userLocation = {
+                resolve({
                     latitude: position.coords.latitude,
                     longitude: position.coords.longitude
-                };
-                resolve(userLocation);
+                });
             },
             (error) => {
                 reject(error);
@@ -586,7 +563,6 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
 
 // Load coordinates from JSON file (instant)
 async function loadCoordinatesFromJSON() {
-    console.log('Loading coordinates from JSON file...');
     organizationsWithCoords = [];
     
     try {
@@ -596,7 +572,6 @@ async function loadCoordinatesFromJSON() {
         }
         
         const coordinatesData = await response.json();
-        console.log('Coordinates loaded:', Object.keys(coordinatesData.coordinates).length, 'zip codes');
         
         // Add coordinates to organizations
         organizationsData.forEach(org => {
@@ -608,107 +583,11 @@ async function loadCoordinatesFromJSON() {
             });
         });
         
-        console.log(`Added coordinates to ${organizationsWithCoords.length} organizations`);
-        
     } catch (error) {
         console.error('Error loading coordinates from JSON:', error);
         alert('Error loading coordinates. Please check if zip_coordinates.json file exists on GitHub.');
         throw error; // Stop execution instead of falling back
     }
-}
-
-// Add coordinates to organization data (fallback method)
-async function addCoordinatesToOrganizations() {
-    console.log('Adding coordinates to organizations...');
-    organizationsWithCoords = [];
-    
-    // Check if we already have coordinates saved locally
-    const savedCoordinates = localStorage.getItem('zipCoordinates');
-    if (savedCoordinates) {
-        console.log('Found saved coordinates in localStorage, loading...');
-        const coordinates = JSON.parse(savedCoordinates);
-        console.log(`Loaded ${Object.keys(coordinates).length} saved coordinates`);
-        
-        // Add coordinates to organizations
-        organizationsData.forEach(org => {
-            const coords = coordinates[org.zip];
-            organizationsWithCoords.push({
-                ...org,
-                latitude: coords ? coords.latitude : null,
-                longitude: coords ? coords.longitude : null
-            });
-        });
-        
-        console.log(`Added coordinates to ${organizationsWithCoords.length} organizations`);
-        return;
-    }
-    
-    // Process organizations in batches to avoid overwhelming the API
-    const batchSize = 5; // Reduced batch size to be more respectful to the API
-    
-    // Filter out invalid zip codes (only keep valid 5-digit zip codes)
-    const validZips = [...new Set(organizationsData.map(org => org.zip))]
-        .filter(zip => /^\d{5}$/.test(zip)); // Only 5-digit zip codes
-    
-    console.log(`Found ${validZips.length} valid zip codes out of ${[...new Set(organizationsData.map(org => org.zip))].length} total`);
-    
-    const zipCoordinates = {};
-    
-    // Update loading message
-    const loadingElement = document.getElementById('loading');
-    if (loadingElement) {
-        loadingElement.innerHTML = `
-            <div class="spinner"></div>
-            <p>Loading coordinates... (${validZips.length} valid zip codes to process)</p>
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill"></div>
-            </div>
-        `;
-    }
-    
-    // Get coordinates for valid zip codes only
-    for (let i = 0; i < validZips.length; i += batchSize) {
-        const batch = validZips.slice(i, i + batchSize);
-        const promises = batch.map(async (zip) => {
-            try {
-                const coords = await getCoordinatesFromZip(zip);
-                zipCoordinates[zip] = coords;
-                return { zip, coords };
-            } catch (error) {
-                console.warn(`Failed to get coordinates for zip ${zip}:`, error);
-                return { zip, coords: null };
-            }
-        });
-        
-        await Promise.all(promises);
-        
-        // Update progress
-        const progress = ((i + batchSize) / validZips.length) * 100;
-        const progressFill = document.getElementById('progressFill');
-        if (progressFill) {
-            progressFill.style.width = `${Math.min(progress, 100)}%`;
-        }
-        
-        // Longer delay to be respectful to the API
-        await new Promise(resolve => setTimeout(resolve, 1000));
-    }
-    
-    // Save coordinates to localStorage for future use
-    console.log('Saving coordinates to localStorage for future use...');
-    localStorage.setItem('zipCoordinates', JSON.stringify(zipCoordinates));
-    console.log(`Saved ${Object.keys(zipCoordinates).length} coordinates to localStorage`);
-    
-    // Add coordinates to organizations
-    organizationsData.forEach(org => {
-        const coords = zipCoordinates[org.zip];
-        organizationsWithCoords.push({
-            ...org,
-            latitude: coords ? coords.latitude : null,
-            longitude: coords ? coords.longitude : null
-        });
-    });
-    
-    console.log(`Added coordinates to ${organizationsWithCoords.length} organizations`);
 }
 
 
@@ -732,19 +611,4 @@ function searchByProximityWithFilters(userLat, userLon, radiusMiles, housingType
             distance: Math.round(distance * 10) / 10 // Round to 1 decimal place
         };
     }).sort((a, b) => a.distance - b.distance); // Sort by distance
-}
-
-// Search organizations within a certain radius (legacy function for backward compatibility)
-function searchByProximity(userLat, userLon, radiusMiles) {
-    return searchByProximityWithFilters(userLat, userLon, radiusMiles, '');
-}
-
-// Export functions for testing (if needed)
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        parseCSV,
-        searchByZipCode,
-        calculateDistance,
-        searchByProximity
-    };
 }
