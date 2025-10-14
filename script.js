@@ -271,6 +271,8 @@ async function handleProximitySearch() {
     }
     
     const radiusSelect = document.getElementById('radiusSelect');
+    const selectedHousingType = housingTypeSelect.value;
+    
     if (!radiusSelect) {
         console.error('Radius select element not found');
         alert('Error: Radius selector not found');
@@ -279,6 +281,7 @@ async function handleProximitySearch() {
     
     const radiusMiles = parseInt(radiusSelect.value);
     console.log('Selected radius:', radiusMiles);
+    console.log('Selected housing type:', selectedHousingType || 'All Types');
     
     try {
         showLoading();
@@ -286,8 +289,8 @@ async function handleProximitySearch() {
         const location = await getCurrentLocation();
         console.log('Location obtained:', location);
         
-        console.log('Searching organizations with coordinates...');
-        const results = searchByProximity(location.latitude, location.longitude, radiusMiles);
+        console.log('Searching organizations with coordinates and filters...');
+        const results = searchByProximityWithFilters(location.latitude, location.longitude, radiusMiles, selectedHousingType);
         console.log('Found results:', results.length);
         
         displayResults(results);
@@ -309,6 +312,7 @@ async function handleProximitySearchByZip() {
     
     const zipCode = zipInput.value.trim();
     const radiusSelect = document.getElementById('radiusSelect');
+    const selectedHousingType = housingTypeSelect.value;
     
     if (!radiusSelect) {
         console.error('Radius select element not found');
@@ -318,6 +322,7 @@ async function handleProximitySearchByZip() {
     
     const radiusMiles = parseInt(radiusSelect.value);
     console.log('Selected radius:', radiusMiles);
+    console.log('Selected housing type:', selectedHousingType || 'All Types');
     console.log('Zip code entered:', zipCode);
     
     if (!zipCode) {
@@ -337,8 +342,8 @@ async function handleProximitySearchByZip() {
         const coords = await getCoordinatesFromZip(zipCode);
         console.log('Coordinates obtained:', coords);
         
-        console.log('Searching organizations with coordinates...');
-        const results = searchByProximity(coords.latitude, coords.longitude, radiusMiles);
+        console.log('Searching organizations with coordinates and filters...');
+        const results = searchByProximityWithFilters(coords.latitude, coords.longitude, radiusMiles, selectedHousingType);
         console.log('Found results:', results.length);
         
         displayResults(results);
@@ -556,10 +561,8 @@ async function loadCoordinatesFromJSON() {
         
     } catch (error) {
         console.error('Error loading coordinates from JSON:', error);
-        console.log('Falling back to API-based coordinate loading...');
-        
-        // Fallback to the old method if JSON fails
-        await addCoordinatesToOrganizations();
+        alert('Error loading coordinates. Please check if zip_coordinates.json file exists on GitHub.');
+        throw error; // Stop execution instead of falling back
     }
 }
 
@@ -699,9 +702,15 @@ function exportCoordinates() {
     console.log(`Exported ${Object.keys(coordinates).length} coordinates to zip_coordinates_export.json`);
 }
 
-// Search organizations within a certain radius
-function searchByProximity(userLat, userLon, radiusMiles) {
+// Search organizations within a certain radius with housing type filter
+function searchByProximityWithFilters(userLat, userLon, radiusMiles, housingType = '') {
     return organizationsWithCoords.filter(org => {
+        // Filter by housing type first (if specified)
+        if (housingType && org.type !== housingType) {
+            return false;
+        }
+        
+        // Then filter by distance
         if (!org.latitude || !org.longitude) return false;
         
         const distance = calculateDistance(userLat, userLon, org.latitude, org.longitude);
@@ -713,6 +722,11 @@ function searchByProximity(userLat, userLon, radiusMiles) {
             distance: Math.round(distance * 10) / 10 // Round to 1 decimal place
         };
     }).sort((a, b) => a.distance - b.distance); // Sort by distance
+}
+
+// Search organizations within a certain radius (legacy function for backward compatibility)
+function searchByProximity(userLat, userLon, radiusMiles) {
+    return searchByProximityWithFilters(userLat, userLon, radiusMiles, '');
 }
 
 // Export functions for testing (if needed)
