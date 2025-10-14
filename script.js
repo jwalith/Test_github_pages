@@ -553,12 +553,6 @@ async function loadCoordinatesFromJSON() {
         
         console.log(`Added coordinates to ${organizationsWithCoords.length} organizations`);
         
-        // Show export button
-        const exportBtn = document.getElementById('exportCoordinatesBtn');
-        if (exportBtn) {
-            exportBtn.style.display = 'inline-block';
-        }
-        
     } catch (error) {
         console.error('Error loading coordinates from JSON:', error);
         alert('Error loading coordinates. Please check if zip_coordinates.json file exists on GitHub.');
@@ -589,13 +583,6 @@ async function addCoordinatesToOrganizations() {
         });
         
         console.log(`Added coordinates to ${organizationsWithCoords.length} organizations`);
-        
-        // Show export button
-        const exportBtn = document.getElementById('exportCoordinatesBtn');
-        if (exportBtn) {
-            exportBtn.style.display = 'inline-block';
-        }
-        
         return;
     }
     
@@ -665,42 +652,8 @@ async function addCoordinatesToOrganizations() {
     });
     
     console.log(`Added coordinates to ${organizationsWithCoords.length} organizations`);
-    
-    // Show export button
-    const exportBtn = document.getElementById('exportCoordinatesBtn');
-    if (exportBtn) {
-        exportBtn.style.display = 'inline-block';
-    }
 }
 
-// Export coordinates to downloadable JSON file
-function exportCoordinates() {
-    const savedCoordinates = localStorage.getItem('zipCoordinates');
-    if (!savedCoordinates) {
-        alert('No coordinates found in localStorage. Please load the data first.');
-        return;
-    }
-    
-    const coordinates = JSON.parse(savedCoordinates);
-    const exportData = {
-        metadata: {
-            total_zips: Object.keys(coordinates).length,
-            exported_at: new Date().toISOString(),
-            source: 'Organization Search System'
-        },
-        coordinates: coordinates
-    };
-    
-    const dataStr = JSON.stringify(exportData, null, 2);
-    const dataBlob = new Blob([dataStr], {type: 'application/json'});
-    
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(dataBlob);
-    link.download = 'zip_coordinates_export.json';
-    link.click();
-    
-    console.log(`Exported ${Object.keys(coordinates).length} coordinates to zip_coordinates_export.json`);
-}
 
 // Search organizations within a certain radius with housing type filter
 function searchByProximityWithFilters(userLat, userLon, radiusMiles, housingType = '') {
