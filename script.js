@@ -333,7 +333,7 @@ async function handleProximitySearchByZip() {
     
     try {
         showLoading();
-        const coords = await getCoordinatesFromZip(zipCode);
+        const coords = getCoordinatesFromZip(zipCode);
         
         const results = searchByProximityWithFilters(coords.latitude, coords.longitude, radiusMiles, selectedHousingType);
         
@@ -530,33 +530,20 @@ function getCurrentLocation() {
     });
 }
 
-// Convert zip code to coordinates using a free geocoding service
-async function getCoordinatesFromZip(zipCode) {
-    try {
-        // Using Nominatim (OpenStreetMap) API - more reliable and CORS-friendly
-        const response = await fetch(`https://nominatim.openstreetmap.org/search?postalcode=${zipCode}&country=US&format=json&limit=1`, {
-            headers: {
-                'User-Agent': 'OrganizationSearch/1.0' // Required by Nominatim
-            }
-        });
-        
-        if (!response.ok) {
-            throw new Error(`HTTP ${response.status}: Failed to get coordinates for zip code`);
-        }
-        
-        const data = await response.json();
-        
-        if (data && data.length > 0 && data[0].lat && data[0].lon) {
-            return {
-                latitude: parseFloat(data[0].lat),
-                longitude: parseFloat(data[0].lon)
-            };
-        }
-        throw new Error('No coordinates found for zip code');
-    } catch (error) {
-        console.error('Error getting coordinates:', error);
-        throw error;
+// Get coordinates for a zip code from the loaded JSON data
+function getCoordinatesFromZip(zipCode) {
+    // Find the zip coordinates in our loaded data
+    const zipCoords = organizationsWithCoords.find(org => org.zip === zipCode);
+    
+    if (zipCoords && zipCoords.latitude && zipCoords.longitude) {
+        return {
+            latitude: zipCoords.latitude,
+            longitude: zipCoords.longitude
+        };
     }
+    
+    // If not found in our data, throw an error
+    throw new Error(`No coordinates found for zip code ${zipCode}`);
 }
 
 // Haversine formula to calculate distance between two coordinates
