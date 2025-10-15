@@ -1,0 +1,3886 @@
+{
+  "metadata": {
+    "total_cities": 777,
+    "successful": 775,
+    "failed": 2,
+    "generated_at": "2025-10-15 01:09:23",
+    "description": "Coordinates for cities with missing zip codes"
+  },
+  "city_coordinates": {
+    "Acton, MA": {
+      "latitude": 42.4850931,
+      "longitude": -71.43284,
+      "display_name": "Acton, Middlesex County, Massachusetts, United States"
+    },
+    "Ada, OK": {
+      "latitude": 34.7743383,
+      "longitude": -96.6783651,
+      "display_name": "Ada, Pontotoc County, Oklahoma, 74820, United States"
+    },
+    "Adams, TN": {
+      "latitude": 36.5823718,
+      "longitude": -87.0655751,
+      "display_name": "Adams, Robertson County, Middle Tennessee, Tennessee, United States"
+    },
+    "Addison, ME": {
+      "latitude": 44.618822,
+      "longitude": -67.744446,
+      "display_name": "Addison, Washington County, Maine, 04606, United States"
+    },
+    "Agawam, MA": {
+      "latitude": 42.0688621,
+      "longitude": -72.6151604,
+      "display_name": "Agawam, Hampden County, Massachusetts, United States"
+    },
+    "Allendale, NJ": {
+      "latitude": 41.0413199,
+      "longitude": -74.1291407,
+      "display_name": "Allendale, Bergen County, New Jersey, 07401, United States"
+    },
+    "Alton, KS": {
+      "latitude": 39.4709268,
+      "longitude": -98.9481551,
+      "display_name": "Alton, Osborne County, Kansas, United States"
+    },
+    "Altus, OK": {
+      "latitude": 34.6381255,
+      "longitude": -99.3339754,
+      "display_name": "Altus, Jackson County, Oklahoma, 73521, United States"
+    },
+    "American Falls, ID": {
+      "latitude": 42.7860227,
+      "longitude": -112.854437,
+      "display_name": "American Falls, Power County, Idaho, 83211, United States"
+    },
+    "Amesbury, MA": {
+      "latitude": 42.8579536,
+      "longitude": -70.9300921,
+      "display_name": "Amesbury, Essex County, Massachusetts, 01913, United States"
+    },
+    "Amherst, MA": {
+      "latitude": 42.3731948,
+      "longitude": -72.5198761,
+      "display_name": "Amherst, Hampshire County, Massachusetts, United States"
+    },
+    "Ammon, ID": {
+      "latitude": 43.4768028,
+      "longitude": -111.9641319,
+      "display_name": "Ammon, Bonneville County, Idaho, 83406, United States"
+    },
+    "Andover, MA": {
+      "latitude": 42.65717,
+      "longitude": -71.1408776,
+      "display_name": "Andover, Essex County, Massachusetts, United States"
+    },
+    "Andover, NH": {
+      "latitude": 43.4366616,
+      "longitude": -71.8197481,
+      "display_name": "Andover, Merrimack County, New Hampshire, United States"
+    },
+    "Ann Arbor, MI": {
+      "latitude": 42.2813722,
+      "longitude": -83.7484616,
+      "display_name": "Ann Arbor, Washtenaw County, Michigan, United States"
+    },
+    "Anton, NM": {
+      "latitude": 36.7654695,
+      "longitude": -108.1561282,
+      "display_name": "Anton, Country Club Drive, Farmington, San Juan County, New Mexico, 87402, United States"
+    },
+    "Ardmore, OK": {
+      "latitude": 34.1729273,
+      "longitude": -97.1309119,
+      "display_name": "Ardmore, Carter County, Oklahoma, United States"
+    },
+    "Arkansas City, KS": {
+      "latitude": 37.0622562,
+      "longitude": -97.0388338,
+      "display_name": "Arkansas City, Cowley County, Kansas, 67005, United States"
+    },
+    "Arlington, MA": {
+      "latitude": 42.4153739,
+      "longitude": -71.1564428,
+      "display_name": "Arlington, Middlesex County, Massachusetts, United States"
+    },
+    "Ascutney, VT": {
+      "latitude": 43.4077723,
+      "longitude": -72.4072058,
+      "display_name": "Ascutney, Weathersfield, Windsor County, Vermont, United States"
+    },
+    "Ashland, MA": {
+      "latitude": 42.2599608,
+      "longitude": -71.4642596,
+      "display_name": "Ashland, Middlesex County, Massachusetts, 01721, United States"
+    },
+    "Atco, NJ": {
+      "latitude": 39.7836223,
+      "longitude": -74.9077919,
+      "display_name": "Atco, Hopewell Road, Bishops, Waterford Township, Camden County, New Jersey, 08091, United States"
+    },
+    "Atlantic City, NJ": {
+      "latitude": 39.3642852,
+      "longitude": -74.4229351,
+      "display_name": "Atlantic City, Atlantic County, New Jersey, United States"
+    },
+    "Attleboro, MA": {
+      "latitude": 41.9439695,
+      "longitude": -71.2804301,
+      "display_name": "Attleboro, Bristol County, Massachusetts, 02703, United States"
+    },
+    "Auburn, MA": {
+      "latitude": 42.1945465,
+      "longitude": -71.8358095,
+      "display_name": "Auburn, Worcester County, Massachusetts, United States"
+    },
+    "Auburn, ME": {
+      "latitude": 44.0965374,
+      "longitude": -70.2249487,
+      "display_name": "Auburn, Androscoggin County, Maine, 04210, United States"
+    },
+    "Avon, CT": {
+      "latitude": 41.8098209,
+      "longitude": -72.8306541,
+      "display_name": "Avon, Capitol Planning Region, Connecticut, 06001, United States"
+    },
+    "Ayer, MA": {
+      "latitude": 42.5595807,
+      "longitude": -71.5882561,
+      "display_name": "Ayer, Middlesex County, Massachusetts, 01432, United States"
+    },
+    "Baldwin City, KS": {
+      "latitude": 38.775007,
+      "longitude": -95.1863603,
+      "display_name": "Baldwin City, Douglas County, Kansas, United States"
+    },
+    "Bangor, ME": {
+      "latitude": 44.8016255,
+      "longitude": -68.7713289,
+      "display_name": "Bangor, Penobscot County, Maine, 04401, United States"
+    },
+    "Barre, VT": {
+      "latitude": 44.1969042,
+      "longitude": -72.5007458,
+      "display_name": "Barre, Washington County, Vermont, 05641, United States"
+    },
+    "Barrington, NH": {
+      "latitude": 43.223191,
+      "longitude": -71.047211,
+      "display_name": "Barrington, Strafford County, New Hampshire, United States"
+    },
+    "Barrington, RI": {
+      "latitude": 41.7407661,
+      "longitude": -71.3084633,
+      "display_name": "Barrington, Bristol County, Rhode Island, 02806, United States"
+    },
+    "Bartlesville, OK": {
+      "latitude": 36.7509272,
+      "longitude": -95.9771779,
+      "display_name": "Bartlesville, Washington County, Oklahoma, United States"
+    },
+    "Barton, VT": {
+      "latitude": 44.7484736,
+      "longitude": -72.1806582,
+      "display_name": "Barton, Orleans County, Vermont, United States"
+    },
+    "Basking Ridge, NJ": {
+      "latitude": 40.7064088,
+      "longitude": -74.5492725,
+      "display_name": "Basking Ridge, Bernards Township, Somerset County, New Jersey, 02794, United States"
+    },
+    "Battle Creek, MI": {
+      "latitude": 42.3192548,
+      "longitude": -85.1824269,
+      "display_name": "Battle Creek, Calhoun County, Michigan, United States"
+    },
+    "Baxter Springs, KS": {
+      "latitude": 37.0235753,
+      "longitude": -94.7352387,
+      "display_name": "Baxter Springs, Cherokee County, Kansas, 66713, United States"
+    },
+    "Bay City, MI": {
+      "latitude": 43.5962107,
+      "longitude": -83.8881711,
+      "display_name": "Bay City, Bay County, Michigan, 48708, United States"
+    },
+    "Bedford, NH": {
+      "latitude": 42.9464737,
+      "longitude": -71.5159015,
+      "display_name": "Bedford, Hillsborough County, New Hampshire, 03110, United States"
+    },
+    "Belchertown, MA": {
+      "latitude": 42.2772732,
+      "longitude": -72.4007966,
+      "display_name": "Belchertown, Hampshire County, Massachusetts, 01007, United States"
+    },
+    "Bellevue, ID": {
+      "latitude": 43.463518,
+      "longitude": -114.2606,
+      "display_name": "Bellevue, Blaine County, Idaho, 83313, United States"
+    },
+    "Bellingham, WA": {
+      "latitude": 48.7544012,
+      "longitude": -122.478836,
+      "display_name": "Bellingham, Whatcom County, Washington, United States"
+    },
+    "Bellows Falls, VT": {
+      "latitude": 43.134063,
+      "longitude": -72.444534,
+      "display_name": "Bellows Falls, Rockingham, Windham County, Vermont, United States"
+    },
+    "Belvidere, NJ": {
+      "latitude": 40.8299357,
+      "longitude": -75.0782702,
+      "display_name": "Belvidere, Warren County, New Jersey, United States"
+    },
+    "Bennington, VT": {
+      "latitude": 42.8788667,
+      "longitude": -73.1968205,
+      "display_name": "Bennington, Bennington County, Vermont, United States"
+    },
+    "Berlin, NJ": {
+      "latitude": 39.7912262,
+      "longitude": -74.9290536,
+      "display_name": "Berlin, Camden County, New Jersey, United States"
+    },
+    "Berryton, KS": {
+      "latitude": 38.9408353,
+      "longitude": -95.6316474,
+      "display_name": "Berryton, Shawnee County, Kansas, 66409, United States"
+    },
+    "Bethany, OK": {
+      "latitude": 35.5186728,
+      "longitude": -97.6322648,
+      "display_name": "Bethany, Oklahoma County, Oklahoma, United States"
+    },
+    "Beverly, MA": {
+      "latitude": 42.5489744,
+      "longitude": -70.8781883,
+      "display_name": "Beverly, Essex County, Massachusetts, United States"
+    },
+    "Billerica, MA": {
+      "latitude": 42.5584264,
+      "longitude": -71.268947,
+      "display_name": "Billerica, Middlesex County, Massachusetts, United States"
+    },
+    "Bismarck, ND": {
+      "latitude": 46.808327,
+      "longitude": -100.783739,
+      "display_name": "Bismarck, Burleigh County, North Dakota, United States"
+    },
+    "Bixby, OK": {
+      "latitude": 35.9420431,
+      "longitude": -95.8833235,
+      "display_name": "Bixby, Tulsa County, Oklahoma, 74008, United States"
+    },
+    "Blackfoot, ID": {
+      "latitude": 43.190039,
+      "longitude": -112.348357,
+      "display_name": "Blackfoot, Bingham County, Idaho, United States"
+    },
+    "Blackstone, MA": {
+      "latitude": 42.0178352,
+      "longitude": -71.5411133,
+      "display_name": "Blackstone, Worcester County, Massachusetts, 01504, United States"
+    },
+    "Bloomfield, NJ": {
+      "latitude": 40.7934789,
+      "longitude": -74.1979277,
+      "display_name": "Bloomfield, Essex County, New Jersey, 07003, United States"
+    },
+    "Blue Hill, ME": {
+      "latitude": 44.413027,
+      "longitude": -68.5880555,
+      "display_name": "Blue Hill, Hancock County, Maine, United States"
+    },
+    "Boise, ID": {
+      "latitude": 43.6166163,
+      "longitude": -116.200886,
+      "display_name": "Boise, Ada County, Idaho, United States"
+    },
+    "Bonners Ferry, ID": {
+      "latitude": 48.6972317,
+      "longitude": -116.3119832,
+      "display_name": "Bonners Ferry, Boundary County, Idaho, 83503, United States"
+    },
+    "Boonton Township, NJ": {
+      "latitude": 40.9314543,
+      "longitude": -74.4291549,
+      "display_name": "Boonton Township, Morris County, New Jersey, United States"
+    },
+    "Bordentown, NJ": {
+      "latitude": 40.1462685,
+      "longitude": -74.7114508,
+      "display_name": "Bordentown, Burlington County, New Jersey, United States"
+    },
+    "Boscawen, NH": {
+      "latitude": 43.315187,
+      "longitude": -71.621246,
+      "display_name": "Boscawen, Merrimack County, New Hampshire, 03303, United States"
+    },
+    "Bosque, NM": {
+      "latitude": 34.5600616,
+      "longitude": -106.7891935,
+      "display_name": "Bosque, Valencia County, New Mexico, 87023, United States"
+    },
+    "Boston-Back Bay, MA": {
+      "latitude": 42.3473297,
+      "longitude": -71.0749406,
+      "display_name": "Boston Back Bay, 145, Dartmouth Street, South End, Boston, Suffolk County, Massachusetts, 02116, United States"
+    },
+    "Boston-Brighton, MA": {
+      "latitude": 42.3486499,
+      "longitude": -71.1479958,
+      "display_name": "Boston Medical Center – Brighton, 736, Cambridge Street, Brighton Center, Brighton, Boston, Suffolk County, Massachusetts, 02135, United States"
+    },
+    "Boston-Charlestown, MA": {
+      "latitude": 42.3907154,
+      "longitude": -71.0703096,
+      "display_name": "Alford Street, Charlestown, Boston, Suffolk County, Massachusetts, 02129, United States"
+    },
+    "Boston-Dorchester, MA": {
+      "latitude": 42.2866488,
+      "longitude": -71.0422912,
+      "display_name": "William T. Morrissey Boulevard, Neponset, Dorchester, Boston, Suffolk County, Massachusetts, 02122, United States"
+    },
+    "Boston-Jamaica Plain, MA": {
+      "latitude": 42.3013672,
+      "longitude": -71.1089034,
+      "display_name": "Arborway, Jamaica Plain, Boston, Suffolk County, Massachusetts, 02130, United States"
+    },
+    "Boston-Mission Hill, MA": {
+      "latitude": 42.3371779,
+      "longitude": -71.0967299,
+      "display_name": "Huntington Avenue, Mission Hill, Boston, Suffolk County, Massachusetts, 02120, United States"
+    },
+    "Boston-Roxbury, MA": {
+      "latitude": 42.2913485,
+      "longitude": -71.0955109,
+      "display_name": "Morton Street, Mattapan, Boston, Suffolk County, Massachusetts, 02126, United States"
+    },
+    "Boston-South Boston, MA": {
+      "latitude": 42.3515458,
+      "longitude": -71.0551533,
+      "display_name": "Boston South Station, 700, Atlantic Avenue, Leather District, Downtown Boston, Boston, Suffolk County, Massachusetts, 02205, United States"
+    },
+    "Boston-West Roxbury, MA": {
+      "latitude": 42.270907,
+      "longitude": -71.1732646,
+      "display_name": "Spring Street, West Roxbury, Boston, Suffolk County, Massachusetts, 02132, United States"
+    },
+    "Bound Brook, NJ": {
+      "latitude": 40.5684363,
+      "longitude": -74.5384889,
+      "display_name": "Bound Brook, Somerset County, New Jersey, 08805, United States"
+    },
+    "Bourne, MA": {
+      "latitude": 41.7412166,
+      "longitude": -70.5989196,
+      "display_name": "Bourne, Barnstable County, Massachusetts, United States"
+    },
+    "Bradford, VT": {
+      "latitude": 43.9924278,
+      "longitude": -72.1294525,
+      "display_name": "Bradford, Orange County, Vermont, 05033, United States"
+    },
+    "Braintree, MA": {
+      "latitude": 42.2205956,
+      "longitude": -71.0041229,
+      "display_name": "Braintree, Norfolk County, Massachusetts, 02184, United States"
+    },
+    "Branchville, NJ": {
+      "latitude": 41.1464852,
+      "longitude": -74.7523874,
+      "display_name": "Branchville, Sussex County, New Jersey, 07890, United States"
+    },
+    "Brandon, VT": {
+      "latitude": 43.7982806,
+      "longitude": -73.087913,
+      "display_name": "Brandon, Rutland County, Vermont, United States"
+    },
+    "Brattleboro, VT": {
+      "latitude": 42.8507588,
+      "longitude": -72.5572913,
+      "display_name": "Brattleboro, Windham County, Vermont, United States"
+    },
+    "Bremerton, WA": {
+      "latitude": 47.5653663,
+      "longitude": -122.6246836,
+      "display_name": "Bremerton, Kitsap County, Washington, United States"
+    },
+    "Brentwood, NH": {
+      "latitude": 42.9786981,
+      "longitude": -71.0728369,
+      "display_name": "Brentwood, Rockingham County, New Hampshire, United States"
+    },
+    "Brewster, MA": {
+      "latitude": 41.7601093,
+      "longitude": -70.082796,
+      "display_name": "Brewster, Barnstable County, Massachusetts, 02631, United States"
+    },
+    "Brick, NJ": {
+      "latitude": 40.0707244,
+      "longitude": -74.1280562,
+      "display_name": "Brick Township, Ocean County, New Jersey, United States"
+    },
+    "Bridgeport, CT": {
+      "latitude": 41.1792695,
+      "longitude": -73.1887863,
+      "display_name": "Bridgeport, Greater Bridgeport Planning Region, Connecticut, United States"
+    },
+    "Bridgeton, NJ": {
+      "latitude": 39.427337,
+      "longitude": -75.2340768,
+      "display_name": "Bridgeton, Cumberland County, New Jersey, 08302, United States"
+    },
+    "Bridgewater, NJ": {
+      "latitude": 40.5598127,
+      "longitude": -74.5517146,
+      "display_name": "Bridgewater, Main Street, Bridgewater Township, Somerset County, New Jersey, 08805, United States"
+    },
+    "Bristol, NH": {
+      "latitude": 43.5912709,
+      "longitude": -71.7361557,
+      "display_name": "Bristol, Grafton County, New Hampshire, 03222, United States"
+    },
+    "Bristol, RI": {
+      "latitude": 41.6770463,
+      "longitude": -71.2661597,
+      "display_name": "Bristol, Bristol County, Rhode Island, 02809, United States"
+    },
+    "Bristow, OK": {
+      "latitude": 35.8308944,
+      "longitude": -96.3907747,
+      "display_name": "Bristow, Creek County, Oklahoma, United States"
+    },
+    "Brockton, MA": {
+      "latitude": 42.0834335,
+      "longitude": -71.0183787,
+      "display_name": "Brockton, Plymouth County, Massachusetts, United States"
+    },
+    "Broken Arrow, OK": {
+      "latitude": 36.0525993,
+      "longitude": -95.7908195,
+      "display_name": "Broken Arrow, Tulsa County, Oklahoma, United States"
+    },
+    "Brookline, MA": {
+      "latitude": 42.332918,
+      "longitude": -71.1187829,
+      "display_name": "Brookline, Norfolk County, Massachusetts, United States"
+    },
+    "Brookline-Chestnut Hill, MA": {
+      "latitude": 42.3267965,
+      "longitude": -71.1519022,
+      "display_name": "Boylston Street, Chestnut Hill, Brookline, Norfolk County, Massachusetts, 02447, United States"
+    },
+    "Brooklyn, CT": {
+      "latitude": 41.7881541,
+      "longitude": -71.9497957,
+      "display_name": "Brooklyn, Northeastern Connecticut Planning Region, Connecticut, 06234, United States"
+    },
+    "Brooklyn, NY": {
+      "latitude": 40.6526006,
+      "longitude": -73.9497211,
+      "display_name": "Brooklyn, Kings County, City of New York, New York, United States"
+    },
+    "Bruce, MS": {
+      "latitude": 33.9920553,
+      "longitude": -89.3489641,
+      "display_name": "Bruce, Calhoun County, Mississippi, United States"
+    },
+    "Bucksport, ME": {
+      "latitude": 44.5718672,
+      "longitude": -68.7942156,
+      "display_name": "Bucksport, Hancock County, Maine, 04416, United States"
+    },
+    "Buhl, ID": {
+      "latitude": 42.5990714,
+      "longitude": -114.7594946,
+      "display_name": "Buhl, Twin Falls County, Idaho, United States"
+    },
+    "Burley, ID": {
+      "latitude": 42.5357428,
+      "longitude": -113.792794,
+      "display_name": "Burley, Cassia County, Idaho, 83318, United States"
+    },
+    "Burlington, MA": {
+      "latitude": 42.5048167,
+      "longitude": -71.1956111,
+      "display_name": "Burlington, Middlesex County, Massachusetts, United States"
+    },
+    "Burlington, NJ": {
+      "latitude": 39.9325409,
+      "longitude": -74.7226665,
+      "display_name": "Burlington County, New Jersey, United States"
+    },
+    "Burlington, VT": {
+      "latitude": 44.4761601,
+      "longitude": -73.212906,
+      "display_name": "Burlington, Chittenden County, Vermont, United States"
+    },
+    "Caldwell, ID": {
+      "latitude": 43.6678736,
+      "longitude": -116.689415,
+      "display_name": "Caldwell, Canyon County, Idaho, United States"
+    },
+    "Cambridge, ID": {
+      "latitude": 44.572596,
+      "longitude": -116.6760812,
+      "display_name": "Cambridge, Washington County, Idaho, United States"
+    },
+    "Cambridge, MA": {
+      "latitude": 42.3656347,
+      "longitude": -71.1040018,
+      "display_name": "Cambridge, Middlesex County, Massachusetts, United States"
+    },
+    "Camden, NJ": {
+      "latitude": 39.9448402,
+      "longitude": -75.1198911,
+      "display_name": "Camden, Camden County, New Jersey, United States"
+    },
+    "Canton, MA": {
+      "latitude": 42.1584324,
+      "longitude": -71.1447732,
+      "display_name": "Canton, Norfolk County, Massachusetts, 02021, United States"
+    },
+    "Cape May Court House, NJ": {
+      "latitude": 39.075938,
+      "longitude": -74.8114615,
+      "display_name": "Cape May Court House, Middle Township, Cape May County, New Jersey, 08210, United States"
+    },
+    "Carbondale, KS": {
+      "latitude": 38.8186156,
+      "longitude": -95.6891498,
+      "display_name": "Carbondale, Osage County, Kansas, United States"
+    },
+    "Carneys Point, NJ": {
+      "latitude": 39.7108202,
+      "longitude": -75.4675508,
+      "display_name": "Carneys Point, Carneys Point Township, Salem County, New Jersey, United States"
+    },
+    "Casco, ME": {
+      "latitude": 44.0060823,
+      "longitude": -70.5225313,
+      "display_name": "Casco, Cumberland County, Maine, 04015, United States"
+    },
+    "Castleton, VT": {
+      "latitude": 43.6111275,
+      "longitude": -73.1807089,
+      "display_name": "Castleton, Rutland County, Vermont, United States"
+    },
+    "Catoosa, OK": {
+      "latitude": 36.188987,
+      "longitude": -95.745817,
+      "display_name": "Catoosa, Rogers County, Oklahoma, United States"
+    },
+    "Centerville, MA": {
+      "latitude": 41.6499298,
+      "longitude": -70.3485753,
+      "display_name": "Centerville, Barnstable, Barnstable County, Massachusetts, 02632, United States"
+    },
+    "Central Falls, RI": {
+      "latitude": 41.8873726,
+      "longitude": -71.3876472,
+      "display_name": "Central Falls, Providence County, Rhode Island, United States"
+    },
+    "Chanute, KS": {
+      "latitude": 37.6816841,
+      "longitude": -95.4517985,
+      "display_name": "Chanute, Neosho County, Kansas, 66720, United States"
+    },
+    "Charlestown, NH": {
+      "latitude": 43.238147,
+      "longitude": -72.4248232,
+      "display_name": "Charlestown, Sullivan County, New Hampshire, 03603, United States"
+    },
+    "Charlevoix, MI": {
+      "latitude": 45.202075,
+      "longitude": -84.9676387,
+      "display_name": "Charlevoix County, Michigan, United States"
+    },
+    "Charlton, MA": {
+      "latitude": 42.1340806,
+      "longitude": -71.9698085,
+      "display_name": "Charlton, Worcester County, Massachusetts, United States"
+    },
+    "Chatham, MA": {
+      "latitude": 41.6822748,
+      "longitude": -69.9595161,
+      "display_name": "Chatham, Barnstable County, Massachusetts, United States"
+    },
+    "Chatham, NJ": {
+      "latitude": 40.7409242,
+      "longitude": -74.3836711,
+      "display_name": "Chatham, Morris County, New Jersey, United States"
+    },
+    "Chelmsford, MA": {
+      "latitude": 42.5968617,
+      "longitude": -71.3517602,
+      "display_name": "Chelmsford, Middlesex County, Massachusetts, United States"
+    },
+    "Chelsea, MA": {
+      "latitude": 42.3912241,
+      "longitude": -71.0369301,
+      "display_name": "Chelsea, Suffolk County, Massachusetts, 02150, United States"
+    },
+    "Chelsea, MI": {
+      "latitude": 40.7464906,
+      "longitude": -74.0015283,
+      "display_name": "Chelsea, Manhattan Community Board 4, Manhattan, New York County, City of New York, New York, 10011, United States"
+    },
+    "Chelsea, VT": {
+      "latitude": 43.9891592,
+      "longitude": -72.4477921,
+      "display_name": "Chelsea, Orange County, Vermont, 05038, United States"
+    },
+    "Cheney, KS": {
+      "latitude": 37.6300316,
+      "longitude": -97.7826841,
+      "display_name": "Cheney, Morton Township, Sedgwick County, Kansas, 67025, United States"
+    },
+    "Cherry Hill, NJ": {
+      "latitude": 39.9348351,
+      "longitude": -75.0307264,
+      "display_name": "Cherry Hill Township, Camden County, New Jersey, United States"
+    },
+    "Chesterfield, MI": {
+      "latitude": 38.661953,
+      "longitude": -90.5643258,
+      "display_name": "Chesterfield, Saint Louis County, Missouri, United States"
+    },
+    "Chickasha, OK": {
+      "latitude": 35.0512159,
+      "longitude": -97.9370036,
+      "display_name": "Chickasha, Grady County, Oklahoma, United States"
+    },
+    "Chicopee, MA": {
+      "latitude": 42.1487691,
+      "longitude": -72.6071119,
+      "display_name": "Chicopee, Hampden County, Massachusetts, United States"
+    },
+    "Chubbuck, ID": {
+      "latitude": 42.9202973,
+      "longitude": -112.4661896,
+      "display_name": "Chubbuck, Bannock County, Idaho, 83202, United States"
+    },
+    "Claremont, NH": {
+      "latitude": 43.3727579,
+      "longitude": -72.3382504,
+      "display_name": "Claremont, Sullivan County, New Hampshire, United States"
+    },
+    "Claremore, OK": {
+      "latitude": 36.3126005,
+      "longitude": -95.6160686,
+      "display_name": "Claremore, Rogers County, Oklahoma, United States"
+    },
+    "Clinton, MA": {
+      "latitude": 42.4212463,
+      "longitude": -71.6874099,
+      "display_name": "Clinton, Worcester County, Massachusetts, 01510, United States"
+    },
+    "Clinton, OK": {
+      "latitude": 35.5156056,
+      "longitude": -98.9673069,
+      "display_name": "Clinton, Custer County, Oklahoma, 73601, United States"
+    },
+    "Clio, MI": {
+      "latitude": 43.1774215,
+      "longitude": -83.7346897,
+      "display_name": "Clio, Genesee County, Michigan, 48420, United States"
+    },
+    "Coeur D Alene, ID": {
+      "latitude": 47.6742994,
+      "longitude": -116.7811531,
+      "display_name": "Coeur d'Alene, Kootenai County, Idaho, 83815, United States"
+    },
+    "Coeur D'Alene, ID": {
+      "latitude": 47.6742994,
+      "longitude": -116.7811531,
+      "display_name": "Coeur d'Alene, Kootenai County, Idaho, 83815, United States"
+    },
+    "Cohasset, MA": {
+      "latitude": 42.2410158,
+      "longitude": -70.8035571,
+      "display_name": "Cohasset, Norfolk County, Massachusetts, 02025, United States"
+    },
+    "Collingswood, NJ": {
+      "latitude": 39.9181686,
+      "longitude": -75.071284,
+      "display_name": "Collingswood, Camden County, New Jersey, United States"
+    },
+    "Collinsville, OK": {
+      "latitude": 36.3661205,
+      "longitude": -95.8398108,
+      "display_name": "Collinsville, Tulsa County, Oklahoma, United States"
+    },
+    "Colts Neck, NJ": {
+      "latitude": 40.2876108,
+      "longitude": -74.1723652,
+      "display_name": "Colts Neck Township, Monmouth County, New Jersey, 07722, United States"
+    },
+    "Columbiaville, MI": {
+      "latitude": 43.156693,
+      "longitude": -83.410505,
+      "display_name": "Columbiaville, Lapeer County, Michigan, United States"
+    },
+    "Concord, MA": {
+      "latitude": 42.4605189,
+      "longitude": -71.3488963,
+      "display_name": "Concord, Middlesex County, Massachusetts, 01742, United States"
+    },
+    "Concord, NH": {
+      "latitude": 43.207178,
+      "longitude": -71.537476,
+      "display_name": "Concord, Merrimack County, New Hampshire, United States"
+    },
+    "Coopers Mills, ME": {
+      "latitude": 44.2589611,
+      "longitude": -69.551988,
+      "display_name": "Coopers Mills, Whitefield, Lincoln County, Maine, 04353, United States"
+    },
+    "Cottonwood, ID": {
+      "latitude": 46.0484923,
+      "longitude": -116.349589,
+      "display_name": "Cottonwood, Idaho County, Idaho, 83522, United States"
+    },
+    "Coventry, RI": {
+      "latitude": 41.7000996,
+      "longitude": -71.6828444,
+      "display_name": "Coventry, Kent County, Rhode Island, United States"
+    },
+    "Craftsbury, VT": {
+      "latitude": 44.6361057,
+      "longitude": -72.3732957,
+      "display_name": "Craftsbury, Orleans County, Vermont, United States"
+    },
+    "Cranford, NJ": {
+      "latitude": 40.656539,
+      "longitude": -74.3035794,
+      "display_name": "Cranford, Union County, New Jersey, 07016, United States"
+    },
+    "Cranston, RI": {
+      "latitude": 41.779588,
+      "longitude": -71.4366813,
+      "display_name": "Cranston, Providence County, Rhode Island, United States"
+    },
+    "Cresskill, NJ": {
+      "latitude": 40.9414874,
+      "longitude": -73.9593041,
+      "display_name": "Cresskill, Bergen County, New Jersey, 07626, United States"
+    },
+    "Cumberland, RI": {
+      "latitude": 41.9667656,
+      "longitude": -71.4328363,
+      "display_name": "Cumberland, Providence County, Rhode Island, 02864, United States"
+    },
+    "Dalton, MA": {
+      "latitude": 42.4741707,
+      "longitude": -73.1599696,
+      "display_name": "Dalton, Berkshire County, Massachusetts, United States"
+    },
+    "Danforth, ME": {
+      "latitude": 45.6585807,
+      "longitude": -67.8668025,
+      "display_name": "Danforth, Washington County, Maine, 04424, United States"
+    },
+    "Danvers, MA": {
+      "latitude": 42.5664984,
+      "longitude": -70.9362957,
+      "display_name": "Danvers, Essex County, Massachusetts, United States"
+    },
+    "Danville, VT": {
+      "latitude": 44.411562,
+      "longitude": -72.1400382,
+      "display_name": "Danville, Caledonia County, Vermont, 05828, United States"
+    },
+    "Darlington, ID": {
+      "latitude": 43.8135138,
+      "longitude": -113.4147348,
+      "display_name": "Darlington, Butte County, Idaho, 83255, United States"
+    },
+    "Dartmouth, MA": {
+      "latitude": 41.6332267,
+      "longitude": -70.9879928,
+      "display_name": "Dartmouth, Bristol County, Massachusetts, United States"
+    },
+    "Dedham, MA": {
+      "latitude": 42.2489143,
+      "longitude": -71.1755732,
+      "display_name": "Dedham, Norfolk County, Massachusetts, United States"
+    },
+    "Deerfield, NH": {
+      "latitude": 43.1301713,
+      "longitude": -71.238819,
+      "display_name": "Deerfield, Rockingham County, New Hampshire, 03037, United States"
+    },
+    "Del City, OK": {
+      "latitude": 35.442007,
+      "longitude": -97.4408709,
+      "display_name": "Del City, Oklahoma County, Oklahoma, 73115, United States"
+    },
+    "Denville, NJ": {
+      "latitude": 40.8922694,
+      "longitude": -74.4774255,
+      "display_name": "Denville, Morris County, New Jersey, 07834, United States"
+    },
+    "Deptford, NJ": {
+      "latitude": 39.8271755,
+      "longitude": -75.1235892,
+      "display_name": "Deptford Township, Gloucester County, New Jersey, United States"
+    },
+    "Derby Line, VT": {
+      "latitude": 45.0053262,
+      "longitude": -72.0996523,
+      "display_name": "Derby Line, Derby, Orleans County, Vermont, United States"
+    },
+    "Derry, NH": {
+      "latitude": 42.8808677,
+      "longitude": -71.3264492,
+      "display_name": "Derry, Rockingham County, New Hampshire, 03038, United States"
+    },
+    "Des Moines, WA": {
+      "latitude": 47.398829,
+      "longitude": -122.3099093,
+      "display_name": "Des Moines, King County, Washington, 98198, United States"
+    },
+    "Detroit, MI": {
+      "latitude": 42.3315509,
+      "longitude": -83.0466403,
+      "display_name": "Detroit, Wayne County, Michigan, United States"
+    },
+    "Dodge City, KS": {
+      "latitude": 37.7527982,
+      "longitude": -100.0170787,
+      "display_name": "Dodge City, Ford County, Kansas, 67801, United States"
+    },
+    "Dover, NH": {
+      "latitude": 43.1981117,
+      "longitude": -70.8739761,
+      "display_name": "Dover, Strafford County, New Hampshire, 03820, United States"
+    },
+    "Dover, NJ": {
+      "latitude": 40.883988,
+      "longitude": -74.5621025,
+      "display_name": "Dover, Morris County, New Jersey, 07801, United States"
+    },
+    "Downey, ID": {
+      "latitude": 42.4285297,
+      "longitude": -112.124407,
+      "display_name": "Downey, Bannock County, Idaho, United States"
+    },
+    "Dracut, MA": {
+      "latitude": 42.6688173,
+      "longitude": -71.3033665,
+      "display_name": "Dracut, Middlesex County, Massachusetts, 01826, United States"
+    },
+    "Duncan, OK": {
+      "latitude": 34.5023029,
+      "longitude": -97.9578129,
+      "display_name": "Duncan, Stephens County, Oklahoma, 73533, United States"
+    },
+    "Durant, OK": {
+      "latitude": 33.9919761,
+      "longitude": -96.3776762,
+      "display_name": "Durant, Bryan County, Oklahoma, United States"
+    },
+    "Durham, NH": {
+      "latitude": 43.134564,
+      "longitude": -70.927048,
+      "display_name": "Durham, Strafford County, New Hampshire, 03824, United States"
+    },
+    "Duxbury, MA": {
+      "latitude": 42.0417695,
+      "longitude": -70.672259,
+      "display_name": "Duxbury, Plymouth County, Massachusetts, United States"
+    },
+    "Eagle Lake, ME": {
+      "latitude": 47.040132,
+      "longitude": -68.5962714,
+      "display_name": "Eagle Lake, Aroostook County, Maine, 04739, United States"
+    },
+    "Eagle, ID": {
+      "latitude": 43.6954424,
+      "longitude": -116.3540138,
+      "display_name": "Eagle, Ada County, Idaho, 83616, United States"
+    },
+    "East Brunswick, NJ": {
+      "latitude": 40.4278841,
+      "longitude": -74.415984,
+      "display_name": "East Brunswick Township, Middlesex County, New Jersey, United States"
+    },
+    "East Greenwich, RI": {
+      "latitude": 41.6603788,
+      "longitude": -71.4558911,
+      "display_name": "East Greenwich, Kent County, Rhode Island, 02818, United States"
+    },
+    "East Hanover, NJ": {
+      "latitude": 40.8200998,
+      "longitude": -74.3648731,
+      "display_name": "East Hanover, Morris County, New Jersey, 07936, United States"
+    },
+    "East Longmeadow, MA": {
+      "latitude": 42.064906,
+      "longitude": -72.5129296,
+      "display_name": "East Longmeadow, Hampden County, Massachusetts, 01028, United States"
+    },
+    "East Providence, RI": {
+      "latitude": 41.8194081,
+      "longitude": -71.376257,
+      "display_name": "East Providence, Providence County, Rhode Island, United States"
+    },
+    "East Windsor, NJ": {
+      "latitude": 40.2682199,
+      "longitude": -74.5409597,
+      "display_name": "East Windsor Township, Mercer County, New Jersey, 18520, United States"
+    },
+    "Easton, MA": {
+      "latitude": 42.0245442,
+      "longitude": -71.1286594,
+      "display_name": "Easton, Bristol County, Massachusetts, United States"
+    },
+    "Edgewater, NJ": {
+      "latitude": 40.8270448,
+      "longitude": -73.975694,
+      "display_name": "Edgewater, Bergen County, New Jersey, 07020, United States"
+    },
+    "Edison, NJ": {
+      "latitude": 40.518157,
+      "longitude": -74.4113926,
+      "display_name": "Edison, Middlesex County, New Jersey, United States"
+    },
+    "Edmond, OK": {
+      "latitude": 35.6571367,
+      "longitude": -97.4649038,
+      "display_name": "Edmond, Oklahoma County, Oklahoma, United States"
+    },
+    "Egg Harbor Township, NJ": {
+      "latitude": 39.3820672,
+      "longitude": -74.6171489,
+      "display_name": "Egg Harbor Township, Atlantic County, New Jersey, 08234, United States"
+    },
+    "El Reno, OK": {
+      "latitude": 35.532198,
+      "longitude": -97.9550578,
+      "display_name": "El Reno, Canadian County, Oklahoma, United States"
+    },
+    "Elizabeth, NJ": {
+      "latitude": 40.6639916,
+      "longitude": -74.2107006,
+      "display_name": "Elizabeth, Union County, New Jersey, United States"
+    },
+    "Elk City, OK": {
+      "latitude": 35.4140081,
+      "longitude": -99.4138648,
+      "display_name": "Elk City, Beckham County, Oklahoma, United States"
+    },
+    "Ellinwood, KS": {
+      "latitude": 38.3555675,
+      "longitude": -98.5809106,
+      "display_name": "Ellinwood, Barton County, Kansas, 67526, United States"
+    },
+    "Ellsworth, ME": {
+      "latitude": 44.5414596,
+      "longitude": -68.4243599,
+      "display_name": "Ellsworth, Hancock County, Maine, United States"
+    },
+    "Embden, ME": {
+      "latitude": 44.9181137,
+      "longitude": -69.8667243,
+      "display_name": "Embden, Somerset County, Maine, 04958, United States"
+    },
+    "Emerson, NJ": {
+      "latitude": 40.976209,
+      "longitude": -74.0262505,
+      "display_name": "Emerson, Bergen County, New Jersey, 07630, United States"
+    },
+    "Emmett, ID": {
+      "latitude": 43.8734979,
+      "longitude": -116.4993012,
+      "display_name": "Emmett, Gem County, Idaho, United States"
+    },
+    "Emmett, Id, ID": {
+      "latitude": 43.8734979,
+      "longitude": -116.4993012,
+      "display_name": "Emmett, Gem County, Idaho, United States"
+    },
+    "Emporia, KS": {
+      "latitude": 38.4040054,
+      "longitude": -96.181623,
+      "display_name": "Emporia, Lyon County, Kansas, 66801, United States"
+    },
+    "Englewood, NJ": {
+      "latitude": 40.8929329,
+      "longitude": -73.9726508,
+      "display_name": "Englewood, Bergen County, New Jersey, 07361, United States"
+    },
+    "Englishtown, NJ": {
+      "latitude": 40.2973319,
+      "longitude": -74.3582041,
+      "display_name": "Englishtown, Monmouth County, New Jersey, United States"
+    },
+    "Enid, OK": {
+      "latitude": 36.3967623,
+      "longitude": -97.8791341,
+      "display_name": "Enid, Garfield County, Oklahoma, United States"
+    },
+    "Enosburg Falls, VT": {
+      "latitude": 44.9066695,
+      "longitude": -72.804578,
+      "display_name": "Enosburg Falls, Enosburgh, Franklin County, Vermont, 05450, United States"
+    },
+    "Essex Junction, VT": {
+      "latitude": 44.4906817,
+      "longitude": -73.11136,
+      "display_name": "Essex Junction, Chittenden County, Vermont, United States"
+    },
+    "Essex, CT": {
+      "latitude": 41.3323144,
+      "longitude": -72.3951943,
+      "display_name": "Essex, Lower Connecticut River Valley Planning Region, Connecticut, 06426, United States"
+    },
+    "Essex, VT": {
+      "latitude": 44.5230418,
+      "longitude": -73.0622703,
+      "display_name": "Essex, Chittenden County, Vermont, 05452, United States"
+    },
+    "Everett, WA": {
+      "latitude": 47.9793437,
+      "longitude": -122.2127011,
+      "display_name": "Everett, Snohomish County, Washington, United States"
+    },
+    "Evesham, NJ": {
+      "latitude": 39.851752,
+      "longitude": -74.8917412,
+      "display_name": "Evesham Township, Burlington County, New Jersey, 08053, United States"
+    },
+    "Ewing, NJ": {
+      "latitude": 40.2688105,
+      "longitude": -74.8006895,
+      "display_name": "Ewing, Ewing Township, Mercer County, New Jersey, 08628, United States"
+    },
+    "Exeter, NH": {
+      "latitude": 42.981477,
+      "longitude": -70.9478343,
+      "display_name": "Exeter, Rockingham County, New Hampshire, United States"
+    },
+    "Fairfield, CT": {
+      "latitude": 41.1412078,
+      "longitude": -73.2637258,
+      "display_name": "Fairfield, Greater Bridgeport Planning Region, Connecticut, United States"
+    },
+    "Fairfield, NJ": {
+      "latitude": 40.8837102,
+      "longitude": -74.3059823,
+      "display_name": "Fairfield, Essex County, New Jersey, 07004, United States"
+    },
+    "Fairhaven, MA": {
+      "latitude": 41.6376043,
+      "longitude": -70.9036487,
+      "display_name": "Fairhaven, Bristol County, Massachusetts, 02719, United States"
+    },
+    "Fairlee, VT": {
+      "latitude": 43.906303,
+      "longitude": -72.147903,
+      "display_name": "Fairlee, Orange County, Vermont, 05045, United States"
+    },
+    "Fairview, OK": {
+      "latitude": 36.2689248,
+      "longitude": -98.4798009,
+      "display_name": "Fairview, Major County, Oklahoma, 73737, United States"
+    },
+    "Fall River, MA": {
+      "latitude": 41.7010642,
+      "longitude": -71.1546367,
+      "display_name": "Fall River, Bristol County, Massachusetts, United States"
+    },
+    "Falmouth, MA": {
+      "latitude": 41.5514979,
+      "longitude": -70.6147519,
+      "display_name": "Falmouth, Barnstable County, Massachusetts, United States"
+    },
+    "Fanwood, NJ": {
+      "latitude": 40.6409555,
+      "longitude": -74.383846,
+      "display_name": "Fanwood, Union County, New Jersey, 07023, United States"
+    },
+    "Farmington, NH": {
+      "latitude": 43.3896356,
+      "longitude": -71.0649105,
+      "display_name": "Farmington, Strafford County, New Hampshire, 03835, United States"
+    },
+    "Fenton, MI": {
+      "latitude": 38.5131989,
+      "longitude": -90.4400578,
+      "display_name": "Fenton, Saint Louis County, Missouri, 63029, United States"
+    },
+    "Filer, ID": {
+      "latitude": 42.570186,
+      "longitude": -114.6078214,
+      "display_name": "Filer, Twin Falls County, Idaho, United States"
+    },
+    "Fitchburg, MA": {
+      "latitude": 42.5854371,
+      "longitude": -71.8046023,
+      "display_name": "Fitchburg, Worcester County, Massachusetts, 01420, United States"
+    },
+    "Flemington, NJ": {
+      "latitude": 40.5130953,
+      "longitude": -74.8591333,
+      "display_name": "Flemington, Hunterdon County, New Jersey, United States"
+    },
+    "Flint, MI": {
+      "latitude": 43.0161693,
+      "longitude": -83.6900211,
+      "display_name": "Flint, Genesee County, Michigan, United States"
+    },
+    "Florence, NJ": {
+      "latitude": 40.1188575,
+      "longitude": -74.8091792,
+      "display_name": "Florence, Florence Township, Burlington County, New Jersey, 08518, United States"
+    },
+    "Florham Park, NJ": {
+      "latitude": 40.7881643,
+      "longitude": -74.3891647,
+      "display_name": "Florham Park, Morris County, New Jersey, 07932, United States"
+    },
+    "Fort Scott, KS": {
+      "latitude": 37.8399791,
+      "longitude": -94.7082882,
+      "display_name": "Fort Scott, Bourbon County, Kansas, 66701, United States"
+    },
+    "Framingham, MA": {
+      "latitude": 42.2773177,
+      "longitude": -71.4165905,
+      "display_name": "Framingham, Middlesex County, Massachusetts, United States"
+    },
+    "Franklin, MA": {
+      "latitude": 42.5896205,
+      "longitude": -72.6110645,
+      "display_name": "Franklin County, Massachusetts, United States"
+    },
+    "Franklin, NH": {
+      "latitude": 43.4442432,
+      "longitude": -71.6472988,
+      "display_name": "Franklin, Merrimack County, New Hampshire, 03235, United States"
+    },
+    "Franklin, NJ": {
+      "latitude": 41.1220409,
+      "longitude": -74.5804378,
+      "display_name": "Franklin, Hardyston Township, Sussex County, New Jersey, United States"
+    },
+    "Freehold, NJ": {
+      "latitude": 40.2601096,
+      "longitude": -74.2737573,
+      "display_name": "Freehold, Monmouth County, New Jersey, United States"
+    },
+    "Fremont, NH": {
+      "latitude": 42.9909194,
+      "longitude": -71.1425606,
+      "display_name": "Fremont, Rockingham County, New Hampshire, 03044, United States"
+    },
+    "Fruitland, ID": {
+      "latitude": 44.0076639,
+      "longitude": -116.9165461,
+      "display_name": "Fruitland, Payette County, Idaho, 83619, United States"
+    },
+    "Fruitport, MI": {
+      "latitude": 43.13067,
+      "longitude": -86.154682,
+      "display_name": "Fruitport, Muskegon County, Michigan, United States"
+    },
+    "Galloway Township, NJ": {
+      "latitude": 39.4646097,
+      "longitude": -74.4986142,
+      "display_name": "Galloway Township, Atlantic County, New Jersey, United States"
+    },
+    "Garden City, ID": {
+      "latitude": 43.622111,
+      "longitude": -116.238178,
+      "display_name": "Garden City, Ada County, Idaho, United States"
+    },
+    "Garden City, KS": {
+      "latitude": 37.9716898,
+      "longitude": -100.8726618,
+      "display_name": "Garden City, Finney County, Kansas, 67846, United States"
+    },
+    "Garden Plain, KS": {
+      "latitude": 37.6585594,
+      "longitude": -97.6837167,
+      "display_name": "Garden Plain, Sedgwick County, Kansas, United States"
+    },
+    "Gardner, MA": {
+      "latitude": 42.5763523,
+      "longitude": -71.9952737,
+      "display_name": "Gardner, Worcester County, Massachusetts, 01440, United States"
+    },
+    "Glassboro, NJ": {
+      "latitude": 39.7027677,
+      "longitude": -75.1119434,
+      "display_name": "Glassboro, Gloucester County, New Jersey, United States"
+    },
+    "Glastonbury, CT": {
+      "latitude": 41.7123218,
+      "longitude": -72.608146,
+      "display_name": "Glastonbury, Capitol Planning Region, Connecticut, United States"
+    },
+    "Glenns Ferry, ID": {
+      "latitude": 42.9548989,
+      "longitude": -115.3009037,
+      "display_name": "Glenns Ferry, Elmore County, Idaho, 83623, United States"
+    },
+    "Glenpool, OK": {
+      "latitude": 35.9553523,
+      "longitude": -96.008778,
+      "display_name": "Glenpool, Tulsa County, Oklahoma, 74033, United States"
+    },
+    "Goffstown, NH": {
+      "latitude": 43.020445,
+      "longitude": -71.600257,
+      "display_name": "Goffstown, Hillsborough County, New Hampshire, 03045, United States"
+    },
+    "Gonic, NH": {
+      "latitude": 43.2748308,
+      "longitude": -70.9787931,
+      "display_name": "Gonic, Rochester, Strafford County, New Hampshire, 03839, United States"
+    },
+    "Gooding, ID": {
+      "latitude": 43.0031041,
+      "longitude": -114.8286924,
+      "display_name": "Gooding County, Idaho, United States"
+    },
+    "Grand Rapids, MI": {
+      "latitude": 42.9632425,
+      "longitude": -85.6678639,
+      "display_name": "Grand Rapids, Kent County, Michigan, 49503, United States"
+    },
+    "Grandville, MI": {
+      "latitude": 42.909598,
+      "longitude": -85.7630956,
+      "display_name": "Grandville, Kent County, Michigan, 49418, United States"
+    },
+    "Grangeville, ID": {
+      "latitude": 45.926552,
+      "longitude": -116.122326,
+      "display_name": "Grangeville, Idaho County, Idaho, 83530, United States"
+    },
+    "Gray, ME": {
+      "latitude": 43.8860922,
+      "longitude": -70.3303592,
+      "display_name": "Gray, Cumberland County, Maine, 04039, United States"
+    },
+    "Great Bend, KS": {
+      "latitude": 38.3625063,
+      "longitude": -98.7804087,
+      "display_name": "Great Bend, Barton County, Kansas, 67530, United States"
+    },
+    "Green, WY": {
+      "latitude": 41.7914045,
+      "longitude": -107.1836206,
+      "display_name": "Green, Rawlins, Carbon County, Wyoming, United States"
+    },
+    "Greenfield, MA": {
+      "latitude": 42.5876342,
+      "longitude": -72.6002068,
+      "display_name": "Greenfield, Franklin County, Massachusetts, 01301, United States"
+    },
+    "Greenfield, NH": {
+      "latitude": 42.9506384,
+      "longitude": -71.8723003,
+      "display_name": "Greenfield, Hillsborough County, New Hampshire, 03047, United States"
+    },
+    "Greenville, RI": {
+      "latitude": 41.886476,
+      "longitude": -71.5537464,
+      "display_name": "Greenville, Smithfield, Providence County, Rhode Island, 02828, United States"
+    },
+    "Grosse Pointe Woods, MI": {
+      "latitude": 42.4435616,
+      "longitude": -82.9069508,
+      "display_name": "Grosse Pointe Woods, Wayne County, Michigan, United States"
+    },
+    "Grove, OK": {
+      "latitude": 36.5898616,
+      "longitude": -94.7685084,
+      "display_name": "Grove, Delaware County, Oklahoma, 07344, United States"
+    },
+    "Guthrie, OK": {
+      "latitude": 35.8789231,
+      "longitude": -97.4252772,
+      "display_name": "Guthrie, Logan County, Oklahoma, 73044, United States"
+    },
+    "Guymon, OK": {
+      "latitude": 36.6828041,
+      "longitude": -101.4815493,
+      "display_name": "Guymon, Texas County, Oklahoma, United States"
+    },
+    "Gwinn, MI": {
+      "latitude": 46.2810556,
+      "longitude": -87.4409718,
+      "display_name": "Gwinn, Marquette County, Michigan, United States"
+    },
+    "Hackettstown, NJ": {
+      "latitude": 40.8538589,
+      "longitude": -74.8292553,
+      "display_name": "Hackettstown, Warren County, New Jersey, 07840, United States"
+    },
+    "Haddonfield, NJ": {
+      "latitude": 39.8915022,
+      "longitude": -75.0376707,
+      "display_name": "Haddonfield, Camden County, New Jersey, 08033, United States"
+    },
+    "Hagerman, ID": {
+      "latitude": 42.8121244,
+      "longitude": -114.898669,
+      "display_name": "Hagerman, Gooding County, Idaho, 83332, United States"
+    },
+    "Hailey, ID": {
+      "latitude": 43.519629,
+      "longitude": -114.315325,
+      "display_name": "Hailey, Blaine County, Idaho, 83333, United States"
+    },
+    "Hamilton Township, NJ": {
+      "latitude": 40.2113211,
+      "longitude": -74.6858335,
+      "display_name": "Hamilton Township, Mercer County, New Jersey, United States"
+    },
+    "Hamilton, NJ": {
+      "latitude": 40.2552939,
+      "longitude": -74.7038183,
+      "display_name": "Hamilton, American Metro Boulevard, East Trenton Heights, Hamilton Township, Mercer County, New Jersey, 08619, United States"
+    },
+    "Hammonton, NJ": {
+      "latitude": 39.6365056,
+      "longitude": -74.8023853,
+      "display_name": "Hammonton, Atlantic County, New Jersey, United States"
+    },
+    "Hampton, NH": {
+      "latitude": 42.9417199,
+      "longitude": -70.8378746,
+      "display_name": "Hampton, Rockingham County, New Hampshire, 03842, United States"
+    },
+    "Hancock, ME": {
+      "latitude": 44.7135397,
+      "longitude": -68.2994753,
+      "display_name": "Hancock County, Maine, United States"
+    },
+    "Hancock, VT": {
+      "latitude": 43.9261385,
+      "longitude": -72.8412096,
+      "display_name": "Hancock, Addison County, Vermont, 05748, United States"
+    },
+    "Hanover, NH": {
+      "latitude": 43.7023545,
+      "longitude": -72.2892164,
+      "display_name": "Hanover, Grafton County, New Hampshire, United States"
+    },
+    "Hanson, MA": {
+      "latitude": 42.0753081,
+      "longitude": -70.8800559,
+      "display_name": "Hanson, Plymouth County, Massachusetts, United States"
+    },
+    "Harrison Twp., MI": {
+      "latitude": 40.6297553,
+      "longitude": -79.71635,
+      "display_name": "Harrison Township, Allegheny County, Pennsylvania, 15065, United States"
+    },
+    "Hartford, CT": {
+      "latitude": 41.764582,
+      "longitude": -72.6908547,
+      "display_name": "Hartford, Capitol Planning Region, Connecticut, United States"
+    },
+    "Hartland, ME": {
+      "latitude": 44.8831798,
+      "longitude": -69.4476611,
+      "display_name": "Hartland, Somerset County, Maine, 04943, United States"
+    },
+    "Hastings, MI": {
+      "latitude": 40.5861322,
+      "longitude": -98.3898883,
+      "display_name": "Hastings, Adams County, Nebraska, United States"
+    },
+    "Haven, KS": {
+      "latitude": 37.8989003,
+      "longitude": -97.7828272,
+      "display_name": "Haven, Reno County, Kansas, United States"
+    },
+    "Haverhill, MA": {
+      "latitude": 42.7777829,
+      "longitude": -71.0767724,
+      "display_name": "Haverhill, Essex County, Massachusetts, United States"
+    },
+    "Haverhill, NH": {
+      "latitude": 44.0342717,
+      "longitude": -72.0634434,
+      "display_name": "Haverhill, Grafton County, New Hampshire, United States"
+    },
+    "Haviland, KS": {
+      "latitude": 37.6194626,
+      "longitude": -99.1064954,
+      "display_name": "Haviland, Kiowa Rural Township, Kiowa County, Kansas, 67059, United States"
+    },
+    "Hawthorne, NJ": {
+      "latitude": 40.9492649,
+      "longitude": -74.1537549,
+      "display_name": "Hawthorne, Passaic County, New Jersey, United States"
+    },
+    "Hayden, ID": {
+      "latitude": 47.7590638,
+      "longitude": -116.7866807,
+      "display_name": "Hayden, Kootenai County, Idaho, United States"
+    },
+    "Hays, KS": {
+      "latitude": 38.8709984,
+      "longitude": -99.3311525,
+      "display_name": "Hays, Ellis County, Kansas, 67601, United States"
+    },
+    "Hiawatha, KS": {
+      "latitude": 39.8524033,
+      "longitude": -95.5364966,
+      "display_name": "Hiawatha, Brown County, Kansas, 66434, United States"
+    },
+    "Highland Park, NJ": {
+      "latitude": 40.4997407,
+      "longitude": -74.4262011,
+      "display_name": "Highland Park, Middlesex County, New Jersey, 08904, United States"
+    },
+    "Highland, KS": {
+      "latitude": 39.8597208,
+      "longitude": -95.2696985,
+      "display_name": "Highland, Doniphan County, Kansas, 66035, United States"
+    },
+    "Hillsborough, NJ": {
+      "latitude": 40.5052296,
+      "longitude": -74.6732941,
+      "display_name": "Hillsborough Township, Somerset County, New Jersey, United States"
+    },
+    "Hinckley, ME": {
+      "latitude": 44.6856193,
+      "longitude": -69.6325485,
+      "display_name": "Hinckley, Fairfield, Somerset County, Maine, United States"
+    },
+    "Hingham, MA": {
+      "latitude": 42.2417669,
+      "longitude": -70.8897676,
+      "display_name": "Hingham, Plymouth County, Massachusetts, 02043, United States"
+    },
+    "Hobart, OK": {
+      "latitude": 35.0282138,
+      "longitude": -99.0959909,
+      "display_name": "Hobart, Kiowa County, Oklahoma, 73651, United States"
+    },
+    "Hoisington, KS": {
+      "latitude": 38.5180672,
+      "longitude": -98.7781394,
+      "display_name": "Hoisington, Barton County, Kansas, United States"
+    },
+    "Holly, MI": {
+      "latitude": 42.7919727,
+      "longitude": -83.6277255,
+      "display_name": "Holly, Oakland County, Michigan, 48442, United States"
+    },
+    "Holmdel, NJ": {
+      "latitude": 40.3451095,
+      "longitude": -74.1840322,
+      "display_name": "Holmdel Township, Monmouth County, New Jersey, 07733, United States"
+    },
+    "Holton, KS": {
+      "latitude": 39.4652865,
+      "longitude": -95.7366657,
+      "display_name": "Holton, Jackson County, Kansas, United States"
+    },
+    "Holyoke, MA": {
+      "latitude": 42.2071184,
+      "longitude": -72.6075851,
+      "display_name": "Holyoke, Hampden County, Massachusetts, 01040, United States"
+    },
+    "Hopedale, MA": {
+      "latitude": 42.1300773,
+      "longitude": -71.5406222,
+      "display_name": "Hopedale, Worcester County, Massachusetts, United States"
+    },
+    "Hopkinton, MA": {
+      "latitude": 42.2288875,
+      "longitude": -71.5196439,
+      "display_name": "Hopkinton, Middlesex County, Massachusetts, United States"
+    },
+    "Houlton, ME": {
+      "latitude": 46.1251286,
+      "longitude": -67.8407944,
+      "display_name": "Houlton, Aroostook County, Maine, 04730, United States"
+    },
+    "Howell, NJ": {
+      "latitude": 40.1413032,
+      "longitude": -74.2236618,
+      "display_name": "Howell Township, Monmouth County, New Jersey, United States"
+    },
+    "Howland, ME": {
+      "latitude": 45.2420787,
+      "longitude": -68.6567209,
+      "display_name": "Howland, Penobscot County, Maine, 04448, United States"
+    },
+    "Hudson, MA": {
+      "latitude": 42.3913503,
+      "longitude": -71.5676895,
+      "display_name": "Hudson, Middlesex County, Massachusetts, 01749, United States"
+    },
+    "Hudson, NH": {
+      "latitude": 42.7655784,
+      "longitude": -71.4393423,
+      "display_name": "Hudson, Hillsborough County, New Hampshire, 03051, United States"
+    },
+    "Hutchinson, KS": {
+      "latitude": 38.0608444,
+      "longitude": -97.9297743,
+      "display_name": "Hutchinson, Reno County, Kansas, United States"
+    },
+    "Hyannis, MA": {
+      "latitude": 41.6535345,
+      "longitude": -70.2823287,
+      "display_name": "Hyannis, Barnstable, Barnstable County, Massachusetts, United States"
+    },
+    "Hyde Park, VT": {
+      "latitude": 44.5935986,
+      "longitude": -72.6170954,
+      "display_name": "Hyde Park, Lamoille County, Vermont, United States"
+    },
+    "Hydeville, VT": {
+      "latitude": 43.6047163,
+      "longitude": -73.2330509,
+      "display_name": "Hydeville, Castleton, Rutland County, Vermont, 05750, United States"
+    },
+    "Idaho Falls, ID": {
+      "latitude": 43.4887907,
+      "longitude": -112.03628,
+      "display_name": "Idaho Falls, Bonneville County, Idaho, United States"
+    },
+    "Inman, KS": {
+      "latitude": 38.2320232,
+      "longitude": -97.7733326,
+      "display_name": "Inman, McPherson County, Kansas, United States"
+    },
+    "Iola, KS": {
+      "latitude": 37.9244799,
+      "longitude": -95.3999814,
+      "display_name": "Iola, Allen County, Kansas, 66749, United States"
+    },
+    "Ipswich, MA": {
+      "latitude": 42.679273,
+      "longitude": -70.8411583,
+      "display_name": "Ipswich, Essex County, Massachusetts, 01938, United States"
+    },
+    "Island Falls, ME": {
+      "latitude": 46.0090346,
+      "longitude": -68.2713196,
+      "display_name": "Island Falls, Aroostook County, Maine, 04747, United States"
+    },
+    "Issaquah, WA": {
+      "latitude": 47.5348778,
+      "longitude": -122.043297,
+      "display_name": "Issaquah, King County, Washington, United States"
+    },
+    "Jackson, MI": {
+      "latitude": 32.2998686,
+      "longitude": -90.1830408,
+      "display_name": "Jackson, Hinds County, Mississippi, United States"
+    },
+    "Jackson, NJ": {
+      "latitude": 39.7765048,
+      "longitude": -74.8623849,
+      "display_name": "Jackson, Waterford Township, Camden County, New Jersey, 08004, United States"
+    },
+    "Jamesburg, NJ": {
+      "latitude": 40.3526079,
+      "longitude": -74.4401513,
+      "display_name": "Jamesburg, Middlesex County, New Jersey, United States"
+    },
+    "Jeffersonville, VT": {
+      "latitude": 44.6437941,
+      "longitude": -72.8293886,
+      "display_name": "Jeffersonville, Cambridge, Lamoille County, Vermont, United States"
+    },
+    "Jenison, MI": {
+      "latitude": 42.906688,
+      "longitude": -85.8201278,
+      "display_name": "Jenison, Georgetown Charter Township, Ottawa County, Michigan, 49428, United States"
+    },
+    "Jerome, ID": {
+      "latitude": 42.702266,
+      "longitude": -114.286704,
+      "display_name": "Jerome County, Idaho, United States"
+    },
+    "Jersey City, NJ": {
+      "latitude": 40.7215682,
+      "longitude": -74.047455,
+      "display_name": "Jersey City, Hudson County, New Jersey, United States"
+    },
+    "Johnston, RI": {
+      "latitude": 41.8310404,
+      "longitude": -71.5412101,
+      "display_name": "Johnston, Providence County, Rhode Island, 02919, United States"
+    },
+    "Kalamazoo, MI": {
+      "latitude": 42.291707,
+      "longitude": -85.5872286,
+      "display_name": "Kalamazoo, Kalamazoo County, Michigan, United States"
+    },
+    "Kansas City, KS": {
+      "latitude": 39.1134562,
+      "longitude": -94.626497,
+      "display_name": "Kansas City, Wyandotte County, Kansas, United States"
+    },
+    "Keansburg, NJ": {
+      "latitude": 40.4417743,
+      "longitude": -74.1298643,
+      "display_name": "Keansburg, Monmouth County, New Jersey, 07734, United States"
+    },
+    "Keene, NH": {
+      "latitude": 42.933597,
+      "longitude": -72.2784264,
+      "display_name": "Keene, Cheshire County, New Hampshire, United States"
+    },
+    "Kentwood, MI": {
+      "latitude": 42.8694731,
+      "longitude": -85.6447492,
+      "display_name": "Kentwood, Kent County, Michigan, United States"
+    },
+    "Killington, VT": {
+      "latitude": 43.67433,
+      "longitude": -72.7784445,
+      "display_name": "Killington, Rutland County, Vermont, 05751, United States"
+    },
+    "Kimberly, ID": {
+      "latitude": 42.5338019,
+      "longitude": -114.364756,
+      "display_name": "Kimberly, Twin Falls County, Idaho, United States"
+    },
+    "Kingfisher, OK": {
+      "latitude": 35.9471931,
+      "longitude": -97.9641244,
+      "display_name": "Kingfisher County, Oklahoma, United States"
+    },
+    "Kingman, KS": {
+      "latitude": 37.5420937,
+      "longitude": -98.122172,
+      "display_name": "Kingman County, Kansas, United States"
+    },
+    "Kingston, MA": {
+      "latitude": 41.9945473,
+      "longitude": -70.7244822,
+      "display_name": "Kingston, Plymouth County, Massachusetts, 02364, United States"
+    },
+    "Kingston, NH": {
+      "latitude": 42.9364768,
+      "longitude": -71.0533918,
+      "display_name": "Kingston, Rockingham County, New Hampshire, United States"
+    },
+    "Kooskia, ID": {
+      "latitude": 46.1448942,
+      "longitude": -115.9779188,
+      "display_name": "Kooskia / leewikees, Idaho County, Idaho, United States"
+    },
+    "Kootenai, ID": {
+      "latitude": 47.654857,
+      "longitude": -116.7162916,
+      "display_name": "Kootenai County, Idaho, United States"
+    },
+    "Kuna, ID": {
+      "latitude": 43.4918307,
+      "longitude": -116.420122,
+      "display_name": "Kuna, Ada County, Idaho, 83634, United States"
+    },
+    "Laconia, NH": {
+      "latitude": 43.5278546,
+      "longitude": -71.470351,
+      "display_name": "Laconia, Belknap County, New Hampshire, United States"
+    },
+    "Lake City, MI": {
+      "latitude": 30.1894252,
+      "longitude": -82.6394803,
+      "display_name": "Lake City, Columbia County, Florida, 32056, United States"
+    },
+    "Lakewood, NJ": {
+      "latitude": 40.0978929,
+      "longitude": -74.2176435,
+      "display_name": "Lakewood Township, Ocean County, New Jersey, 08701, United States"
+    },
+    "Lancaster, MA": {
+      "latitude": 42.4431437,
+      "longitude": -71.6852823,
+      "display_name": "Lancaster, Worcester County, Massachusetts, United States"
+    },
+    "Lanesboro, MA": {
+      "latitude": 43.7207974,
+      "longitude": -91.9768224,
+      "display_name": "Lanesboro, Fillmore County, Minnesota, 55949, United States"
+    },
+    "Lanoka Harbor, NJ": {
+      "latitude": 39.8667856,
+      "longitude": -74.167917,
+      "display_name": "Lanoka Harbor, Lacey Township, Ocean County, New Jersey, 08734, United States"
+    },
+    "Lapeer, MI": {
+      "latitude": 43.0904764,
+      "longitude": -83.2333705,
+      "display_name": "Lapeer County, Michigan, United States"
+    },
+    "Larned, KS": {
+      "latitude": 38.1805693,
+      "longitude": -99.098713,
+      "display_name": "Larned, Pawnee County, Kansas, 67550, United States"
+    },
+    "Las, NM": {
+      "latitude": 32.2984851,
+      "longitude": -106.7895479,
+      "display_name": "South Valley Drive, Las Cruces, Doña Ana County, New Mexico, 88005, United States"
+    },
+    "Lava Hot Springs, ID": {
+      "latitude": 42.6193625,
+      "longitude": -112.011071,
+      "display_name": "Lava Hot Springs, Bannock County, Idaho, 83246, United States"
+    },
+    "Laverne, OK": {
+      "latitude": 36.7093893,
+      "longitude": -99.8955686,
+      "display_name": "Laverne, Harper County, Oklahoma, 73848, United States"
+    },
+    "Lawrence, KS": {
+      "latitude": 38.9719137,
+      "longitude": -95.2359403,
+      "display_name": "Lawrence, Douglas County, Kansas, United States"
+    },
+    "Lawrence, MA": {
+      "latitude": 42.7070354,
+      "longitude": -71.1631137,
+      "display_name": "Lawrence, Essex County, Massachusetts, United States"
+    },
+    "Lawrenceville, NJ": {
+      "latitude": 40.3009876,
+      "longitude": -74.7373728,
+      "display_name": "Lawrenceville, Lawrence Township, Mercer County, New Jersey, United States"
+    },
+    "Lawton, OK": {
+      "latitude": 34.6086854,
+      "longitude": -98.3903305,
+      "display_name": "Lawton, Comanche County, Oklahoma, United States"
+    },
+    "Leawood, KS": {
+      "latitude": 38.966673,
+      "longitude": -94.6169012,
+      "display_name": "Leawood, Johnson County, Kansas, United States"
+    },
+    "Lebanon, NH": {
+      "latitude": 43.643032,
+      "longitude": -72.251587,
+      "display_name": "Lebanon, Grafton County, New Hampshire, United States"
+    },
+    "Lee, MA": {
+      "latitude": 42.3073477,
+      "longitude": -73.2504911,
+      "display_name": "Lee, Berkshire County, Massachusetts, 01260, United States"
+    },
+    "Lee, NH": {
+      "latitude": 43.12354,
+      "longitude": -71.011505,
+      "display_name": "Lee, Strafford County, New Hampshire, 03861, United States"
+    },
+    "Leeds, MA": {
+      "latitude": 42.3543687,
+      "longitude": -72.7010568,
+      "display_name": "Leeds, Northampton, Hampshire County, Massachusetts, 01053, United States"
+    },
+    "Lenox, MA": {
+      "latitude": 42.3568223,
+      "longitude": -73.2850851,
+      "display_name": "Lenox, Berkshire County, Massachusetts, United States"
+    },
+    "Leominster, MA": {
+      "latitude": 42.5267443,
+      "longitude": -71.7614891,
+      "display_name": "Leominster, Worcester County, Massachusetts, 01453, United States"
+    },
+    "Lewiston, ID": {
+      "latitude": 46.4195913,
+      "longitude": -117.0216144,
+      "display_name": "Lewiston, Nez Perce County, Idaho, United States"
+    },
+    "Lewiston, ME": {
+      "latitude": 44.0990717,
+      "longitude": -70.2177099,
+      "display_name": "Lewiston, Androscoggin County, Maine, 04240, United States"
+    },
+    "Lexington, MA": {
+      "latitude": 42.4473175,
+      "longitude": -71.2245003,
+      "display_name": "Lexington, Middlesex County, Massachusetts, United States"
+    },
+    "Liberal, KS": {
+      "latitude": 37.0430812,
+      "longitude": -100.920999,
+      "display_name": "Liberal, Seward County, Kansas, 67905, United States"
+    },
+    "Lincoln, MA": {
+      "latitude": 42.4259283,
+      "longitude": -71.3039469,
+      "display_name": "Lincoln, Middlesex County, Massachusetts, United States"
+    },
+    "Lincoln, RI": {
+      "latitude": 41.9529237,
+      "longitude": -71.4663863,
+      "display_name": "Lincoln, Providence County, Rhode Island, United States"
+    },
+    "Lincroft, NJ": {
+      "latitude": 40.3450695,
+      "longitude": -74.1300764,
+      "display_name": "Lincroft, Middletown Township, Monmouth County, New Jersey, 07738, United States"
+    },
+    "Linden, NJ": {
+      "latitude": 40.6220478,
+      "longitude": -74.2445902,
+      "display_name": "Linden, Union County, New Jersey, United States"
+    },
+    "Linwood, NJ": {
+      "latitude": 39.3398404,
+      "longitude": -74.5751484,
+      "display_name": "Linwood, Atlantic County, New Jersey, 08221, United States"
+    },
+    "Littleton, NH": {
+      "latitude": 44.3063899,
+      "longitude": -71.7710705,
+      "display_name": "Littleton, Grafton County, New Hampshire, 03561, United States"
+    },
+    "Livingston, NJ": {
+      "latitude": 40.7959335,
+      "longitude": -74.3148713,
+      "display_name": "Livingston, Essex County, New Jersey, 07039, United States"
+    },
+    "Livonia, MI": {
+      "latitude": 42.36837,
+      "longitude": -83.3527097,
+      "display_name": "Livonia, Wayne County, Michigan, United States"
+    },
+    "Londonderry, NH": {
+      "latitude": 42.8650869,
+      "longitude": -71.3739532,
+      "display_name": "Londonderry, Rockingham County, New Hampshire, 03053, United States"
+    },
+    "Longmeadow, MA": {
+      "latitude": 42.0504498,
+      "longitude": -72.5824639,
+      "display_name": "Longmeadow, Hampden County, Massachusetts, 01106, United States"
+    },
+    "Los, NM": {
+      "latitude": 35.107152,
+      "longitude": -106.6710723,
+      "display_name": "Rio Grande Boulevard Northwest, Los Duranes, Albuquerque, Bernalillo County, New Mexico, 87104, United States"
+    },
+    "Lowell, MA": {
+      "latitude": 42.6414437,
+      "longitude": -71.3085329,
+      "display_name": "Lowell, Middlesex County, Massachusetts, United States"
+    },
+    "Ludlow, MA": {
+      "latitude": 42.1589979,
+      "longitude": -72.4803259,
+      "display_name": "Ludlow, Hampden County, Massachusetts, 01056, United States"
+    },
+    "Lyndonville, VT": {
+      "latitude": 44.5299115,
+      "longitude": -71.9963381,
+      "display_name": "Lyndonville, Lyndon, Caledonia County, Vermont, United States"
+    },
+    "Lynnfield, MA": {
+      "latitude": 42.5389836,
+      "longitude": -71.0481084,
+      "display_name": "Lynnfield, Essex County, Massachusetts, 01940, United States"
+    },
+    "Madbury, NH": {
+      "latitude": 43.16963,
+      "longitude": -70.924301,
+      "display_name": "Madbury, Strafford County, New Hampshire, 03823, United States"
+    },
+    "Madison, NJ": {
+      "latitude": 40.7598227,
+      "longitude": -74.417097,
+      "display_name": "Madison, Morris County, New Jersey, United States"
+    },
+    "Mahwah, NJ": {
+      "latitude": 41.0887072,
+      "longitude": -74.1437552,
+      "display_name": "Mahwah, Bergen County, New Jersey, United States"
+    },
+    "Maize, KS": {
+      "latitude": 37.7791787,
+      "longitude": -97.4672674,
+      "display_name": "Maize, Sedgwick County, Kansas, United States"
+    },
+    "Malad, ID": {
+      "latitude": 42.1915872,
+      "longitude": -112.250798,
+      "display_name": "Malad City, Oneida County, Idaho, United States"
+    },
+    "Malden, MA": {
+      "latitude": 42.4268484,
+      "longitude": -71.0683741,
+      "display_name": "Malden, Middlesex County, Massachusetts, United States"
+    },
+    "Manahawkin, NJ": {
+      "latitude": 39.690518,
+      "longitude": -74.2486427,
+      "display_name": "Manahawkin, Stafford Township, Ocean County, New Jersey, 08050, United States"
+    },
+    "Manalapan, NJ": {
+      "latitude": 40.2852895,
+      "longitude": -74.333495,
+      "display_name": "Manalapan Township, Monmouth County, New Jersey, 07726, United States"
+    },
+    "Manchester Center, VT": {
+      "latitude": 43.176909,
+      "longitude": -73.0568716,
+      "display_name": "Manchester, Bennington County, Vermont, United States"
+    },
+    "Manchester, ME": {
+      "latitude": 44.324513,
+      "longitude": -69.8603256,
+      "display_name": "Manchester, Kennebec County, Maine, 04351, United States"
+    },
+    "Manchester, NH": {
+      "latitude": 42.9956397,
+      "longitude": -71.4547891,
+      "display_name": "Manchester, Hillsborough County, New Hampshire, United States"
+    },
+    "Manchester, VT": {
+      "latitude": 43.176909,
+      "longitude": -73.0568716,
+      "display_name": "Manchester, Bennington County, Vermont, United States"
+    },
+    "Manhattan, KS": {
+      "latitude": 39.1836082,
+      "longitude": -96.5716694,
+      "display_name": "Manhattan, Riley County, Kansas, United States"
+    },
+    "Mansfield, MA": {
+      "latitude": 42.0334326,
+      "longitude": -71.2189405,
+      "display_name": "Mansfield, Bristol County, Massachusetts, 02048, United States"
+    },
+    "Maplewood, NJ": {
+      "latitude": 40.7312123,
+      "longitude": -74.2734808,
+      "display_name": "Maplewood, Essex County, New Jersey, 07040, United States"
+    },
+    "Marlboro, NJ": {
+      "latitude": 39.4850245,
+      "longitude": -75.3211259,
+      "display_name": "Marlboro, Stow Creek Township, Cumberland County, New Jersey, United States"
+    },
+    "Marlborough, CT": {
+      "latitude": 41.631451,
+      "longitude": -72.4595549,
+      "display_name": "Marlborough, Capitol Planning Region, Connecticut, 06447, United States"
+    },
+    "Marlborough, MA": {
+      "latitude": 42.3468589,
+      "longitude": -71.5525188,
+      "display_name": "Marlborough, Middlesex County, Massachusetts, 01752, United States"
+    },
+    "Marlow, OK": {
+      "latitude": 34.6477329,
+      "longitude": -97.9579447,
+      "display_name": "Marlow, Stephens County, Oklahoma, 73055, United States"
+    },
+    "Marlton, NJ": {
+      "latitude": 39.9005585,
+      "longitude": -74.9338911,
+      "display_name": "Marlton, Evesham Township, Burlington County, New Jersey, United States"
+    },
+    "Marquette, MI": {
+      "latitude": 46.4481521,
+      "longitude": -87.6305899,
+      "display_name": "Marquette County, Michigan, United States"
+    },
+    "Marshfield, MA": {
+      "latitude": 42.091769,
+      "longitude": -70.7055941,
+      "display_name": "Marshfield, Plymouth County, Massachusetts, 02050, United States"
+    },
+    "Martha'S Vineyard, MA": {
+      "latitude": 41.3920455,
+      "longitude": -70.6208138,
+      "display_name": "Martha's Vineyard, West Tisbury, Dukes County, Massachusetts, United States"
+    },
+    "Martinsburg, WV": {
+      "latitude": 39.4562528,
+      "longitude": -77.9639604,
+      "display_name": "Martinsburg, Berkeley County, West Virginia, United States"
+    },
+    "Marysville, KS": {
+      "latitude": 39.84173,
+      "longitude": -96.6480642,
+      "display_name": "Marysville, Marshall County, Kansas, 66508, United States"
+    },
+    "Mashpee, MA": {
+      "latitude": 41.6484421,
+      "longitude": -70.4811383,
+      "display_name": "Mashpee, Barnstable County, Massachusetts, 02649, United States"
+    },
+    "Matawan, NJ": {
+      "latitude": 40.41483,
+      "longitude": -74.2295891,
+      "display_name": "Matawan, Monmouth County, New Jersey, United States"
+    },
+    "Mays Landing, NJ": {
+      "latitude": 39.452786,
+      "longitude": -74.724695,
+      "display_name": "Mays Landing, Hamilton Township, Atlantic County, New Jersey, United States"
+    },
+    "Mcalester, OK": {
+      "latitude": 34.9334981,
+      "longitude": -95.7697934,
+      "display_name": "McAlester, Pittsburg County, Oklahoma, 74501, United States"
+    },
+    "Mcdonald, KS": {
+      "latitude": 39.7842595,
+      "longitude": -101.371968,
+      "display_name": "McDonald, Rawlins County, Kansas, United States"
+    },
+    "Mcpherson, KS": {
+      "latitude": 38.3659015,
+      "longitude": -97.6575171,
+      "display_name": "McPherson County, Kansas, United States"
+    },
+    "Medford, NJ": {
+      "latitude": 39.9009472,
+      "longitude": -74.8234961,
+      "display_name": "Medford Township, Burlington County, New Jersey, 08055, United States"
+    },
+    "Melrose, MA": {
+      "latitude": 42.4564323,
+      "longitude": -71.064182,
+      "display_name": "Melrose, Middlesex County, Massachusetts, 02176, United States"
+    },
+    "Meredith, NH": {
+      "latitude": 43.6567546,
+      "longitude": -71.5011718,
+      "display_name": "Meredith, Belknap County, New Hampshire, 03253, United States"
+    },
+    "Meriden, KS": {
+      "latitude": 39.1888874,
+      "longitude": -95.5697001,
+      "display_name": "Meriden, Jefferson County, Kansas, 66512, United States"
+    },
+    "Meridian, ID": {
+      "latitude": 43.6086295,
+      "longitude": -116.392326,
+      "display_name": "Meridian, Ada County, Idaho, United States"
+    },
+    "Methuen, MA": {
+      "latitude": 42.7262016,
+      "longitude": -71.1908924,
+      "display_name": "Methuen, Essex County, Massachusetts, 01844, United States"
+    },
+    "Middlebury, VT": {
+      "latitude": 44.014299,
+      "longitude": -73.167229,
+      "display_name": "Middlebury, Addison County, Vermont, United States"
+    },
+    "Middleton, ID": {
+      "latitude": 43.7068282,
+      "longitude": -116.620135,
+      "display_name": "Middleton, Canyon County, Idaho, 83644, United States"
+    },
+    "Middletown, NJ": {
+      "latitude": 40.3898188,
+      "longitude": -74.1162152,
+      "display_name": "Middletown, Orchard Street, Middletown Township, Monmouth County, New Jersey, 07748, United States"
+    },
+    "Middletown, RI": {
+      "latitude": 41.5456578,
+      "longitude": -71.2914388,
+      "display_name": "Middletown, Newport County, Rhode Island, 02842, United States"
+    },
+    "Midland Park, NJ": {
+      "latitude": 40.9893112,
+      "longitude": -74.1401008,
+      "display_name": "Midland Park, Bergen County, New Jersey, 07432, United States"
+    },
+    "Midwest City, OK": {
+      "latitude": 35.4495097,
+      "longitude": -97.3967025,
+      "display_name": "Midwest City, Oklahoma County, Oklahoma, United States"
+    },
+    "Milford, MA": {
+      "latitude": 42.1428913,
+      "longitude": -71.5164618,
+      "display_name": "Milford, Worcester County, Massachusetts, 01757, United States"
+    },
+    "Milford, ME": {
+      "latitude": 44.9434681,
+      "longitude": -68.6430208,
+      "display_name": "Milford, Penobscot County, Maine, 04461, United States"
+    },
+    "Milford, NH": {
+      "latitude": 42.8355775,
+      "longitude": -71.6495345,
+      "display_name": "Milford, Hillsborough County, New Hampshire, 03055, United States"
+    },
+    "Millville, NJ": {
+      "latitude": 39.4020593,
+      "longitude": -75.0393368,
+      "display_name": "Millville, Cumberland County, New Jersey, United States"
+    },
+    "Milton, MA": {
+      "latitude": 42.2501425,
+      "longitude": -71.065573,
+      "display_name": "Milton, Norfolk County, Massachusetts, United States"
+    },
+    "Monroe Township, NJ": {
+      "latitude": 40.335756,
+      "longitude": -74.4334464,
+      "display_name": "Monroe Township, Middlesex County, New Jersey, United States"
+    },
+    "Montana City, MT": {
+      "latitude": 46.540855,
+      "longitude": -111.946345,
+      "display_name": "Montana City, Jefferson County, Montana, 59634, United States"
+    },
+    "Montpelier, ID": {
+      "latitude": 42.3221498,
+      "longitude": -111.2977044,
+      "display_name": "Montpelier, Bear Lake County, Idaho, 83254, United States"
+    },
+    "Montpelier, VT": {
+      "latitude": 44.2602244,
+      "longitude": -72.5750364,
+      "display_name": "Montpelier, Washington County, Vermont, 05602, United States"
+    },
+    "Montville, NJ": {
+      "latitude": 40.9148209,
+      "longitude": -74.383763,
+      "display_name": "Montville Township, Morris County, New Jersey, United States"
+    },
+    "Moore, OK": {
+      "latitude": 35.3383254,
+      "longitude": -97.4867045,
+      "display_name": "Moore, Cleveland County, Oklahoma, 73160, United States"
+    },
+    "Moorestown, NJ": {
+      "latitude": 39.9670569,
+      "longitude": -74.9426677,
+      "display_name": "Moorestown Township, Burlington County, New Jersey, 08057, United States"
+    },
+    "Morganville, NJ": {
+      "latitude": 40.3410515,
+      "longitude": -74.2970515,
+      "display_name": "Morganville, Marlboro Township, Monmouth County, New Jersey, United States"
+    },
+    "Morris Plains, NJ": {
+      "latitude": 40.8364845,
+      "longitude": -74.4781885,
+      "display_name": "Morris Plains, Morris County, New Jersey, United States"
+    },
+    "Morristown, NJ": {
+      "latitude": 40.7970382,
+      "longitude": -74.4809868,
+      "display_name": "Morristown, Morris County, New Jersey, United States"
+    },
+    "Morrisville, VT": {
+      "latitude": 44.5615499,
+      "longitude": -72.5982955,
+      "display_name": "Morristown, Lamoille County, Vermont, 05661, United States"
+    },
+    "Moscow, ID": {
+      "latitude": 46.7323875,
+      "longitude": -117.000165,
+      "display_name": "Moscow, Latah County, Idaho, United States"
+    },
+    "Mount Arlington, NJ": {
+      "latitude": 40.9259319,
+      "longitude": -74.6348829,
+      "display_name": "Mount Arlington, Morris County, New Jersey, 07856, United States"
+    },
+    "Mount Laurel, NJ": {
+      "latitude": 39.934002,
+      "longitude": -74.8909988,
+      "display_name": "Mount Laurel Township, Burlington County, New Jersey, United States"
+    },
+    "Mount Vernon, WA": {
+      "latitude": 48.4200462,
+      "longitude": -122.32642,
+      "display_name": "Mount Vernon, Skagit County, Washington, 98273, United States"
+    },
+    "Mountain Home, ID": {
+      "latitude": 43.1329504,
+      "longitude": -115.691197,
+      "display_name": "Mountain Home, Elmore County, Idaho, 83647, United States"
+    },
+    "Mountainside, NJ": {
+      "latitude": 40.6723242,
+      "longitude": -74.3573722,
+      "display_name": "Mountainside, Union County, New Jersey, 07092, United States"
+    },
+    "Mullica Hill, NJ": {
+      "latitude": 39.728986,
+      "longitude": -75.2187865,
+      "display_name": "Mullica Hill, Harrison Township, Gloucester County, New Jersey, 08062, United States"
+    },
+    "Muskegon Heights, MI": {
+      "latitude": 43.201126,
+      "longitude": -86.238946,
+      "display_name": "Muskegon Heights, Muskegon County, Michigan, United States"
+    },
+    "Muskegon, MI": {
+      "latitude": 43.2341813,
+      "longitude": -86.2483921,
+      "display_name": "Muskegon, Muskegon County, Michigan, United States"
+    },
+    "Muskogee, OK": {
+      "latitude": 35.6630196,
+      "longitude": -95.3927706,
+      "display_name": "Muskogee County, Oklahoma, United States"
+    },
+    "Mustang, OK": {
+      "latitude": 35.384227,
+      "longitude": -97.7244813,
+      "display_name": "Mustang, Canadian County, Oklahoma, 73064, United States"
+    },
+    "Nampa, ID": {
+      "latitude": 43.5737361,
+      "longitude": -116.559631,
+      "display_name": "Nampa, Canyon County, Idaho, United States"
+    },
+    "Nampa, Id, ID": {
+      "latitude": 43.5737361,
+      "longitude": -116.559631,
+      "display_name": "Nampa, Canyon County, Idaho, United States"
+    },
+    "Nantucket, MA": {
+      "latitude": 41.2844408,
+      "longitude": -70.09842,
+      "display_name": "Nantucket, Massachusetts, United States"
+    },
+    "Nashua, NH": {
+      "latitude": 42.7656251,
+      "longitude": -71.4677032,
+      "display_name": "Nashua, Hillsborough County, New Hampshire, United States"
+    },
+    "Natick, MA": {
+      "latitude": 42.2836393,
+      "longitude": -71.346996,
+      "display_name": "Natick, Middlesex County, Massachusetts, United States"
+    },
+    "Needham, MA": {
+      "latitude": 42.2802645,
+      "longitude": -71.2360624,
+      "display_name": "Needham, Norfolk County, Massachusetts, United States"
+    },
+    "New Bedford, MA": {
+      "latitude": 41.6362152,
+      "longitude": -70.934205,
+      "display_name": "New Bedford, Bristol County, Massachusetts, United States"
+    },
+    "New Boston, NH": {
+      "latitude": 42.9762688,
+      "longitude": -71.6928736,
+      "display_name": "New Boston, Hillsborough County, New Hampshire, 03070, United States"
+    },
+    "New Britain, CT": {
+      "latitude": 41.6612104,
+      "longitude": -72.7795419,
+      "display_name": "New Britain, Capitol Planning Region, Connecticut, United States"
+    },
+    "New Ipswich, NH": {
+      "latitude": 42.7481421,
+      "longitude": -71.8542429,
+      "display_name": "New Ipswich, Hillsborough County, New Hampshire, 03071, United States"
+    },
+    "New London, NH": {
+      "latitude": 43.414026,
+      "longitude": -71.985168,
+      "display_name": "New London, Merrimack County, New Hampshire, United States"
+    },
+    "New Providence, NJ": {
+      "latitude": 40.6984348,
+      "longitude": -74.4015405,
+      "display_name": "New Providence, Union County, New Jersey, 07974, United States"
+    },
+    "Newark, NJ": {
+      "latitude": 40.735657,
+      "longitude": -74.1723667,
+      "display_name": "Newark, Essex County, New Jersey, United States"
+    },
+    "Newbury, VT": {
+      "latitude": 44.0792316,
+      "longitude": -72.0584234,
+      "display_name": "Newbury, Orange County, Vermont, United States"
+    },
+    "Newburyport, MA": {
+      "latitude": 42.8116592,
+      "longitude": -70.8719271,
+      "display_name": "Newburyport, Essex County, Massachusetts, 01950, United States"
+    },
+    "Newmarket, NH": {
+      "latitude": 43.0796182,
+      "longitude": -70.9357843,
+      "display_name": "Newmarket, Rockingham County, New Hampshire, 03857, United States"
+    },
+    "Newport, NH": {
+      "latitude": 43.3650138,
+      "longitude": -72.1735025,
+      "display_name": "Newport, Sullivan County, New Hampshire, United States"
+    },
+    "Newport, RI": {
+      "latitude": 41.4899827,
+      "longitude": -71.3137707,
+      "display_name": "Newport, Newport County, Rhode Island, 02840, United States"
+    },
+    "Newport, VT": {
+      "latitude": 44.9367172,
+      "longitude": -72.2055988,
+      "display_name": "Newport City, Orleans County, Vermont, 05855, United States"
+    },
+    "Newton, KS": {
+      "latitude": 38.0469166,
+      "longitude": -97.3447244,
+      "display_name": "Newton, Harvey County, Kansas, 67114, United States"
+    },
+    "Newton, MA": {
+      "latitude": 42.3370414,
+      "longitude": -71.2092214,
+      "display_name": "Newton, Middlesex County, Massachusetts, United States"
+    },
+    "Newton, NJ": {
+      "latitude": 41.0583121,
+      "longitude": -74.7531445,
+      "display_name": "Newton, Sussex County, New Jersey, United States"
+    },
+    "Newtown, CT": {
+      "latitude": 41.4134764,
+      "longitude": -73.3086445,
+      "display_name": "Newtown, Western Connecticut Planning Region, Connecticut, United States"
+    },
+    "Nichols Hills, OK": {
+      "latitude": 35.5508857,
+      "longitude": -97.5489318,
+      "display_name": "Nichols Hills, Oklahoma County, Oklahoma, United States"
+    },
+    "Norman, OK": {
+      "latitude": 35.2225717,
+      "longitude": -97.4394816,
+      "display_name": "Norman, Cleveland County, Oklahoma, United States"
+    },
+    "North Andover, MA": {
+      "latitude": 42.7029687,
+      "longitude": -71.1309117,
+      "display_name": "North Andover, Essex County, Massachusetts, 01845, United States"
+    },
+    "North Attleboro, MA": {
+      "latitude": 41.9841334,
+      "longitude": -71.3322798,
+      "display_name": "North Attleborough, Bristol County, Massachusetts, 02760, United States"
+    },
+    "North Bennington, VT": {
+      "latitude": 42.9304266,
+      "longitude": -73.242701,
+      "display_name": "North Bennington, Bennington, Bennington County, Vermont, 05257, United States"
+    },
+    "North Bergen, NJ": {
+      "latitude": 40.8042674,
+      "longitude": -74.012084,
+      "display_name": "North Bergen, Hudson County, New Jersey, United States"
+    },
+    "North Cape May, NJ": {
+      "latitude": 38.980969,
+      "longitude": -74.9515656,
+      "display_name": "North Cape May, Lower Township, Cape May County, New Jersey, United States"
+    },
+    "North Chelmsford, MA": {
+      "latitude": 42.6389798,
+      "longitude": -71.3828403,
+      "display_name": "North Chelmsford, Chelmsford, Middlesex County, Massachusetts, 08163, United States"
+    },
+    "North Concord, VT": {
+      "latitude": 44.4687608,
+      "longitude": -71.8566027,
+      "display_name": "North Concord, Concord, Essex County, Vermont, United States"
+    },
+    "North Conway, NH": {
+      "latitude": 44.037776,
+      "longitude": -71.1238246,
+      "display_name": "North Conway, Conway, Carroll County, New Hampshire, 03860, United States"
+    },
+    "North Muskegon, MI": {
+      "latitude": 43.256125,
+      "longitude": -86.26756,
+      "display_name": "North Muskegon, Muskegon County, Michigan, United States"
+    },
+    "North Providence, RI": {
+      "latitude": 41.8500997,
+      "longitude": -71.4661703,
+      "display_name": "North Providence, Providence County, Rhode Island, 02911, United States"
+    },
+    "North Scituate, RI": {
+      "latitude": 41.8317661,
+      "longitude": -71.5872858,
+      "display_name": "North Scituate, Scituate, Providence County, Rhode Island, United States"
+    },
+    "North Smithfield, RI": {
+      "latitude": 41.9667652,
+      "longitude": -71.5495071,
+      "display_name": "North Smithfield, Providence County, Rhode Island, United States"
+    },
+    "North Springfield, VT": {
+      "latitude": 43.3301035,
+      "longitude": -72.5274051,
+      "display_name": "North Springfield, Springfield, Windsor County, Vermont, 05150, United States"
+    },
+    "Northampton, MA": {
+      "latitude": 42.3178989,
+      "longitude": -72.6311006,
+      "display_name": "Northampton, Hampshire County, Massachusetts, United States"
+    },
+    "Northborough, MA": {
+      "latitude": 42.3196015,
+      "longitude": -71.6422408,
+      "display_name": "Northborough, Worcester County, Massachusetts, United States"
+    },
+    "Northbridge, MA": {
+      "latitude": 42.1145179,
+      "longitude": -71.654404,
+      "display_name": "Northbridge, Worcester County, Massachusetts, United States"
+    },
+    "Northfield, NH": {
+      "latitude": 43.4400718,
+      "longitude": -71.5932621,
+      "display_name": "Northfield, Merrimack County, New Hampshire, 03276, United States"
+    },
+    "Northfield, VT": {
+      "latitude": 44.1486362,
+      "longitude": -72.6569682,
+      "display_name": "Northfield, Washington County, Vermont, United States"
+    },
+    "Norton, MA": {
+      "latitude": 41.9670616,
+      "longitude": -71.1875071,
+      "display_name": "Norton, Bristol County, Massachusetts, 02766, United States"
+    },
+    "Norwood, MA": {
+      "latitude": 42.194543,
+      "longitude": -71.1994976,
+      "display_name": "Norwood, Norfolk County, Massachusetts, 02062, United States"
+    },
+    "Norwood, NJ": {
+      "latitude": 40.9981532,
+      "longitude": -73.9618039,
+      "display_name": "Norwood, Bergen County, New Jersey, 07648, United States"
+    },
+    "Oak Harbor, WA": {
+      "latitude": 48.2931559,
+      "longitude": -122.643224,
+      "display_name": "Oak Harbor, Island County, Washington, United States"
+    },
+    "Ocean City, NJ": {
+      "latitude": 39.2776156,
+      "longitude": -74.5746001,
+      "display_name": "Ocean City, Cape May County, New Jersey, United States"
+    },
+    "Ocean Grove, NJ": {
+      "latitude": 40.2120564,
+      "longitude": -74.0075297,
+      "display_name": "Ocean Grove, Neptune Township, Monmouth County, New Jersey, 07756, United States"
+    },
+    "Ocean View, NJ": {
+      "latitude": 39.1914735,
+      "longitude": -74.732029,
+      "display_name": "Ocean View, Dennis Township, Cape May County, New Jersey, United States"
+    },
+    "Oklahoma City, OK": {
+      "latitude": 35.4729886,
+      "longitude": -97.5170536,
+      "display_name": "Oklahoma City, Oklahoma County, Oklahoma, United States"
+    },
+    "Okmulgee, OK": {
+      "latitude": 35.6677078,
+      "longitude": -95.9690122,
+      "display_name": "Okmulgee County, Oklahoma, United States"
+    },
+    "Olathe, KS": {
+      "latitude": 38.8838856,
+      "longitude": -94.81887,
+      "display_name": "Olathe, Johnson County, Kansas, United States"
+    },
+    "Old Bridge, NJ": {
+      "latitude": 40.399178,
+      "longitude": -74.3409036,
+      "display_name": "Old Bridge, Old Bridge Township, Middlesex County, New Jersey, 08857, United States"
+    },
+    "Old Tappan, NJ": {
+      "latitude": 41.0106971,
+      "longitude": -73.9911073,
+      "display_name": "Old Tappan, Bergen County, New Jersey, United States"
+    },
+    "Olympia, WA": {
+      "latitude": 47.0451022,
+      "longitude": -122.8950075,
+      "display_name": "Olympia, Thurston County, Washington, United States"
+    },
+    "Orofino, ID": {
+      "latitude": 46.4811378,
+      "longitude": -116.255778,
+      "display_name": "Orofino, Clearwater County, Idaho, 83544, United States"
+    },
+    "Oskaloosa, KS": {
+      "latitude": 39.2150702,
+      "longitude": -95.3127203,
+      "display_name": "Oskaloosa, Jefferson County, Kansas, United States"
+    },
+    "Ottawa, KS": {
+      "latitude": 39.1273653,
+      "longitude": -97.6568094,
+      "display_name": "Ottawa County, Kansas, United States"
+    },
+    "Overbrook, KS": {
+      "latitude": 38.7805607,
+      "longitude": -95.5572026,
+      "display_name": "Overbrook, Osage County, Kansas, United States"
+    },
+    "Overland Park, KS": {
+      "latitude": 38.9742502,
+      "longitude": -94.6851702,
+      "display_name": "Overland Park, Johnson County, Kansas, United States"
+    },
+    "Owasso, OK": {
+      "latitude": 36.2659698,
+      "longitude": -95.8548557,
+      "display_name": "Owasso, Tulsa County, Oklahoma, 74055, United States"
+    },
+    "Owendale, MI": {
+      "latitude": 43.7291081,
+      "longitude": -83.2671817,
+      "display_name": "Owendale, Huron County, Michigan, United States"
+    },
+    "Owls Head, ME": {
+      "latitude": 44.0823473,
+      "longitude": -69.0571014,
+      "display_name": "Owls Head, Knox County, Maine, 04854, United States"
+    },
+    "Oxford, KS": {
+      "latitude": 37.2741908,
+      "longitude": -97.1689296,
+      "display_name": "Oxford, Sumner County, Kansas, United States"
+    },
+    "Oxford, ME": {
+      "latitude": 44.4694529,
+      "longitude": -70.7782375,
+      "display_name": "Oxford County, Maine, United States"
+    },
+    "Paramus, NJ": {
+      "latitude": 40.9452911,
+      "longitude": -74.0735899,
+      "display_name": "Paramus, Bergen County, New Jersey, United States"
+    },
+    "Park Ridge, NJ": {
+      "latitude": 41.0375969,
+      "longitude": -74.0406956,
+      "display_name": "Park Ridge, Bergen County, New Jersey, 07656, United States"
+    },
+    "Parma, ID": {
+      "latitude": 43.7851615,
+      "longitude": -116.9432088,
+      "display_name": "Parma, Canyon County, Idaho, 83660, United States"
+    },
+    "Parsippany Troy Hill, NJ": {
+      "latitude": 40.8640982,
+      "longitude": -74.3515005,
+      "display_name": "WXMC-AM (Parsippany-Troy Hill), Christopher Columbus Highway, Parsippany-Troy Hills, Morris County, New Jersey, 07058, United States"
+    },
+    "Passaic, NJ": {
+      "latitude": 41.0461864,
+      "longitude": -74.3177933,
+      "display_name": "Passaic County, New Jersey, United States"
+    },
+    "Pauls Valley, OK": {
+      "latitude": 34.7392055,
+      "longitude": -97.218509,
+      "display_name": "Pauls Valley, Garvin County, Oklahoma, United States"
+    },
+    "Pawtucket, RI": {
+      "latitude": 41.8789531,
+      "longitude": -71.3821203,
+      "display_name": "Pawtucket, Providence County, Rhode Island, United States"
+    },
+    "Payette, ID": {
+      "latitude": 44.0374651,
+      "longitude": -116.7651123,
+      "display_name": "Payette County, Idaho, United States"
+    },
+    "Peabody, MA": {
+      "latitude": 42.5278731,
+      "longitude": -70.9286609,
+      "display_name": "Peabody, Essex County, Massachusetts, 01960, United States"
+    },
+    "Pembroke, MA": {
+      "latitude": 42.0714907,
+      "longitude": -70.8092074,
+      "display_name": "Pembroke, Plymouth County, Massachusetts, 02359, United States"
+    },
+    "Pennington, NJ": {
+      "latitude": 40.3281213,
+      "longitude": -74.7909992,
+      "display_name": "Pennington, Mercer County, New Jersey, 08534, United States"
+    },
+    "Pennsauken, NJ": {
+      "latitude": 39.9562238,
+      "longitude": -75.0579502,
+      "display_name": "Pennsauken Township, Camden County, New Jersey, 08110, United States"
+    },
+    "Pennsville, NJ": {
+      "latitude": 39.6534464,
+      "longitude": -75.5165881,
+      "display_name": "Pennsville Township, Salem County, New Jersey, 08070, United States"
+    },
+    "Perkins, OK": {
+      "latitude": 35.9740886,
+      "longitude": -97.0337692,
+      "display_name": "Perkins / Pékinⁿ Chína^i, Payne County, Oklahoma, 74059, United States"
+    },
+    "Peterborough, NH": {
+      "latitude": 42.8776166,
+      "longitude": -71.949383,
+      "display_name": "Peterborough, Hillsborough County, New Hampshire, United States"
+    },
+    "Pigeon, MI": {
+      "latitude": 43.8300075,
+      "longitude": -83.2704555,
+      "display_name": "Pigeon, Huron County, Michigan, United States"
+    },
+    "Pinehurst, ID": {
+      "latitude": 47.5388091,
+      "longitude": -116.23739,
+      "display_name": "Pinehurst, Shoshone County, Idaho, 83850, United States"
+    },
+    "Pitman, NJ": {
+      "latitude": 39.731681,
+      "longitude": -75.1300457,
+      "display_name": "Pitman, Gloucester County, New Jersey, 08071, United States"
+    },
+    "Pittsburg, KS": {
+      "latitude": 37.4108841,
+      "longitude": -94.70496,
+      "display_name": "Pittsburg, Crawford County, Kansas, 66762, United States"
+    },
+    "Pittsfield, MA": {
+      "latitude": 42.4484778,
+      "longitude": -73.2541069,
+      "display_name": "Pittsfield, Berkshire County, Massachusetts, United States"
+    },
+    "Pittsfield, NH": {
+      "latitude": 43.305177,
+      "longitude": -71.3280016,
+      "display_name": "Pittsfield, Merrimack County, New Hampshire, 03263, United States"
+    },
+    "Pleasantville, NJ": {
+      "latitude": 39.3898388,
+      "longitude": -74.5240422,
+      "display_name": "Pleasantville, Atlantic County, New Jersey, 08232, United States"
+    },
+    "Plymouth, MA": {
+      "latitude": 41.9426657,
+      "longitude": -70.7618592,
+      "display_name": "Plymouth County, Massachusetts, United States"
+    },
+    "Pocasset, MA": {
+      "latitude": 41.6971475,
+      "longitude": -70.6063733,
+      "display_name": "Pocasset, Bourne, Barnstable County, Massachusetts, United States"
+    },
+    "Pocatello, ID": {
+      "latitude": 42.8620287,
+      "longitude": -112.450627,
+      "display_name": "Pocatello, Bannock County, Idaho, United States"
+    },
+    "Pomona, KS": {
+      "latitude": 38.6083436,
+      "longitude": -95.4516456,
+      "display_name": "Pomona, Franklin County, Kansas, United States"
+    },
+    "Pompton Plains, NJ": {
+      "latitude": 40.9695665,
+      "longitude": -74.306398,
+      "display_name": "Pompton Plains, Pequannock Township, Morris County, New Jersey, 07444, United States"
+    },
+    "Ponca City, OK": {
+      "latitude": 36.703647,
+      "longitude": -97.081898,
+      "display_name": "Ponca City, Kay County, Oklahoma, 74601, United States"
+    },
+    "Portland, ME": {
+      "latitude": 43.6573605,
+      "longitude": -70.2586618,
+      "display_name": "Portland, Cumberland County, Maine, United States"
+    },
+    "Portsmouth, NH": {
+      "latitude": 43.0751306,
+      "longitude": -70.7601826,
+      "display_name": "Portsmouth, Rockingham County, New Hampshire, United States"
+    },
+    "Portsmouth, RI": {
+      "latitude": 41.6024068,
+      "longitude": -71.2503157,
+      "display_name": "Portsmouth, Newport County, Rhode Island, United States"
+    },
+    "Post Falls, ID": {
+      "latitude": 47.7110106,
+      "longitude": -116.9480877,
+      "display_name": "Post Falls, Kootenai County, Idaho, 83877, United States"
+    },
+    "Pratt, KS": {
+      "latitude": 37.6280602,
+      "longitude": -98.7485305,
+      "display_name": "Pratt County, Kansas, United States"
+    },
+    "Preston, ID": {
+      "latitude": 42.0963133,
+      "longitude": -111.876617,
+      "display_name": "Preston, Franklin County, Idaho, United States"
+    },
+    "Princeton, NJ": {
+      "latitude": 40.3496953,
+      "longitude": -74.6597376,
+      "display_name": "Princeton, Mercer County, New Jersey, United States"
+    },
+    "Providence, RI": {
+      "latitude": 41.8239891,
+      "longitude": -71.4128343,
+      "display_name": "Providence, Providence County, Rhode Island, United States"
+    },
+    "Pryor, OK": {
+      "latitude": 36.3084275,
+      "longitude": -95.3169136,
+      "display_name": "Pryor Creek, Mayes County, Oklahoma, United States"
+    },
+    "Purcell, OK": {
+      "latitude": 35.0154723,
+      "longitude": -97.3650998,
+      "display_name": "Purcell, McClain County, Oklahoma, United States"
+    },
+    "Quincy, MA": {
+      "latitude": 42.2509914,
+      "longitude": -71.0037374,
+      "display_name": "Quincy, Norfolk County, Massachusetts, United States"
+    },
+    "Randolph, NJ": {
+      "latitude": 40.844265,
+      "longitude": -74.5857218,
+      "display_name": "Randolph Township, Morris County, New Jersey, 07869, United States"
+    },
+    "Randolph, VT": {
+      "latitude": 43.9253287,
+      "longitude": -72.6659422,
+      "display_name": "Randolph, Orange County, Vermont, United States"
+    },
+    "Rathdrum, ID": {
+      "latitude": 47.8111504,
+      "longitude": -116.896931,
+      "display_name": "Rathdrum, Kootenai County, Idaho, 83858, United States"
+    },
+    "Ravenna, MI": {
+      "latitude": 41.157557,
+      "longitude": -81.242047,
+      "display_name": "Ravenna, Portage County, Ohio, 44266, United States"
+    },
+    "Raymond, NH": {
+      "latitude": 43.0365037,
+      "longitude": -71.183294,
+      "display_name": "Raymond, Rockingham County, New Hampshire, 03077, United States"
+    },
+    "Raynham, MA": {
+      "latitude": 41.9487118,
+      "longitude": -71.0731008,
+      "display_name": "Raynham, Bristol County, Massachusetts, 02767, United States"
+    },
+    "Reading, MA": {
+      "latitude": 42.5260297,
+      "longitude": -71.1020262,
+      "display_name": "Reading, Middlesex County, Massachusetts, 01867, United States"
+    },
+    "Reese, MI": {
+      "latitude": 43.4505787,
+      "longitude": -83.6963533,
+      "display_name": "Reese, Tuscola County, Michigan, United States"
+    },
+    "Republic, WA": {
+      "latitude": 48.6482183,
+      "longitude": -118.737806,
+      "display_name": "Republic, Ferry County, Washington, United States"
+    },
+    "Revere, MA": {
+      "latitude": 42.4084302,
+      "longitude": -71.0119948,
+      "display_name": "Revere, Suffolk County, Massachusetts, 02151, United States"
+    },
+    "Rexburg, ID": {
+      "latitude": 43.8235163,
+      "longitude": -111.787022,
+      "display_name": "Rexburg, Madison County, Idaho, 83460, United States"
+    },
+    "Rexburg, Id, ID": {
+      "latitude": 43.8235163,
+      "longitude": -111.787022,
+      "display_name": "Rexburg, Madison County, Idaho, 83460, United States"
+    },
+    "Richford, VT": {
+      "latitude": 44.9965604,
+      "longitude": -72.671942,
+      "display_name": "Richford, Franklin County, Vermont, 05476, United States"
+    },
+    "Richland, WA": {
+      "latitude": 46.2804298,
+      "longitude": -119.275205,
+      "display_name": "Richland, Benton County, Washington, United States"
+    },
+    "Richmond, VT": {
+      "latitude": 44.4052143,
+      "longitude": -72.9930745,
+      "display_name": "Richmond, Chittenden County, Vermont, 05477, United States"
+    },
+    "Ridgefield, CT": {
+      "latitude": 41.2814842,
+      "longitude": -73.4981792,
+      "display_name": "Ridgefield, Western Connecticut Planning Region, Connecticut, 06877, United States"
+    },
+    "Rigby, ID": {
+      "latitude": 43.6751937,
+      "longitude": -111.918002,
+      "display_name": "Rigby, Jefferson County, Idaho, 83442, United States"
+    },
+    "Riley, KS": {
+      "latitude": 39.3026347,
+      "longitude": -96.7709339,
+      "display_name": "Riley County, Kansas, United States"
+    },
+    "Rio, NM": {
+      "latitude": 36.1294015,
+      "longitude": -106.0301901,
+      "display_name": "NM 582 (old NM 291), Lyden, Rio Arriba County, New Mexico, 87511, United States"
+    },
+    "River Vale, NJ": {
+      "latitude": 40.9953754,
+      "longitude": -74.0120832,
+      "display_name": "River Vale, Bergen County, New Jersey, 07675, United States"
+    },
+    "Riverside, RI": {
+      "latitude": 41.7673231,
+      "longitude": -71.3647759,
+      "display_name": "Riverside, East Providence, Providence County, Rhode Island, 02915, United States"
+    },
+    "Riverton, NJ": {
+      "latitude": 40.0115009,
+      "longitude": -75.0148931,
+      "display_name": "Riverton, Burlington County, New Jersey, United States"
+    },
+    "Robbinston, ME": {
+      "latitude": 45.0781324,
+      "longitude": -67.1094283,
+      "display_name": "Robbinston, Washington County, Maine, 04671, United States"
+    },
+    "Robbinsville, NJ": {
+      "latitude": 40.2162828,
+      "longitude": -74.619833,
+      "display_name": "Robbinsville Township, Mercer County, New Jersey, 08691, United States"
+    },
+    "Rochester, NH": {
+      "latitude": 43.3050758,
+      "longitude": -70.9753978,
+      "display_name": "Rochester, Strafford County, New Hampshire, United States"
+    },
+    "Rockland, ME": {
+      "latitude": 44.1048327,
+      "longitude": -69.1091823,
+      "display_name": "Rockland, Knox County, Maine, 04841, United States"
+    },
+    "Rockport, ME": {
+      "latitude": 44.1875192,
+      "longitude": -69.0729263,
+      "display_name": "Rockport, Knox County, Maine, United States"
+    },
+    "Rose Hill, KS": {
+      "latitude": 37.5583517,
+      "longitude": -97.1350405,
+      "display_name": "Rose Hill, Butler County, Kansas, United States"
+    },
+    "Roseland, NJ": {
+      "latitude": 40.8206555,
+      "longitude": -74.2937595,
+      "display_name": "Roseland, Essex County, New Jersey, 07068, United States"
+    },
+    "Rossville, KS": {
+      "latitude": 39.13611,
+      "longitude": -95.951656,
+      "display_name": "Rossville, Rossville Township, Shawnee County, Kansas, United States"
+    },
+    "Rupert, ID": {
+      "latitude": 42.6190756,
+      "longitude": -113.677234,
+      "display_name": "Rupert, Minidoka County, Idaho, 83350, United States"
+    },
+    "Rutland, VT": {
+      "latitude": 43.6084792,
+      "longitude": -72.9724768,
+      "display_name": "Rutland City, Rutland County, Vermont, 05702, United States"
+    },
+    "Rye, NH": {
+      "latitude": 43.0120186,
+      "longitude": -70.7719426,
+      "display_name": "Rye, Rockingham County, New Hampshire, United States"
+    },
+    "Saddle River, NJ": {
+      "latitude": 41.0317637,
+      "longitude": -74.1020866,
+      "display_name": "Saddle River, Bergen County, New Jersey, United States"
+    },
+    "Saint Anthony, ID": {
+      "latitude": 46.0999683,
+      "longitude": -116.2543646,
+      "display_name": "Saint Anthony Cemetery, Idaho County, Idaho, United States"
+    },
+    "Salem, MA": {
+      "latitude": 42.5195292,
+      "longitude": -70.8967226,
+      "display_name": "Salem, Essex County, Massachusetts, 01970, United States"
+    },
+    "Salem, NH": {
+      "latitude": 42.7884957,
+      "longitude": -71.2009035,
+      "display_name": "Salem, Rockingham County, New Hampshire, 03079, United States"
+    },
+    "Salisbury, MA": {
+      "latitude": 42.8418855,
+      "longitude": -70.8602328,
+      "display_name": "Salisbury, Essex County, Massachusetts, 01952, United States"
+    },
+    "Salisbury, VT": {
+      "latitude": 43.8963386,
+      "longitude": -73.1002327,
+      "display_name": "Salisbury, Addison County, Vermont, 05769, United States"
+    },
+    "Salmon, ID": {
+      "latitude": 45.1759213,
+      "longitude": -113.895773,
+      "display_name": "Salmon, Lemhi County, Idaho, 83467, United States"
+    },
+    "Sanbornton, NH": {
+      "latitude": 43.489296,
+      "longitude": -71.582794,
+      "display_name": "Sanbornton, Belknap County, New Hampshire, 03269, United States"
+    },
+    "Sand Springs, OK": {
+      "latitude": 36.1394339,
+      "longitude": -96.1100025,
+      "display_name": "Sand Springs, Tulsa County, Oklahoma, United States"
+    },
+    "Sandown, NH": {
+      "latitude": 42.928698,
+      "longitude": -71.1870053,
+      "display_name": "Sandown, Rockingham County, New Hampshire, 03873, United States"
+    },
+    "Sandpoint, ID": {
+      "latitude": 48.2765903,
+      "longitude": -116.553247,
+      "display_name": "Sandpoint, Bonner County, Idaho, United States"
+    },
+    "Sandwich, MA": {
+      "latitude": 41.7579043,
+      "longitude": -70.4968152,
+      "display_name": "Sandwich, Barnstable County, Massachusetts, United States"
+    },
+    "Sanford, ME": {
+      "latitude": 43.4387179,
+      "longitude": -70.7746224,
+      "display_name": "Sanford, York County, Maine, United States"
+    },
+    "Santa, NM": {
+      "latitude": 35.603432,
+      "longitude": -105.993333,
+      "display_name": "Santa Fe Community College, 6401, Richards Avenue, Santa Fe County, New Mexico, 87508, United States"
+    },
+    "Saugus, MA": {
+      "latitude": 42.4648183,
+      "longitude": -71.010051,
+      "display_name": "Saugus, Essex County, Massachusetts, 01906, United States"
+    },
+    "Scotch Plains, NJ": {
+      "latitude": 40.65538,
+      "longitude": -74.3898732,
+      "display_name": "Scotch Plains, Union County, New Jersey, 07076, United States"
+    },
+    "Searsport, ME": {
+      "latitude": 44.4586711,
+      "longitude": -68.9253126,
+      "display_name": "Searsport, Waldo County, Maine, 04974, United States"
+    },
+    "Seattle, WA": {
+      "latitude": 47.6038321,
+      "longitude": -122.330062,
+      "display_name": "Seattle, King County, Washington, United States"
+    },
+    "Seminole, OK": {
+      "latitude": 35.1705939,
+      "longitude": -96.6263487,
+      "display_name": "Seminole County, Oklahoma, United States"
+    },
+    "Seneca, KS": {
+      "latitude": 39.834165,
+      "longitude": -96.064168,
+      "display_name": "Seneca, Nemaha County, Kansas, 66538, United States"
+    },
+    "Sewell, NJ": {
+      "latitude": 39.770683,
+      "longitude": -75.1438863,
+      "display_name": "Sewell, Mantua Township, Gloucester County, New Jersey, United States"
+    },
+    "Sharon Springs, KS": {
+      "latitude": 38.8977867,
+      "longitude": -101.7521158,
+      "display_name": "Sharon Springs, Sharon Springs Township, Wallace County, Kansas, 67758, United States"
+    },
+    "Sharon, MA": {
+      "latitude": 42.1237328,
+      "longitude": -71.1787282,
+      "display_name": "Sharon, Norfolk County, Massachusetts, 02067, United States"
+    },
+    "Shawmut, ME": {
+      "latitude": 44.62687,
+      "longitude": -69.5877564,
+      "display_name": "Shawmut, Fairfield, Somerset County, Maine, 04975, United States"
+    },
+    "Shawnee, KS": {
+      "latitude": 39.0273676,
+      "longitude": -95.7627535,
+      "display_name": "Shawnee County, Kansas, United States"
+    },
+    "Shawnee, OK": {
+      "latitude": 35.3272928,
+      "longitude": -96.9253004,
+      "display_name": "Shawnee, Pottawatomie County, Oklahoma, United States"
+    },
+    "Shelburne, VT": {
+      "latitude": 44.3783486,
+      "longitude": -73.2276183,
+      "display_name": "Shelburne, Chittenden County, Vermont, 05482, United States"
+    },
+    "Shelby Township, MI": {
+      "latitude": 43.5974492,
+      "longitude": -86.3379509,
+      "display_name": "Shelby Township, Oceana County, Michigan, 49455, United States"
+    },
+    "Shelley, ID": {
+      "latitude": 43.37998,
+      "longitude": -112.126914,
+      "display_name": "Shelley, Bingham County, Idaho, 83274, United States"
+    },
+    "Shrewsbury, MA": {
+      "latitude": 42.2960187,
+      "longitude": -71.71351,
+      "display_name": "Shrewsbury, Worcester County, Massachusetts, 01545, United States"
+    },
+    "Shrewsbury, NJ": {
+      "latitude": 40.3295547,
+      "longitude": -74.0615285,
+      "display_name": "Shrewsbury, Monmouth County, New Jersey, 07702, United States"
+    },
+    "Silver, NM": {
+      "latitude": 32.7640117,
+      "longitude": -108.2804237,
+      "display_name": "South Cooper Street, Silver City, Grant County, New Mexico, 88062, United States"
+    },
+    "Silverton, ID": {
+      "latitude": 47.4940526,
+      "longitude": -115.9553597,
+      "display_name": "Silverton, Shoshone County, Idaho, 83873, United States"
+    },
+    "Skillman, NJ": {
+      "latitude": 40.4234145,
+      "longitude": -74.7077882,
+      "display_name": "Skillman, Montgomery Township, Somerset County, New Jersey, United States"
+    },
+    "Smithfield, RI": {
+      "latitude": 41.9220433,
+      "longitude": -71.549507,
+      "display_name": "Smithfield, Providence County, Rhode Island, United States"
+    },
+    "Soda Springs, ID": {
+      "latitude": 42.6546059,
+      "longitude": -111.603809,
+      "display_name": "Soda Springs, Caribou County, Idaho, 83276, United States"
+    },
+    "Somerset, MA": {
+      "latitude": 41.7695463,
+      "longitude": -71.128656,
+      "display_name": "Somerset, Bristol County, Massachusetts, United States"
+    },
+    "Somerset, NJ": {
+      "latitude": 40.5675084,
+      "longitude": -74.6189556,
+      "display_name": "Somerset County, New Jersey, United States"
+    },
+    "Somerville, MA": {
+      "latitude": 42.3875968,
+      "longitude": -71.0994968,
+      "display_name": "Somerville, Middlesex County, Massachusetts, United States"
+    },
+    "South Burlington, VT": {
+      "latitude": 44.4671635,
+      "longitude": -73.1715669,
+      "display_name": "South Burlington, Chittenden County, Vermont, United States"
+    },
+    "South Hadley, MA": {
+      "latitude": 42.2591392,
+      "longitude": -72.5751341,
+      "display_name": "South Hadley, Hampshire County, Massachusetts, 01075, United States"
+    },
+    "South Lyon, MI": {
+      "latitude": 42.451377,
+      "longitude": -83.659179,
+      "display_name": "South Lyon, Oakland County, Michigan, 48178, United States"
+    },
+    "South Portland, ME": {
+      "latitude": 43.6382443,
+      "longitude": -70.2529189,
+      "display_name": "South Portland, Cumberland County, Maine, 04106, United States"
+    },
+    "South Windsor, CT": {
+      "latitude": 41.8352395,
+      "longitude": -72.5562712,
+      "display_name": "South Windsor, Capitol Planning Region, Connecticut, 06074, United States"
+    },
+    "Southbury, CT": {
+      "latitude": 41.4814848,
+      "longitude": -73.2131693,
+      "display_name": "Southbury, Naugatuck Valley Planning Region, Connecticut, 06488, United States"
+    },
+    "Southwick, MA": {
+      "latitude": 42.0548167,
+      "longitude": -72.7703938,
+      "display_name": "Southwick, Hampden County, Massachusetts, 01077, United States"
+    },
+    "Sparta, NJ": {
+      "latitude": 41.0401567,
+      "longitude": -74.6310081,
+      "display_name": "Sparta Township, Sussex County, New Jersey, United States"
+    },
+    "Spirit Lake, ID": {
+      "latitude": 47.9662924,
+      "longitude": -116.868531,
+      "display_name": "Spirit Lake, Kootenai County, Idaho, 83869, United States"
+    },
+    "Spirit Lake, Id, ID": {
+      "latitude": 47.9662924,
+      "longitude": -116.868531,
+      "display_name": "Spirit Lake, Kootenai County, Idaho, 83869, United States"
+    },
+    "Spokane Valley, WA": {
+      "latitude": 47.6571104,
+      "longitude": -117.2613936,
+      "display_name": "Spokane Valley, Spokane County, Washington, United States"
+    },
+    "Spokane, WA": {
+      "latitude": 47.6571934,
+      "longitude": -117.42351,
+      "display_name": "Spokane, Spokane County, Washington, United States"
+    },
+    "Spring Lake, NJ": {
+      "latitude": 40.1535132,
+      "longitude": -74.0293941,
+      "display_name": "Spring Lake, Monmouth County, New Jersey, United States"
+    },
+    "Springfield, MA": {
+      "latitude": 42.1018764,
+      "longitude": -72.5886727,
+      "display_name": "Springfield, Hampden County, Massachusetts, United States"
+    },
+    "St. Albans, VT": {
+      "latitude": 44.8107911,
+      "longitude": -73.0833607,
+      "display_name": "Saint Albans City, Franklin County, Vermont, 05479, United States"
+    },
+    "St. Johnsbury, VT": {
+      "latitude": 44.419494,
+      "longitude": -72.0156532,
+      "display_name": "Saint Johnsbury, Caledonia County, Vermont, United States"
+    },
+    "St. Maries, ID": {
+      "latitude": 47.3143542,
+      "longitude": -116.562667,
+      "display_name": "Saint Maries, Benewah County, Idaho, United States"
+    },
+    "Stafford, KS": {
+      "latitude": 38.0350094,
+      "longitude": -98.718816,
+      "display_name": "Stafford County, Kansas, United States"
+    },
+    "Standish, ME": {
+      "latitude": 43.735879,
+      "longitude": -70.551453,
+      "display_name": "Standish, Cumberland County, Maine, 04084, United States"
+    },
+    "Standish, MI": {
+      "latitude": 43.983076,
+      "longitude": -83.95888,
+      "display_name": "Standish, Arenac County, Michigan, United States"
+    },
+    "Star, ID": {
+      "latitude": 43.6921071,
+      "longitude": -116.493463,
+      "display_name": "Star, Ada County, Idaho, 83669, United States"
+    },
+    "Sterling Heights, MI": {
+      "latitude": 42.5803122,
+      "longitude": -83.0302033,
+      "display_name": "Sterling Heights, Macomb County, Michigan, United States"
+    },
+    "Stillwater, OK": {
+      "latitude": 36.1156306,
+      "longitude": -97.0585717,
+      "display_name": "Stillwater, Payne County, Oklahoma, United States"
+    },
+    "Stoneham, MA": {
+      "latitude": 42.4802635,
+      "longitude": -71.0993581,
+      "display_name": "Stoneham, Middlesex County, Massachusetts, 02180, United States"
+    },
+    "Stoughton, MA": {
+      "latitude": 42.1252079,
+      "longitude": -71.1022015,
+      "display_name": "Stoughton, Norfolk County, Massachusetts, United States"
+    },
+    "Stroud, OK": {
+      "latitude": 35.7477749,
+      "longitude": -96.6566742,
+      "display_name": "Stroud, Lincoln County, Oklahoma, 74079, United States"
+    },
+    "Succasunna, NJ": {
+      "latitude": 40.8515285,
+      "longitude": -74.6616155,
+      "display_name": "Succasunna, Roxbury Township, Morris County, New Jersey, 07876, United States"
+    },
+    "Sudbury, MA": {
+      "latitude": 42.3834278,
+      "longitude": -71.4161725,
+      "display_name": "Sudbury, Middlesex County, Massachusetts, 01776, United States"
+    },
+    "Summit, NJ": {
+      "latitude": 40.7182356,
+      "longitude": -74.3592296,
+      "display_name": "Summit, Union County, New Jersey, United States"
+    },
+    "Sunapee, NH": {
+      "latitude": 43.3874615,
+      "longitude": -72.0876516,
+      "display_name": "Sunapee, Sullivan County, New Hampshire, United States"
+    },
+    "Sunfield, MI": {
+      "latitude": 42.7622568,
+      "longitude": -84.9924962,
+      "display_name": "Sunfield, Eaton County, Michigan, United States"
+    },
+    "Swampscott, MA": {
+      "latitude": 42.4699241,
+      "longitude": -70.9171507,
+      "display_name": "Swampscott, Essex County, Massachusetts, 01907, United States"
+    },
+    "Swansea, MA": {
+      "latitude": 41.7481575,
+      "longitude": -71.1897684,
+      "display_name": "Swansea, Bristol County, Massachusetts, 02777, United States"
+    },
+    "Swanton, VT": {
+      "latitude": 44.9181593,
+      "longitude": -73.1242364,
+      "display_name": "Swanton, Franklin County, Vermont, 05488, United States"
+    },
+    "Swartz Creek, MI": {
+      "latitude": 42.9572508,
+      "longitude": -83.8305144,
+      "display_name": "Swartz Creek, Genesee County, Michigan, United States"
+    },
+    "T, NM": {
+      "latitude": 35.1599056,
+      "longitude": -106.4984382,
+      "display_name": "t, San Antonio Drive Northeast, Albuquerque, Bernalillo County, New Mexico, 87111, United States"
+    },
+    "Tahlequah, OK": {
+      "latitude": 35.91537,
+      "longitude": -94.969956,
+      "display_name": "Tahlequah ᏓᎵᏆ, Cherokee County, Oklahoma, 74464, United States"
+    },
+    "Taunton, MA": {
+      "latitude": 41.9019257,
+      "longitude": -71.0931485,
+      "display_name": "Taunton, Bristol County, Massachusetts, United States"
+    },
+    "Teaneck, NJ": {
+      "latitude": 40.8860164,
+      "longitude": -74.0072568,
+      "display_name": "Teaneck Township, Bergen County, New Jersey, United States"
+    },
+    "Temple, NH": {
+      "latitude": 42.8185392,
+      "longitude": -71.8514103,
+      "display_name": "Temple, Hillsborough County, New Hampshire, 03084, United States"
+    },
+    "Tenafly, NJ": {
+      "latitude": 40.9253766,
+      "longitude": -73.9629154,
+      "display_name": "Tenafly, Bergen County, New Jersey, 07670, United States"
+    },
+    "Tewksbury, MA": {
+      "latitude": 42.6106479,
+      "longitude": -71.2342248,
+      "display_name": "Tewksbury, Middlesex County, Massachusetts, 01876, United States"
+    },
+    "Tinton Falls, NJ": {
+      "latitude": 40.2890734,
+      "longitude": -74.0927967,
+      "display_name": "Tinton Falls, Monmouth County, New Jersey, United States"
+    },
+    "Tiverton, RI": {
+      "latitude": 41.6257406,
+      "longitude": -71.166333,
+      "display_name": "Tiverton, Newport County, Rhode Island, 02878, United States"
+    },
+    "Tn 37801, TN": {
+      "latitude": 35.7719293,
+      "longitude": -83.9773961,
+      "display_name": "North Hall Road, Bassel Addition, Alcoa, Blount County, East Tennessee, Tennessee, 37701, United States"
+    },
+    "Toms River, NJ": {
+      "latitude": 39.9526791,
+      "longitude": -74.1968257,
+      "display_name": "Toms River, Ocean County, New Jersey, United States"
+    },
+    "Topeka, KS": {
+      "latitude": 39.049011,
+      "longitude": -95.677556,
+      "display_name": "Topeka, Shawnee County, Kansas, United States"
+    },
+    "Torrington, CT": {
+      "latitude": 41.8006523,
+      "longitude": -73.1212214,
+      "display_name": "Torrington, Northwest Hills Planning Region, Connecticut, 06790, United States"
+    },
+    "Townshend, VT": {
+      "latitude": 43.0462583,
+      "longitude": -72.6679825,
+      "display_name": "Townshend, Windham County, Vermont, 05353, United States"
+    },
+    "Traverse City, MI": {
+      "latitude": 44.7606481,
+      "longitude": -85.6165976,
+      "display_name": "Traverse City, Grand Traverse County, Michigan, United States"
+    },
+    "Trenton, NJ": {
+      "latitude": 40.2203074,
+      "longitude": -74.7659,
+      "display_name": "Trenton, Mercer County, New Jersey, United States"
+    },
+    "Tulsa, OK": {
+      "latitude": 36.1563122,
+      "longitude": -95.9927516,
+      "display_name": "Tulsa, Tulsa County, Oklahoma, United States"
+    },
+    "Twin Falls, ID": {
+      "latitude": 42.5558542,
+      "longitude": -114.4700684,
+      "display_name": "Twin Falls, Twin Falls County, Idaho, 83301, United States"
+    },
+    "Twin Falls, Id, ID": {
+      "latitude": 42.5558542,
+      "longitude": -114.4700684,
+      "display_name": "Twin Falls, Twin Falls County, Idaho, 83301, United States"
+    },
+    "Vergennes, VT": {
+      "latitude": 44.1681052,
+      "longitude": -73.2518037,
+      "display_name": "Vergennes, Addison County, Vermont, United States"
+    },
+    "Vernon, VT": {
+      "latitude": 42.7620504,
+      "longitude": -72.5138672,
+      "display_name": "Vernon, Windham County, Vermont, 05354, United States"
+    },
+    "Victor, ID": {
+      "latitude": 43.6025939,
+      "longitude": -111.111309,
+      "display_name": "Victor, Teton County, Idaho, 83455, United States"
+    },
+    "Vineland, NJ": {
+      "latitude": 39.4862777,
+      "longitude": -75.0254256,
+      "display_name": "Vineland, Cumberland County, New Jersey, United States"
+    },
+    "Vinita, OK": {
+      "latitude": 36.6408372,
+      "longitude": -95.156363,
+      "display_name": "Vinita, Craig County, Oklahoma, United States"
+    },
+    "Voorhees, NJ": {
+      "latitude": 39.8512162,
+      "longitude": -74.9619779,
+      "display_name": "Voorhees Township, Camden County, New Jersey, 08043, United States"
+    },
+    "Wakefield, MA": {
+      "latitude": 42.506484,
+      "longitude": -71.0728306,
+      "display_name": "Wakefield, Middlesex County, Massachusetts, United States"
+    },
+    "Wakefield, RI": {
+      "latitude": 41.437324,
+      "longitude": -71.5014469,
+      "display_name": "Wakefield, South Kingstown, South County, Rhode Island, 02879, United States"
+    },
+    "Waldwick, NJ": {
+      "latitude": 41.0109281,
+      "longitude": -74.1182019,
+      "display_name": "Waldwick, Bergen County, New Jersey, 07463, United States"
+    },
+    "Walker, MI": {
+      "latitude": 30.6795741,
+      "longitude": -95.5522823,
+      "display_name": "Walker County, Texas, United States"
+    },
+    "Wall, NJ": {
+      "latitude": 40.1926852,
+      "longitude": -74.0615285,
+      "display_name": "NJ 18, Remsen Mill, Wall Township, Monmouth County, New Jersey, 07753, United States"
+    },
+    "Wallingford, CT": {
+      "latitude": 41.4564233,
+      "longitude": -72.8239356,
+      "display_name": "Wallingford, South Central Connecticut Planning Region, Connecticut, 06492, United States"
+    },
+    "Wallingford, VT": {
+      "latitude": 43.4717502,
+      "longitude": -72.9771002,
+      "display_name": "Wallingford, Rutland County, Vermont, 05773, United States"
+    },
+    "Walpole, MA": {
+      "latitude": 42.1459019,
+      "longitude": -71.2538759,
+      "display_name": "Walpole, Norfolk County, Massachusetts, United States"
+    },
+    "Walpole, ME": {
+      "latitude": 43.955914,
+      "longitude": -69.5586582,
+      "display_name": "Walpole, South Bristol, Lincoln County, Maine, 04573, United States"
+    },
+    "Waltham, MA": {
+      "latitude": 42.3762385,
+      "longitude": -71.2355644,
+      "display_name": "Waltham, Middlesex County, Massachusetts, United States"
+    },
+    "Ware, MA": {
+      "latitude": 42.2599297,
+      "longitude": -72.2397806,
+      "display_name": "Ware, Hampshire County, Massachusetts, 01082, United States"
+    },
+    "Wareham, MA": {
+      "latitude": 41.7626037,
+      "longitude": -70.7217017,
+      "display_name": "Wareham, Plymouth County, Massachusetts, United States"
+    },
+    "Warner, NH": {
+      "latitude": 43.2809477,
+      "longitude": -71.8164258,
+      "display_name": "Warner, Merrimack County, New Hampshire, United States"
+    },
+    "Warren, NJ": {
+      "latitude": 40.8602222,
+      "longitude": -74.9720493,
+      "display_name": "Warren County, New Jersey, United States"
+    },
+    "Warren, RI": {
+      "latitude": 41.7303794,
+      "longitude": -71.2825494,
+      "display_name": "Warren, Bristol County, Rhode Island, 02885, United States"
+    },
+    "Warwick, RI": {
+      "latitude": 41.6992717,
+      "longitude": -71.4586114,
+      "display_name": "Warwick, Kent County, Rhode Island, United States"
+    },
+    "Washington, DC": {
+      "latitude": 38.8950368,
+      "longitude": -77.0365427,
+      "display_name": "Washington, District of Columbia, United States"
+    },
+    "Watchung, NJ": {
+      "latitude": 40.6378801,
+      "longitude": -74.4509863,
+      "display_name": "Watchung, Somerset County, New Jersey, 07069, United States"
+    },
+    "Waterbury, VT": {
+      "latitude": 44.3379214,
+      "longitude": -72.7563801,
+      "display_name": "Waterbury, Washington County, Vermont, United States"
+    },
+    "Watertown, MA": {
+      "latitude": 42.3652518,
+      "longitude": -71.1843236,
+      "display_name": "Watertown, Middlesex County, Massachusetts, United States"
+    },
+    "Wathena, KS": {
+      "latitude": 39.7599235,
+      "longitude": -94.9478024,
+      "display_name": "Wathena, Doniphan County, Kansas, 66090, United States"
+    },
+    "Wayland, MA": {
+      "latitude": 42.3632063,
+      "longitude": -71.3606721,
+      "display_name": "Wayland, Middlesex County, Massachusetts, 01778, United States"
+    },
+    "Wayne, NJ": {
+      "latitude": 40.9491723,
+      "longitude": -74.2376802,
+      "display_name": "Wayne, Passaic County, New Jersey, 07470, United States"
+    },
+    "Weatherford, OK": {
+      "latitude": 35.5261633,
+      "longitude": -98.7075744,
+      "display_name": "Weatherford, Custer County, Oklahoma, 73096, United States"
+    },
+    "Webster, MA": {
+      "latitude": 42.0501373,
+      "longitude": -71.8803308,
+      "display_name": "Webster, Worcester County, Massachusetts, 01570, United States"
+    },
+    "Webster, NH": {
+      "latitude": 43.3292843,
+      "longitude": -71.7167362,
+      "display_name": "Webster, Merrimack County, New Hampshire, United States"
+    },
+    "Weiser, ID": {
+      "latitude": 44.2454664,
+      "longitude": -116.9702376,
+      "display_name": "Weiser, Washington County, Idaho, United States"
+    },
+    "Wellesley, MA": {
+      "latitude": 42.2964859,
+      "longitude": -71.2925571,
+      "display_name": "Wellesley, Norfolk County, Massachusetts, United States"
+    },
+    "Wells, ME": {
+      "latitude": 43.3220487,
+      "longitude": -70.5807422,
+      "display_name": "Wells, York County, Maine, 04090, United States"
+    },
+    "Wenatchee, WA": {
+      "latitude": 47.4234599,
+      "longitude": -120.310349,
+      "display_name": "Wenatchee, Chelan County, Washington, United States"
+    },
+    "Wendell, ID": {
+      "latitude": 42.7757368,
+      "longitude": -114.7042168,
+      "display_name": "Wendell, Gooding County, Idaho, 83355, United States"
+    },
+    "Wenonah, NJ": {
+      "latitude": 39.7946263,
+      "longitude": -75.148766,
+      "display_name": "Wenonah, Gloucester County, New Jersey, 08090, United States"
+    },
+    "West Caldwell, NJ": {
+      "latitude": 40.8409329,
+      "longitude": -74.3018154,
+      "display_name": "West Caldwell, Essex County, New Jersey, 07006, United States"
+    },
+    "West Groton, MA": {
+      "latitude": 42.6042568,
+      "longitude": -71.6272912,
+      "display_name": "West Groton, Groton, Middlesex County, Massachusetts, United States"
+    },
+    "West Hartford, CT": {
+      "latitude": 41.7620447,
+      "longitude": -72.7420399,
+      "display_name": "West Hartford, Capitol Planning Region, Connecticut, United States"
+    },
+    "West Lebanon, NH": {
+      "latitude": 43.6482811,
+      "longitude": -72.3102794,
+      "display_name": "West Lebanon, Lebanon, Grafton County, New Hampshire, 03784, United States"
+    },
+    "West Milford, NJ": {
+      "latitude": 41.1312069,
+      "longitude": -74.3673748,
+      "display_name": "West Milford, Passaic County, New Jersey, United States"
+    },
+    "West Orange, NJ": {
+      "latitude": 40.7987113,
+      "longitude": -74.2390353,
+      "display_name": "West Orange, Essex County, New Jersey, 07052, United States"
+    },
+    "West Ossipee, NH": {
+      "latitude": 43.8247967,
+      "longitude": -71.2047919,
+      "display_name": "West Ossipee, Ossipee, Carroll County, New Hampshire, 03890, United States"
+    },
+    "West Paris, ME": {
+      "latitude": 44.324339,
+      "longitude": -70.574112,
+      "display_name": "West Paris, Oxford County, Maine, 04289, United States"
+    },
+    "West Warwick, RI": {
+      "latitude": 41.7061296,
+      "longitude": -71.5221451,
+      "display_name": "West Warwick, Kent County, Rhode Island, 02893, United States"
+    },
+    "West Windsor, NJ": {
+      "latitude": 40.2971798,
+      "longitude": -74.6206496,
+      "display_name": "West Windsor, Mercer County, New Jersey, 08550, United States"
+    },
+    "Westampton, NJ": {
+      "latitude": 40.0155412,
+      "longitude": -74.8280828,
+      "display_name": "Westampton Township, Burlington County, New Jersey, 08073, United States"
+    },
+    "Westborough, MA": {
+      "latitude": 42.2694308,
+      "longitude": -71.6129907,
+      "display_name": "Westborough, Worcester County, Massachusetts, 01581, United States"
+    },
+    "Westbrook, ME": {
+      "latitude": 43.6763036,
+      "longitude": -70.3663874,
+      "display_name": "Westbrook, Cumberland County, Maine, 04092, United States"
+    },
+    "Westerly, RI": {
+      "latitude": 41.3775996,
+      "longitude": -71.8272911,
+      "display_name": "Westerly, South County, Rhode Island, United States"
+    },
+    "Westfield, MA": {
+      "latitude": 42.1205411,
+      "longitude": -72.7489158,
+      "display_name": "Westfield, Hampden County, Massachusetts, United States"
+    },
+    "Westfield, NJ": {
+      "latitude": 40.651726,
+      "longitude": -74.3483059,
+      "display_name": "Westfield, Union County, New Jersey, 07090, United States"
+    },
+    "Westford, MA": {
+      "latitude": 42.5792583,
+      "longitude": -71.4378411,
+      "display_name": "Westford, Middlesex County, Massachusetts, United States"
+    },
+    "Westford, VT": {
+      "latitude": 44.6119901,
+      "longitude": -73.0088889,
+      "display_name": "Westford, Chittenden County, Vermont, 05494, United States"
+    },
+    "Westminster, VT": {
+      "latitude": 43.0678903,
+      "longitude": -72.4586472,
+      "display_name": "Westminster, Windham County, Vermont, United States"
+    },
+    "Westmoreland, NH": {
+      "latitude": 42.9620253,
+      "longitude": -72.4423102,
+      "display_name": "Westmoreland, Cheshire County, New Hampshire, 03467, United States"
+    },
+    "Weston, MA": {
+      "latitude": 42.3667625,
+      "longitude": -71.3031132,
+      "display_name": "Weston, Middlesex County, Massachusetts, 02493, United States"
+    },
+    "Westport, CT": {
+      "latitude": 41.1414855,
+      "longitude": -73.3578955,
+      "display_name": "Westport, Western Connecticut Planning Region, Connecticut, 06880, United States"
+    },
+    "Westwood, MA": {
+      "latitude": 42.2186913,
+      "longitude": -71.2233829,
+      "display_name": "Westwood, Norfolk County, Massachusetts, 02090, United States"
+    },
+    "Weymouth, MA": {
+      "latitude": 42.2212188,
+      "longitude": -70.9391625,
+      "display_name": "Weymouth, Norfolk County, Massachusetts, United States"
+    },
+    "Whippany, NJ": {
+      "latitude": 40.823275,
+      "longitude": -74.4138394,
+      "display_name": "Whippany, Hanover Township, Morris County, New Jersey, 07981, United States"
+    },
+    "White River Junction, VT": {
+      "latitude": 43.6505307,
+      "longitude": -72.3309258,
+      "display_name": "White River Junction, Hartford, Windsor County, Vermont, 05009, United States"
+    },
+    "White, NM": {
+      "latitude": 32.1809616,
+      "longitude": -104.3992895,
+      "display_name": "White, Eddy County, New Mexico, 88268, United States"
+    },
+    "Whitefield, NH": {
+      "latitude": 44.3731286,
+      "longitude": -71.6119661,
+      "display_name": "Whitefield, Coös County, New Hampshire, United States"
+    },
+    "Whiting, NJ": {
+      "latitude": 39.9545613,
+      "longitude": -74.3784815,
+      "display_name": "Whiting, Manchester Township, Ocean County, New Jersey, United States"
+    },
+    "Wichita, KS": {
+      "latitude": 37.6922361,
+      "longitude": -97.3375448,
+      "display_name": "Wichita, Sedgwick County, Kansas, United States"
+    },
+    "Wilbraham, MA": {
+      "latitude": 42.1223378,
+      "longitude": -72.4313151,
+      "display_name": "Wilbraham, Hampden County, Massachusetts, 01095, United States"
+    },
+    "Williamstown, NJ": {
+      "latitude": 39.688691,
+      "longitude": -74.9869191,
+      "display_name": "Williamstown, Monroe Township, Gloucester County, New Jersey, United States"
+    },
+    "Williamstown, VT": {
+      "latitude": 44.1224482,
+      "longitude": -72.5413894,
+      "display_name": "Williamstown, Orange County, Vermont, 05679, United States"
+    },
+    "Williston, VT": {
+      "latitude": 44.4376099,
+      "longitude": -73.0682659,
+      "display_name": "Williston, Chittenden County, Vermont, United States"
+    },
+    "Wilmington, MA": {
+      "latitude": 42.5464828,
+      "longitude": -71.1736669,
+      "display_name": "Wilmington, Middlesex County, Massachusetts, 01887, United States"
+    },
+    "Winchendon, MA": {
+      "latitude": 42.6815126,
+      "longitude": -72.0499767,
+      "display_name": "Winchendon, Worcester County, Massachusetts, 01475, United States"
+    },
+    "Winchester, ID": {
+      "latitude": 46.24067,
+      "longitude": -116.6237402,
+      "display_name": "Winchester, Lewis County, Idaho, United States"
+    },
+    "Winchester, MA": {
+      "latitude": 42.4523178,
+      "longitude": -71.1369982,
+      "display_name": "Winchester, Middlesex County, Massachusetts, 01890, United States"
+    },
+    "Windham, NH": {
+      "latitude": 42.8006441,
+      "longitude": -71.304229,
+      "display_name": "Windham, Rockingham County, New Hampshire, 03087, United States"
+    },
+    "Windsor, VT": {
+      "latitude": 43.4798875,
+      "longitude": -72.3866266,
+      "display_name": "Windsor, Windsor County, Vermont, 05089, United States"
+    },
+    "Winooski, VT": {
+      "latitude": 44.4910402,
+      "longitude": -73.1861064,
+      "display_name": "Winooski, Chittenden County, Vermont, 05404, United States"
+    },
+    "Winterport, ME": {
+      "latitude": 44.6380042,
+      "longitude": -68.8452778,
+      "display_name": "Winterport, Waldo County, Maine, 04496, United States"
+    },
+    "Winthrop, MA": {
+      "latitude": 42.3746525,
+      "longitude": -70.9825807,
+      "display_name": "Winthrop, Suffolk County, Massachusetts, 02152, United States"
+    },
+    "Woburn, MA": {
+      "latitude": 42.4792618,
+      "longitude": -71.1522766,
+      "display_name": "Woburn, Middlesex County, Massachusetts, 01801, United States"
+    },
+    "Wolfeboro, NH": {
+      "latitude": 43.5820331,
+      "longitude": -71.2027956,
+      "display_name": "Wolfeboro, Carroll County, New Hampshire, United States"
+    },
+    "Woodbridge, NJ": {
+      "latitude": 40.55418,
+      "longitude": -74.2860008,
+      "display_name": "Woodbridge, Port Reading, Woodbridge Township, Middlesex County, New Jersey, 07095, United States"
+    },
+    "Woodbury, NJ": {
+      "latitude": 39.8381691,
+      "longitude": -75.1526774,
+      "display_name": "Woodbury, Gloucester County, New Jersey, United States"
+    },
+    "Woodcliff Lake, NJ": {
+      "latitude": 41.0234304,
+      "longitude": -74.0665297,
+      "display_name": "Woodcliff Lake, Bergen County, New Jersey, 07677, United States"
+    },
+    "Woodstock, VT": {
+      "latitude": 43.6247646,
+      "longitude": -72.5189791,
+      "display_name": "Woodstock, Windsor County, Vermont, United States"
+    },
+    "Woodstown, NJ": {
+      "latitude": 39.6515027,
+      "longitude": -75.3282454,
+      "display_name": "Woodstown, Salem County, New Jersey, 08098, United States"
+    },
+    "Woodward, OK": {
+      "latitude": 36.374499,
+      "longitude": -99.2455382,
+      "display_name": "Woodward County, Oklahoma, United States"
+    },
+    "Woolwich, ME": {
+      "latitude": 43.9170048,
+      "longitude": -69.8015193,
+      "display_name": "Woolwich, Sagadahoc County, Maine, 04579, United States"
+    },
+    "Woonsocket, RI": {
+      "latitude": 42.0028761,
+      "longitude": -71.5147839,
+      "display_name": "Woonsocket, Providence County, Rhode Island, 02895, United States"
+    },
+    "Worcester, MA": {
+      "latitude": 42.2625621,
+      "longitude": -71.8018877,
+      "display_name": "Worcester, Worcester County, Massachusetts, United States"
+    },
+    "Wrentham, MA": {
+      "latitude": 42.0667652,
+      "longitude": -71.3281114,
+      "display_name": "Wrentham, Norfolk County, Massachusetts, 02093, United States"
+    },
+    "Wyckoff, NJ": {
+      "latitude": 41.0095417,
+      "longitude": -74.1729222,
+      "display_name": "Wyckoff, Bergen County, New Jersey, 07481, United States"
+    },
+    "Wyoming, MI": {
+      "latitude": 43.1700264,
+      "longitude": -107.568534,
+      "display_name": "Wyoming, United States"
+    },
+    "Yarmouth, MA": {
+      "latitude": 41.7056656,
+      "longitude": -70.2286314,
+      "display_name": "Yarmouth, Barnstable County, Massachusetts, United States"
+    },
+    "Yukon, OK": {
+      "latitude": 35.5067259,
+      "longitude": -97.7625386,
+      "display_name": "Yukon, Canadian County, Oklahoma, United States"
+    }
+  }
+}

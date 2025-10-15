@@ -319,6 +319,24 @@ header p {
     font-size: 1.1rem;
 }
 
+.coordinate-source {
+    background: #f8f9fa;
+    border-left: 3px solid #17a2b8;
+    padding: 6px 12px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
+
+.coordinate-source .detail-label {
+    color: #6c757d;
+    font-size: 0.9em;
+}
+
+.coordinate-source .detail-value {
+    color: #17a2b8;
+    font-weight: 500;
+}
+
 /* No results */
 .no-results {
     text-align: center;

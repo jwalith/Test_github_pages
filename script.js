@@ -28,7 +28,8 @@ const resultCount = document.getElementById('resultCount');
 
 // URLs from your GitHub repository
 const CSV_URL = 'https://raw.githubusercontent.com/jwalith/Test_github_pages/main/01_master_all_states.csv';
-const COORDINATES_URL = 'https://raw.githubusercontent.com/jwalith/Test_github_pages/main/zip_coordinates.json';
+const ZIP_COORDINATES_URL = 'https://raw.githubusercontent.com/jwalith/Test_github_pages/main/zip_coordinates.json';
+const CITY_COORDINATES_URL = 'https://raw.githubusercontent.com/jwalith/Test_github_pages/main/city_coordinates.json';
 
 // Event listeners
 searchBtn.addEventListener('click', handleSearch);
@@ -420,10 +421,19 @@ function createResultCard(org) {
         </div>
     ` : '';
     
+    // Add coordinate source info for proximity searches
+    const coordinateSourceInfo = org.coordinateSource && org.distance ? `
+        <div class="detail-item coordinate-source">
+            <span class="detail-label">Location</span>
+            <span class="detail-value">${org.coordinateSource === 'zip' ? 'Precise (zip code)' : 'Approximate (city center)'}</span>
+        </div>
+    ` : '';
+    
     card.innerHTML = `
         <h3>${org.name}</h3>
         <div class="result-details">
             ${distanceInfo}
+            ${coordinateSourceInfo}
             <div class="detail-item">
                 <span class="detail-label">Type</span>
                 <span class="detail-value">${org.type}</span>
@@ -438,7 +448,7 @@ function createResultCard(org) {
             </div>
             <div class="detail-item">
                 <span class="detail-label">Zip Code</span>
-                <span class="detail-value">${org.zip}</span>
+                <span class="detail-value">${org.zip || 'N/A'}</span>
             </div>
             ${org.address ? `
             <div class="detail-item">
@@ -561,31 +571,73 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
     return R * c; // Distance in miles
 }
 
-// Load coordinates from JSON file (instant)
+// Load coordinates from JSON files (instant)
 async function loadCoordinatesFromJSON() {
     organizationsWithCoords = [];
     
     try {
-        const response = await fetch(COORDINATES_URL);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        // Load both zip and city coordinates
+        const [zipResponse, cityResponse] = await Promise.all([
+            fetch(ZIP_COORDINATES_URL),
+            fetch(CITY_COORDINATES_URL)
+        ]);
+        
+        if (!zipResponse.ok) {
+            throw new Error(`HTTP error loading zip coordinates! status: ${zipResponse.status}`);
         }
         
-        const coordinatesData = await response.json();
+        const zipCoordinatesData = await zipResponse.json();
+        let cityCoordinatesData = null;
+        
+        // City coordinates are optional (may not exist yet)
+        if (cityResponse.ok) {
+            cityCoordinatesData = await cityResponse.json();
+        } else {
+            console.log('City coordinates file not found - will only use zip coordinates');
+        }
         
         // Add coordinates to organizations
         organizationsData.forEach(org => {
-            const coords = coordinatesData.coordinates[org.zip];
+            let latitude = null;
+            let longitude = null;
+            let coordinateSource = 'none';
+            
+            // Try zip coordinates first
+            if (org.zip && zipCoordinatesData.coordinates[org.zip]) {
+                const coords = zipCoordinatesData.coordinates[org.zip];
+                latitude = coords.latitude;
+                longitude = coords.longitude;
+                coordinateSource = 'zip';
+            }
+            // Fall back to city coordinates if zip not available
+            else if (cityCoordinatesData && org.city && org.state) {
+                const cityKey = `${org.city}, ${org.state}`;
+                const cityCoords = cityCoordinatesData.city_coordinates[cityKey];
+                if (cityCoords) {
+                    latitude = cityCoords.latitude;
+                    longitude = cityCoords.longitude;
+                    coordinateSource = 'city';
+                }
+            }
+            
             organizationsWithCoords.push({
                 ...org,
-                latitude: coords ? coords.latitude : null,
-                longitude: coords ? coords.longitude : null
+                latitude: latitude,
+                longitude: longitude,
+                coordinateSource: coordinateSource
             });
         });
         
+        // Log statistics
+        const zipCount = organizationsWithCoords.filter(org => org.coordinateSource === 'zip').length;
+        const cityCount = organizationsWithCoords.filter(org => org.coordinateSource === 'city').length;
+        const noCoordsCount = organizationsWithCoords.filter(org => org.coordinateSource === 'none').length;
+        
+        console.log(`Coordinates loaded: ${zipCount} zip-based, ${cityCount} city-based, ${noCoordsCount} no coordinates`);
+        
     } catch (error) {
         console.error('Error loading coordinates from JSON:', error);
-        alert('Error loading coordinates. Please check if zip_coordinates.json file exists on GitHub.');
+        alert('Error loading coordinates. Please check if coordinate files exist on GitHub.');
         throw error; // Stop execution instead of falling back
     }
 }
