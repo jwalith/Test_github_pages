@@ -3,96 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Organization Search System</title>
+    <title>Find Mental Health & Housing Services</title>
+    <meta name="description" content="Find mental health and housing services near you. Search by location to find support organizations.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Organization Search</h1>
-            <p>Find organizations by zip code</p>
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">🏠</div>
+                    <div class="logo-text">
+                        <h1>Find Support Services</h1>
+                        <p>Mental Health & Housing Resources</p>
+                    </div>
+                </div>
+                <div class="help-text">
+                    <p>Get help finding mental health and housing services in your area</p>
+                </div>
+            </div>
         </header>
         
-        <div class="search-section">
-            <div class="search-box">
-                <input type="text" id="zipInput" placeholder="Enter zip code (e.g., 12345)">
-                <button id="searchBtn">Search</button>
-            </div>
+        <main class="main-content">
+            <!-- Step 1: Location Search -->
+            <section class="search-step active" id="step1">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <h2>Where do you need help?</h2>
+                    <p>Enter your zip code or let us find services near you</p>
+                </div>
+                
+                <div class="search-options">
+                    <div class="search-option primary">
+                        <div class="option-header">
+                            <span class="option-icon">📍</span>
+                            <h3>Search by Zip Code</h3>
+                        </div>
+                        <div class="search-input-group">
+                            <input type="text" id="zipInput" placeholder="Enter your zip code (e.g., 12345)" aria-label="Enter your zip code">
+                            <button id="searchBtn" class="btn-primary">
+                                <span class="btn-text">Find Services</span>
+                                <span class="btn-icon">🔍</span>
+                            </button>
+                        </div>
+                        <p class="help-text">Enter your 5-digit zip code to find services in your area</p>
+                    </div>
+                    
+                    <div class="search-option secondary">
+                        <div class="option-header">
+                            <span class="option-icon">🌍</span>
+                            <h3>Find Services Near Me</h3>
+                        </div>
+                        <div class="location-controls">
+                            <div class="radius-selector">
+                                <label for="radiusSelect">Search within:</label>
+                                <select id="radiusSelect" aria-label="Search radius">
+                                    <option value="5">5 miles</option>
+                                    <option value="10" selected>10 miles</option>
+                                    <option value="15">15 miles</option>
+                                    <option value="25">25 miles</option>
+                                    <option value="50">50 miles</option>
+                                </select>
+                            </div>
+                            <button id="proximitySearchBtn" class="btn-secondary">
+                                <span class="btn-text">Use My Location</span>
+                                <span class="btn-icon">📍</span>
+                            </button>
+                        </div>
+                        <p class="help-text">We'll use your current location to find nearby services</p>
+                    </div>
+                </div>
+            </section>
             
-            <div class="filter-section">
-                <div class="filter-row">
+            <!-- Step 2: Service Type Filter -->
+            <section class="search-step" id="step2">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <h2>What type of help do you need?</h2>
+                    <p>Choose the type of services you're looking for (optional)</p>
+                </div>
+                
+                <div class="filter-options">
                     <div class="filter-group">
-                        <label for="stateSelect">State:</label>
-                        <select id="stateSelect">
+                        <label for="stateSelect">State</label>
+                        <select id="stateSelect" aria-label="Select state">
                             <option value="">All States</option>
                         </select>
                     </div>
                     
                     <div class="filter-group">
-                        <label for="housingTypeSelect">Housing Type:</label>
-                        <select id="housingTypeSelect">
-                            <option value="">All Types</option>
+                        <label for="housingTypeSelect">Service Type</label>
+                        <select id="housingTypeSelect" aria-label="Select service type">
+                            <option value="">All Services</option>
                         </select>
                     </div>
                 </div>
                 
-                <div class="proximity-section">
-                    <h3>📍 Proximity Search</h3>
-                    <div class="proximity-controls">
-                        <div class="filter-group">
-                            <label for="radiusSelect">Search Radius:</label>
-                            <select id="radiusSelect">
-                                <option value="5">5 miles</option>
-                                <option value="10" selected>10 miles</option>
-                                <option value="15">15 miles</option>
-                                <option value="25">25 miles</option>
-                                <option value="50">50 miles</option>
-                            </select>
-                        </div>
-                        <div class="proximity-buttons">
-                            <button id="proximitySearchBtn" class="proximity-btn">
-                                📍 Find Near Me
-                            </button>
-                            <button id="proximitySearchByZipBtn" class="proximity-btn">
-                                📍 Find Near Zip Code
-                            </button>
-                        </div>
-                    </div>
+                <div class="step-actions">
+                    <button id="searchWithFiltersBtn" class="btn-primary">
+                        <span class="btn-text">Search with Filters</span>
+                        <span class="btn-icon">🔍</span>
+                    </button>
+                    <button id="clearFiltersBtn" class="btn-outline">
+                        <span class="btn-text">Clear Filters</span>
+                    </button>
                 </div>
-                
-                <div class="filter-actions">
-                    <button id="clearFiltersBtn">Clear Filters</button>
-                    <button id="searchWithFiltersBtn">Search with Filters</button>
-                </div>
-            </div>
+            </section>
             
-            <div class="data-info">
-                <p>📊 Data loaded from GitHub CSV file</p>
-            </div>
-        </div>
+            <!-- Alternative Search by Zip -->
+            <section class="alternative-search">
+                <div class="alt-search-header">
+                    <h3>Or search near a specific zip code</h3>
+                </div>
+                <div class="alt-search-controls">
+                    <input type="text" id="altZipInput" placeholder="Enter zip code" aria-label="Enter zip code for proximity search">
+                    <button id="proximitySearchByZipBtn" class="btn-secondary">
+                        <span class="btn-text">Find Near This Zip</span>
+                        <span class="btn-icon">📍</span>
+                    </button>
+                </div>
+            </section>
+        </main>
         
-        <div class="results-section" id="resultsSection" style="display: none;">
-            <h2>Search Results</h2>
-            <div class="results-info">
-                <span id="resultCount">0 results found</span>
+        <!-- Results Section -->
+        <section class="results-section" id="resultsSection" style="display: none;">
+            <div class="results-header">
+                <h2>Services Found</h2>
+                <div class="results-summary">
+                    <span id="resultCount" class="result-count">0 services found</span>
+                    <button id="newSearchBtn" class="btn-outline">New Search</button>
+                </div>
             </div>
             <div class="results-container" id="resultsContainer">
                 <!-- Results will be populated here -->
             </div>
-        </div>
+        </section>
         
-        <div class="no-results" id="noResults" style="display: none;">
-            <!-- Dynamic message will be inserted here by JavaScript -->
-        </div>
+        <!-- No Results -->
+        <section class="no-results" id="noResults" style="display: none;">
+            <div class="no-results-content">
+                <div class="no-results-icon">🔍</div>
+                <h3>No services found</h3>
+                <div class="no-results-message">
+                    <!-- Dynamic message will be inserted here by JavaScript -->
+                </div>
+                <div class="no-results-actions">
+                    <button id="tryAgainBtn" class="btn-primary">Try Again</button>
+                    <button id="expandSearchBtn" class="btn-outline">Expand Search</button>
+                </div>
+            </div>
+        </section>
         
-        <div class="loading" id="loading" style="display: none;">
-            <div class="spinner"></div>
-            <p>Loading data...</p>
-        </div>
+        <!-- Loading State -->
+        <section class="loading" id="loading" style="display: none;">
+            <div class="loading-content">
+                <div class="spinner"></div>
+                <h3>Finding services...</h3>
+                <p>Please wait while we search for services in your area</p>
+            </div>
+        </section>
         
-        <div class="error" id="error" style="display: none;">
-            <p>❌ Error loading data. Please try again later.</p>
-        </div>
+        <!-- Error State -->
+        <section class="error" id="error" style="display: none;">
+            <div class="error-content">
+                <div class="error-icon">⚠️</div>
+                <h3>Unable to load services</h3>
+                <p>We're having trouble loading the service database. Please try again later.</p>
+                <button id="retryBtn" class="btn-primary">Try Again</button>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>Data provided by healthcare organizations nationwide</p>
+                    <p class="footer-note">This service helps connect people with mental health and housing resources</p>
+                </div>
+                <div class="footer-help">
+                    <p><strong>Need immediate help?</strong></p>
+                    <p>Call 988 for mental health crisis support</p>
+                </div>
+            </div>
+        </footer>
     </div>
     
     <script src="script.js"></script>

@@ -3,6 +3,8 @@ let organizationsData = [];
 let isIframeMode = false;
 let isDataLoaded = false;
 let organizationsWithCoords = [];
+let zipCoordinatesData = null;
+let cityCoordinatesData = null;
 
 // Check if running in iframe
 if (window.self !== window.top) {
@@ -12,6 +14,7 @@ if (window.self !== window.top) {
 
 // DOM elements
 const zipInput = document.getElementById('zipInput');
+const altZipInput = document.getElementById('altZipInput');
 const searchBtn = document.getElementById('searchBtn');
 const stateSelect = document.getElementById('stateSelect');
 const housingTypeSelect = document.getElementById('housingTypeSelect');
@@ -25,6 +28,12 @@ const loading = document.getElementById('loading');
 const error = document.getElementById('error');
 const resultsContainer = document.getElementById('resultsContainer');
 const resultCount = document.getElementById('resultCount');
+const newSearchBtn = document.getElementById('newSearchBtn');
+const tryAgainBtn = document.getElementById('tryAgainBtn');
+const expandSearchBtn = document.getElementById('expandSearchBtn');
+const retryBtn = document.getElementById('retryBtn');
+const step1 = document.getElementById('step1');
+const step2 = document.getElementById('step2');
 
 // URLs from your GitHub repository
 const CSV_URL = 'https://raw.githubusercontent.com/jwalith/Test_github_pages/main/01_master_all_states.csv';
@@ -38,10 +47,19 @@ zipInput.addEventListener('keypress', function(e) {
         handleSearch();
     }
 });
+altZipInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        handleProximitySearchByZip();
+    }
+});
 clearFiltersBtn.addEventListener('click', clearFilters);
 searchWithFiltersBtn.addEventListener('click', handleSearchWithFilters);
 proximitySearchBtn.addEventListener('click', handleProximitySearch);
 proximitySearchByZipBtn.addEventListener('click', handleProximitySearchByZip);
+newSearchBtn.addEventListener('click', resetToSearch);
+tryAgainBtn.addEventListener('click', resetToSearch);
+expandSearchBtn.addEventListener('click', expandSearch);
+retryBtn.addEventListener('click', retryLoadData);
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
@@ -146,7 +164,7 @@ function validateZipCode(zipCode) {
 
 function checkDataLoaded() {
     if (!isDataLoaded) {
-        alert('Data is still loading. Please wait a moment and try again.');
+        showUserMessage('Data is still loading. Please wait a moment and try again.', 'warning');
         return false;
     }
     return true;
@@ -156,7 +174,7 @@ function getRadiusSelect() {
     const radiusSelect = document.getElementById('radiusSelect');
     if (!radiusSelect) {
         console.error('Radius select element not found');
-        alert('Error: Radius selector not found');
+        showUserMessage('Error: Search radius selector not found', 'error');
         return null;
     }
     return radiusSelect;
@@ -168,12 +186,12 @@ function handleSearch() {
     const zipCode = zipInput.value.trim();
     
     if (!zipCode) {
-        alert('Please enter a zip code');
+        showUserMessage('Please enter a zip code to search for services', 'warning');
         return;
     }
     
     if (!validateZipCode(zipCode)) {
-        alert('Please enter a valid zip code (e.g., 12345 or 12345-6789)');
+        showUserMessage('Please enter a valid zip code (e.g., 12345)', 'warning');
         return;
     }
     
@@ -251,9 +269,107 @@ function populateHousingTypeDropdown() {
 
 function clearFilters() {
     zipInput.value = '';
+    altZipInput.value = '';
     stateSelect.value = '';
     housingTypeSelect.value = '';
     hideAllSections();
+    resetToSearch();
+}
+
+// New helper functions for better UX
+function resetToSearch() {
+    hideAllSections();
+    step1.classList.add('active');
+    step2.classList.remove('active');
+    zipInput.focus();
+}
+
+function expandSearch() {
+    // Increase search radius and try again
+    const radiusSelect = getRadiusSelect();
+    if (radiusSelect) {
+        const currentRadius = parseInt(radiusSelect.value);
+        const newRadius = Math.min(currentRadius * 2, 50);
+        radiusSelect.value = newRadius;
+        
+        // Try the last search again with expanded radius
+        if (zipInput.value.trim()) {
+            handleSearch();
+        } else if (altZipInput.value.trim()) {
+            handleProximitySearchByZip();
+        } else {
+            handleProximitySearch();
+        }
+    }
+}
+
+function retryLoadData() {
+    hideAllSections();
+    loadDataFromCSV();
+}
+
+function showUserMessage(message, type = 'info') {
+    // Create a more user-friendly message system
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `user-message ${type}`;
+    messageDiv.innerHTML = `
+        <div class="message-content">
+            <span class="message-icon">${type === 'error' ? '⚠️' : type === 'warning' ? '⚠️' : 'ℹ️'}</span>
+            <span class="message-text">${message}</span>
+            <button class="message-close" onclick="this.parentElement.parentElement.remove()">×</button>
+        </div>
+    `;
+    
+    // Add styles if not already added
+    if (!document.getElementById('message-styles')) {
+        const style = document.createElement('style');
+        style.id = 'message-styles';
+        style.textContent = `
+            .user-message {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                z-index: 1000;
+                max-width: 400px;
+                animation: slideIn 0.3s ease;
+            }
+            .user-message.error { border-left: 4px solid #ef4444; }
+            .user-message.warning { border-left: 4px solid #f59e0b; }
+            .user-message.info { border-left: 4px solid #3b82f6; }
+            .message-content {
+                display: flex;
+                align-items: center;
+                padding: 12px 16px;
+                gap: 8px;
+            }
+            .message-icon { font-size: 18px; }
+            .message-text { flex: 1; font-size: 14px; }
+            .message-close {
+                background: none;
+                border: none;
+                font-size: 18px;
+                cursor: pointer;
+                color: #6b7280;
+            }
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    document.body.appendChild(messageDiv);
+    
+    // Auto-remove after 5 seconds
+    setTimeout(() => {
+        if (messageDiv.parentElement) {
+            messageDiv.remove();
+        }
+    }, 5000);
 }
 
 function handleSearchWithFilters() {
@@ -264,12 +380,12 @@ function handleSearchWithFilters() {
     const selectedHousingType = housingTypeSelect.value;
     
     if (zipCode && !validateZipCode(zipCode)) {
-        alert('Please enter a valid zip code (e.g., 12345 or 12345-6789)');
+        showUserMessage('Please enter a valid zip code (e.g., 12345)', 'warning');
         return;
     }
     
     if (!zipCode && !selectedState && !selectedHousingType) {
-        alert('Please select at least one filter (zip code, state, or housing type)');
+        showUserMessage('Please select at least one filter (zip code, state, or service type)', 'warning');
         return;
     }
     
@@ -292,6 +408,11 @@ async function handleProximitySearch() {
     const selectedHousingType = housingTypeSelect.value;
     const radiusMiles = parseInt(radiusSelect.value);
     
+    if (isNaN(radiusMiles) || radiusMiles <= 0) {
+        showUserMessage('Please select a valid search radius', 'warning');
+        return;
+    }
+    
     try {
         showLoading();
         const location = await getCurrentLocation();
@@ -305,7 +426,7 @@ async function handleProximitySearch() {
         });
     } catch (error) {
         console.error('Error getting location:', error);
-        alert('Unable to get your location. Please check your browser permissions or try searching by zip code instead.');
+        showUserMessage('Unable to get your location. Please check your browser permissions or try searching by zip code instead.', 'error');
         hideLoading();
     }
 }
@@ -314,20 +435,25 @@ async function handleProximitySearch() {
 async function handleProximitySearchByZip() {
     if (!checkDataLoaded()) return;
     
-    const zipCode = zipInput.value.trim();
+    const zipCode = altZipInput.value.trim();
     const radiusSelect = getRadiusSelect();
     if (!radiusSelect) return;
     
     const selectedHousingType = housingTypeSelect.value;
     const radiusMiles = parseInt(radiusSelect.value);
     
+    if (isNaN(radiusMiles) || radiusMiles <= 0) {
+        showUserMessage('Please select a valid search radius', 'warning');
+        return;
+    }
+    
     if (!zipCode) {
-        alert('Please enter a zip code for proximity search');
+        showUserMessage('Please enter a zip code for proximity search', 'warning');
         return;
     }
     
     if (!validateZipCode(zipCode)) {
-        alert('Please enter a valid zip code (e.g., 12345 or 12345-6789)');
+        showUserMessage('Please enter a valid zip code (e.g., 12345)', 'warning');
         return;
     }
     
@@ -345,7 +471,7 @@ async function handleProximitySearchByZip() {
         });
     } catch (error) {
         console.error('Error getting coordinates:', error);
-        alert('Unable to get coordinates for that zip code. Please try a different zip code.');
+        showUserMessage('Unable to get coordinates for that zip code. Please try a different zip code.', 'error');
         hideLoading();
     }
 }
@@ -358,12 +484,13 @@ function displayResults(results, searchContext = {}) {
         
         // Generate specific "no results" message based on search context
         const message = generateNoResultsMessage(searchContext);
-        noResults.innerHTML = `<p>${message}</p>`;
+        const messageDiv = noResults.querySelector('.no-results-message');
+        messageDiv.innerHTML = `<p>${message}</p>`;
         return;
     }
     
     resultsSection.style.display = 'block';
-    resultCount.textContent = `${results.length} result${results.length !== 1 ? 's' : ''} found`;
+    resultCount.textContent = `${results.length} service${results.length !== 1 ? 's' : ''} found`;
     
     resultsContainer.innerHTML = '';
     
@@ -376,7 +503,7 @@ function displayResults(results, searchContext = {}) {
 function generateNoResultsMessage(searchContext) {
     const { zipCode, state, housingType, radius, searchType } = searchContext;
     
-    let message = "No organizations found";
+    let message = "No services found";
     
     // Build the message based on applied filters
     const filters = [];
@@ -406,7 +533,7 @@ function generateNoResultsMessage(searchContext) {
         message += ` ${filters.join(' ')}`;
     }
     
-    return message + ".";
+    return message + ". Try expanding your search or checking nearby areas.";
 }
 
 function createResultCard(org) {
@@ -417,14 +544,14 @@ function createResultCard(org) {
     const distanceInfo = org.distance ? `
         <div class="detail-item distance-item">
             <span class="detail-label">Distance</span>
-            <span class="detail-value distance-value">${org.distance} miles</span>
+            <span class="detail-value distance-value">${org.distance} miles away</span>
         </div>
     ` : '';
     
     // Add coordinate source info for proximity searches
     const coordinateSourceInfo = org.coordinateSource && org.distance ? `
         <div class="detail-item coordinate-source">
-            <span class="detail-label">Location</span>
+            <span class="detail-label">Location Accuracy</span>
             <span class="detail-value">${org.coordinateSource === 'zip' ? 'Precise (zip code)' : 'Approximate (city center)'}</span>
         </div>
     ` : '';
@@ -435,20 +562,12 @@ function createResultCard(org) {
             ${distanceInfo}
             ${coordinateSourceInfo}
             <div class="detail-item">
-                <span class="detail-label">Type</span>
+                <span class="detail-label">Service Type</span>
                 <span class="detail-value">${org.type}</span>
             </div>
             <div class="detail-item">
-                <span class="detail-label">City</span>
-                <span class="detail-value">${org.city}</span>
-            </div>
-            <div class="detail-item">
-                <span class="detail-label">State</span>
-                <span class="detail-value">${org.state}</span>
-            </div>
-            <div class="detail-item">
-                <span class="detail-label">Zip Code</span>
-                <span class="detail-value">${org.zip || 'N/A'}</span>
+                <span class="detail-label">Location</span>
+                <span class="detail-value">${org.city}, ${org.state} ${org.zip || ''}</span>
             </div>
             ${org.address ? `
             <div class="detail-item">
@@ -459,13 +578,13 @@ function createResultCard(org) {
             ${org.phone ? `
             <div class="detail-item">
                 <span class="detail-label">Phone</span>
-                <span class="detail-value">${org.phone}</span>
+                <span class="detail-value"><a href="tel:${org.phone}" style="color: var(--primary-blue); text-decoration: none;">${org.phone}</a></span>
             </div>
             ` : ''}
             ${org.email ? `
             <div class="detail-item">
                 <span class="detail-label">Email</span>
-                <span class="detail-value">${org.email}</span>
+                <span class="detail-value"><a href="mailto:${org.email}" style="color: var(--primary-blue); text-decoration: none;">${org.email}</a></span>
             </div>
             ` : ''}
         </div>
@@ -532,13 +651,17 @@ function getCurrentLocation() {
 
 // Get coordinates for a zip code from the loaded JSON data
 function getCoordinatesFromZip(zipCode) {
-    // Find the zip coordinates in our loaded data
-    const zipCoords = organizationsWithCoords.find(org => org.zip === zipCode);
+    // Access the globally stored zip coordinates data
+    if (!window.zipCoordinatesData) {
+        throw new Error('Zip coordinates data not loaded yet');
+    }
     
-    if (zipCoords && zipCoords.latitude && zipCoords.longitude) {
+    const coords = window.zipCoordinatesData.coordinates[zipCode];
+    
+    if (coords && coords.latitude && coords.longitude) {
         return {
-            latitude: zipCoords.latitude,
-            longitude: zipCoords.longitude
+            latitude: coords.latitude,
+            longitude: coords.longitude
         };
     }
     
@@ -576,9 +699,14 @@ async function loadCoordinatesFromJSON() {
         const zipCoordinatesData = await zipResponse.json();
         let cityCoordinatesData = null;
         
+        // Store globally for access by other functions
+        window.zipCoordinatesData = zipCoordinatesData;
+        window.cityCoordinatesData = cityCoordinatesData;
+        
         // City coordinates are optional (may not exist yet)
         if (cityResponse.ok) {
             cityCoordinatesData = await cityResponse.json();
+            window.cityCoordinatesData = cityCoordinatesData;
         } else {
             console.log('City coordinates file not found - will only use zip coordinates');
         }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>City Coordinates Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-result { margin: 10px 0; padding: 10px; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+    </style>
+</head>
+<body>
+    <h1>City Coordinates Test</h1>
+    <div id="results"></div>
+    
+    <script>
+        const ZIP_COORDINATES_URL = 'https://raw.githubusercontent.com/jwalith/Test_github_pages/main/zip_coordinates.json';
+        const CITY_COORDINATES_URL = 'https://raw.githubusercontent.com/jwalith/Test_github_pages/main/city_coordinates.json';
+        
+        async function testCityCoordinates() {
+            const results = document.getElementById('results');
+            
+            try {
+                results.innerHTML = '<div class="info">Testing coordinate loading...</div>';
+                
+                // Test zip coordinates
+                const zipResponse = await fetch(ZIP_COORDINATES_URL);
+                if (zipResponse.ok) {
+                    const zipData = await zipResponse.json();
+                    results.innerHTML += `<div class="success">✅ Zip coordinates loaded: ${Object.keys(zipData.coordinates).length} zip codes</div>`;
+                } else {
+                    results.innerHTML += `<div class="error">❌ Zip coordinates failed: ${zipResponse.status}</div>`;
+                }
+                
+                // Test city coordinates
+                const cityResponse = await fetch(CITY_COORDINATES_URL);
+                if (cityResponse.ok) {
+                    const cityData = await cityResponse.json();
+                    const cityCount = Object.keys(cityData.city_coordinates).length;
+                    results.innerHTML += `<div class="success">✅ City coordinates loaded: ${cityCount} cities</div>`;
+                    
+                    // Show some sample cities
+                    const sampleCities = Object.keys(cityData.city_coordinates).slice(0, 5);
+                    results.innerHTML += `<div class="info">Sample cities: ${sampleCities.join(', ')}</div>`;
+                    
+                    // Test a specific city lookup
+                    const testCity = sampleCities[0];
+                    const testCoords = cityData.city_coordinates[testCity];
+                    results.innerHTML += `<div class="info">Test lookup "${testCity}": ${testCoords.latitude}, ${testCoords.longitude}</div>`;
+                    
+                } else {
+                    results.innerHTML += `<div class="error">❌ City coordinates failed: ${cityResponse.status}</div>`;
+                }
+                
+            } catch (error) {
+                results.innerHTML += `<div class="error">❌ Error: ${error.message}</div>`;
+            }
+        }
+        
+        testCityCoordinates();
+    </script>
+</body>
+</html>
+
+
