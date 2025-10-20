@@ -32,8 +32,7 @@ const newSearchBtn = document.getElementById('newSearchBtn');
 const tryAgainBtn = document.getElementById('tryAgainBtn');
 const expandSearchBtn = document.getElementById('expandSearchBtn');
 const retryBtn = document.getElementById('retryBtn');
-const step1 = document.getElementById('step1');
-const step2 = document.getElementById('step2');
+// Remove step references since we now have a unified interface
 
 // URLs from your GitHub repository
 const CSV_URL = 'https://raw.githubusercontent.com/jwalith/Test_github_pages/main/01_master_all_states.csv';
@@ -273,14 +272,11 @@ function clearFilters() {
     stateSelect.value = '';
     housingTypeSelect.value = '';
     hideAllSections();
-    resetToSearch();
 }
 
 // New helper functions for better UX
 function resetToSearch() {
     hideAllSections();
-    step1.classList.add('active');
-    step2.classList.remove('active');
     zipInput.focus();
 }
 
@@ -376,26 +372,66 @@ function handleSearchWithFilters() {
     if (!checkDataLoaded()) return;
     
     const zipCode = zipInput.value.trim();
+    const altZipCode = altZipInput.value.trim();
     const selectedState = stateSelect.value;
     const selectedHousingType = housingTypeSelect.value;
     
+    // Check if any location method is specified
+    if (!zipCode && !altZipCode) {
+        showUserMessage('Please enter a zip code or use location search to find services', 'warning');
+        return;
+    }
+    
+    // Validate zip codes if provided
     if (zipCode && !validateZipCode(zipCode)) {
         showUserMessage('Please enter a valid zip code (e.g., 12345)', 'warning');
         return;
     }
     
-    if (!zipCode && !selectedState && !selectedHousingType) {
-        showUserMessage('Please select at least one filter (zip code, state, or service type)', 'warning');
+    if (altZipCode && !validateZipCode(altZipCode)) {
+        showUserMessage('Please enter a valid zip code for proximity search (e.g., 12345)', 'warning');
         return;
     }
     
-    const results = searchWithFilters();
-    displayResults(results, {
-        zipCode: zipCode,
-        state: selectedState,
-        housingType: selectedHousingType,
-        searchType: 'filters'
-    });
+    // Determine search type and execute
+    if (zipCode) {
+        // Direct zip code search
+        const results = searchWithFilters();
+        displayResults(results, {
+            zipCode: zipCode,
+            state: selectedState,
+            housingType: selectedHousingType,
+            searchType: 'zip'
+        });
+    } else if (altZipCode) {
+        // Proximity search by zip code
+        try {
+            showLoading();
+            const coords = getCoordinatesFromZip(altZipCode);
+            const radiusSelect = getRadiusSelect();
+            const radiusMiles = radiusSelect ? parseInt(radiusSelect.value) : 10;
+            
+            const results = searchByProximityWithFilters(coords.latitude, coords.longitude, radiusMiles, selectedHousingType);
+            
+            // Apply state filter if selected
+            let filteredResults = results;
+            if (selectedState) {
+                filteredResults = results.filter(org => org.state === selectedState);
+            }
+            
+            displayResults(filteredResults, {
+                zipCode: altZipCode,
+                state: selectedState,
+                housingType: selectedHousingType,
+                radius: radiusMiles,
+                searchType: 'proximity'
+            });
+        } catch (error) {
+            console.error('Error getting coordinates:', error);
+            showUserMessage('Unable to get coordinates for that zip code. Please try a different zip code.', 'error');
+            hideLoading();
+        }
+    }
 }
 
 // Handle proximity search using current location
@@ -419,7 +455,14 @@ async function handleProximitySearch() {
         
         const results = searchByProximityWithFilters(location.latitude, location.longitude, radiusMiles, selectedHousingType);
         
-        displayResults(results, {
+        // Apply state filter if selected
+        let filteredResults = results;
+        if (selectedState) {
+            filteredResults = results.filter(org => org.state === selectedState);
+        }
+        
+        displayResults(filteredResults, {
+            state: selectedState,
             housingType: selectedHousingType,
             radius: radiusMiles,
             searchType: 'proximity'
@@ -463,8 +506,15 @@ async function handleProximitySearchByZip() {
         
         const results = searchByProximityWithFilters(coords.latitude, coords.longitude, radiusMiles, selectedHousingType);
         
-        displayResults(results, {
+        // Apply state filter if selected
+        let filteredResults = results;
+        if (selectedState) {
+            filteredResults = results.filter(org => org.state === selectedState);
+        }
+        
+        displayResults(filteredResults, {
             zipCode: zipCode,
+            state: selectedState,
             housingType: selectedHousingType,
             radius: radiusMiles,
             searchType: 'proximity'
