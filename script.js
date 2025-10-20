@@ -14,14 +14,12 @@ if (window.self !== window.top) {
 
 // DOM elements
 const zipInput = document.getElementById('zipInput');
-const altZipInput = document.getElementById('altZipInput');
 const searchBtn = document.getElementById('searchBtn');
 const stateSelect = document.getElementById('stateSelect');
 const housingTypeSelect = document.getElementById('housingTypeSelect');
 const clearFiltersBtn = document.getElementById('clearFiltersBtn');
 const searchWithFiltersBtn = document.getElementById('searchWithFiltersBtn');
 const proximitySearchBtn = document.getElementById('proximitySearchBtn');
-const proximitySearchByZipBtn = document.getElementById('proximitySearchByZipBtn');
 const resultsSection = document.getElementById('resultsSection');
 const noResults = document.getElementById('noResults');
 const loading = document.getElementById('loading');
@@ -32,7 +30,6 @@ const newSearchBtn = document.getElementById('newSearchBtn');
 const tryAgainBtn = document.getElementById('tryAgainBtn');
 const expandSearchBtn = document.getElementById('expandSearchBtn');
 const retryBtn = document.getElementById('retryBtn');
-// Remove step references since we now have a unified interface
 
 // URLs from your GitHub repository
 const CSV_URL = 'https://raw.githubusercontent.com/jwalith/Test_github_pages/main/01_master_all_states.csv';
@@ -46,15 +43,9 @@ zipInput.addEventListener('keypress', function(e) {
         handleSearch();
     }
 });
-altZipInput.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        handleProximitySearchByZip();
-    }
-});
 clearFiltersBtn.addEventListener('click', clearFilters);
 searchWithFiltersBtn.addEventListener('click', handleSearchWithFilters);
 proximitySearchBtn.addEventListener('click', handleProximitySearch);
-proximitySearchByZipBtn.addEventListener('click', handleProximitySearchByZip);
 newSearchBtn.addEventListener('click', resetToSearch);
 tryAgainBtn.addEventListener('click', resetToSearch);
 expandSearchBtn.addEventListener('click', expandSearch);
@@ -268,7 +259,6 @@ function populateHousingTypeDropdown() {
 
 function clearFilters() {
     zipInput.value = '';
-    altZipInput.value = '';
     stateSelect.value = '';
     housingTypeSelect.value = '';
     hideAllSections();
@@ -291,8 +281,6 @@ function expandSearch() {
         // Try the last search again with expanded radius
         if (zipInput.value.trim()) {
             handleSearch();
-        } else if (altZipInput.value.trim()) {
-            handleProximitySearchByZip();
         } else {
             handleProximitySearch();
         }
@@ -372,66 +360,29 @@ function handleSearchWithFilters() {
     if (!checkDataLoaded()) return;
     
     const zipCode = zipInput.value.trim();
-    const altZipCode = altZipInput.value.trim();
     const selectedState = stateSelect.value;
     const selectedHousingType = housingTypeSelect.value;
     
-    // Check if any location method is specified
-    if (!zipCode && !altZipCode) {
-        showUserMessage('Please enter a zip code or use location search to find services', 'warning');
+    // Check if zip code is provided
+    if (!zipCode) {
+        showUserMessage('Please enter a zip code to find services', 'warning');
         return;
     }
     
-    // Validate zip codes if provided
-    if (zipCode && !validateZipCode(zipCode)) {
+    // Validate zip code
+    if (!validateZipCode(zipCode)) {
         showUserMessage('Please enter a valid zip code (e.g., 12345)', 'warning');
         return;
     }
     
-    if (altZipCode && !validateZipCode(altZipCode)) {
-        showUserMessage('Please enter a valid zip code for proximity search (e.g., 12345)', 'warning');
-        return;
-    }
-    
-    // Determine search type and execute
-    if (zipCode) {
-        // Direct zip code search
-        const results = searchWithFilters();
-        displayResults(results, {
-            zipCode: zipCode,
-            state: selectedState,
-            housingType: selectedHousingType,
-            searchType: 'zip'
-        });
-    } else if (altZipCode) {
-        // Proximity search by zip code
-        try {
-            showLoading();
-            const coords = getCoordinatesFromZip(altZipCode);
-            const radiusSelect = getRadiusSelect();
-            const radiusMiles = radiusSelect ? parseInt(radiusSelect.value) : 10;
-            
-            const results = searchByProximityWithFilters(coords.latitude, coords.longitude, radiusMiles, selectedHousingType);
-            
-            // Apply state filter if selected
-            let filteredResults = results;
-            if (selectedState) {
-                filteredResults = results.filter(org => org.state === selectedState);
-            }
-            
-            displayResults(filteredResults, {
-                zipCode: altZipCode,
-                state: selectedState,
-                housingType: selectedHousingType,
-                radius: radiusMiles,
-                searchType: 'proximity'
-            });
-        } catch (error) {
-            console.error('Error getting coordinates:', error);
-            showUserMessage('Unable to get coordinates for that zip code. Please try a different zip code.', 'error');
-            hideLoading();
-        }
-    }
+    // Direct zip code search with filters
+    const results = searchWithFilters();
+    displayResults(results, {
+        zipCode: zipCode,
+        state: selectedState,
+        housingType: selectedHousingType,
+        searchType: 'zip'
+    });
 }
 
 // Handle proximity search using current location
@@ -474,57 +425,7 @@ async function handleProximitySearch() {
     }
 }
 
-// Handle proximity search using zip code
-async function handleProximitySearchByZip() {
-    if (!checkDataLoaded()) return;
-    
-    const zipCode = altZipInput.value.trim();
-    const radiusSelect = getRadiusSelect();
-    if (!radiusSelect) return;
-    
-    const selectedHousingType = housingTypeSelect.value;
-    const radiusMiles = parseInt(radiusSelect.value);
-    
-    if (isNaN(radiusMiles) || radiusMiles <= 0) {
-        showUserMessage('Please select a valid search radius', 'warning');
-        return;
-    }
-    
-    if (!zipCode) {
-        showUserMessage('Please enter a zip code for proximity search', 'warning');
-        return;
-    }
-    
-    if (!validateZipCode(zipCode)) {
-        showUserMessage('Please enter a valid zip code (e.g., 12345)', 'warning');
-        return;
-    }
-    
-    try {
-        showLoading();
-        const coords = getCoordinatesFromZip(zipCode);
-        
-        const results = searchByProximityWithFilters(coords.latitude, coords.longitude, radiusMiles, selectedHousingType);
-        
-        // Apply state filter if selected
-        let filteredResults = results;
-        if (selectedState) {
-            filteredResults = results.filter(org => org.state === selectedState);
-        }
-        
-        displayResults(filteredResults, {
-            zipCode: zipCode,
-            state: selectedState,
-            housingType: selectedHousingType,
-            radius: radiusMiles,
-            searchType: 'proximity'
-        });
-    } catch (error) {
-        console.error('Error getting coordinates:', error);
-        showUserMessage('Unable to get coordinates for that zip code. Please try a different zip code.', 'error');
-        hideLoading();
-    }
-}
+// Handle proximity search using zip code - REMOVED since we simplified to only have direct zip search and current location search
 
 function displayResults(results, searchContext = {}) {
     hideAllSections();
@@ -536,6 +437,14 @@ function displayResults(results, searchContext = {}) {
         const message = generateNoResultsMessage(searchContext);
         const messageDiv = noResults.querySelector('.no-results-message');
         messageDiv.innerHTML = `<p>${message}</p>`;
+        
+        // Scroll to no results section
+        setTimeout(() => {
+            noResults.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }, 100);
         return;
     }
     
@@ -548,6 +457,14 @@ function displayResults(results, searchContext = {}) {
         const resultCard = createResultCard(org);
         resultsContainer.appendChild(resultCard);
     });
+    
+    // Scroll to results section
+    setTimeout(() => {
+        resultsSection.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+        });
+    }, 100);
 }
 
 function generateNoResultsMessage(searchContext) {
