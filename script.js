@@ -522,19 +522,10 @@ function createResultCard(org) {
         </div>
     ` : '';
     
-    // Add coordinate source info for proximity searches
-    const coordinateSourceInfo = org.coordinateSource && org.distance ? `
-        <div class="detail-item coordinate-source">
-            <span class="detail-label">Location Accuracy</span>
-            <span class="detail-value">${org.coordinateSource === 'zip' ? 'Precise (zip code)' : 'Approximate (city center)'}</span>
-        </div>
-    ` : '';
-    
     card.innerHTML = `
         <h3>${org.name}</h3>
         <div class="result-details">
             ${distanceInfo}
-            ${coordinateSourceInfo}
             <div class="detail-item">
                 <span class="detail-label">Service Type</span>
                 <span class="detail-value">${org.type}</span>
@@ -691,6 +682,14 @@ async function loadCoordinatesFromJSON() {
         if (cityResponse.ok) {
             cityCoordinatesData = await cityResponse.json();
             window.cityCoordinatesData = cityCoordinatesData;
+            console.log('City coordinates loaded:', Object.keys(cityCoordinatesData.city_coordinates || {}).length, 'cities');
+            
+            // Debug: Show sample city coordinates
+            const sampleCities = Object.keys(cityCoordinatesData.city_coordinates || {}).slice(0, 3);
+            console.log('Sample city coordinates:', sampleCities.map(city => ({
+                city: city,
+                coords: cityCoordinatesData.city_coordinates[city]
+            })));
         } else {
             console.log('City coordinates file not found - will only use zip coordinates');
         }
@@ -716,6 +715,19 @@ async function loadCoordinatesFromJSON() {
                     latitude = cityCoords.latitude;
                     longitude = cityCoords.longitude;
                     coordinateSource = 'city';
+                } else {
+                    // Debug: log organizations without city coordinates
+                    if (!org.zip) {
+                        console.log('No coordinates found for:', cityKey, 'Organization:', org.name);
+                        // Try case-insensitive search
+                        const availableCities = Object.keys(cityCoordinatesData.city_coordinates || {});
+                        const matchingCity = availableCities.find(city => 
+                            city.toLowerCase() === cityKey.toLowerCase()
+                        );
+                        if (matchingCity) {
+                            console.log('Found case-insensitive match:', matchingCity);
+                        }
+                    }
                 }
             }
             
@@ -733,6 +745,10 @@ async function loadCoordinatesFromJSON() {
         const noCoordsCount = organizationsWithCoords.filter(org => org.coordinateSource === 'none').length;
         
         console.log(`Coordinates loaded: ${zipCount} zip-based, ${cityCount} city-based, ${noCoordsCount} no coordinates`);
+        
+        // Debug: Show some examples of organizations without zip codes
+        const orgsWithoutZip = organizationsWithCoords.filter(org => !org.zip && org.city && org.state);
+        console.log('Organizations without zip codes:', orgsWithoutZip.slice(0, 5));
         
         // Log a sample of organizations with coordinates for debugging
         const sampleWithCoords = organizationsWithCoords.filter(org => org.coordinateSource !== 'none').slice(0, 3);
