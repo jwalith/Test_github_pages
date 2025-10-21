@@ -14,9 +14,9 @@ if (window.self !== window.top) {
 
 // DOM elements
 const zipInput = document.getElementById('zipInput');
-const searchBtn = document.getElementById('searchBtn');
 const stateSelect = document.getElementById('stateSelect');
 const housingTypeSelect = document.getElementById('housingTypeSelect');
+const proximityServiceType = document.getElementById('proximityServiceType');
 const clearFiltersBtn = document.getElementById('clearFiltersBtn');
 const searchWithFiltersBtn = document.getElementById('searchWithFiltersBtn');
 const proximitySearchBtn = document.getElementById('proximitySearchBtn');
@@ -37,10 +37,9 @@ const ZIP_COORDINATES_URL = 'https://raw.githubusercontent.com/jwalith/Test_gith
 const CITY_COORDINATES_URL = 'https://raw.githubusercontent.com/jwalith/Test_github_pages/main/city_coordinates.json';
 
 // Event listeners
-searchBtn.addEventListener('click', handleSearch);
 zipInput.addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
-        handleSearch();
+        handleSearchWithFilters();
     }
 });
 clearFiltersBtn.addEventListener('click', clearFilters);
@@ -170,27 +169,7 @@ function getRadiusSelect() {
     return radiusSelect;
 }
 
-function handleSearch() {
-    if (!checkDataLoaded()) return;
-    
-    const zipCode = zipInput.value.trim();
-    
-    if (!zipCode) {
-        showUserMessage('Please enter a zip code to search, or use the "Search for Services" button below to search by state or service type', 'warning');
-        return;
-    }
-    
-    if (!validateZipCode(zipCode)) {
-        showUserMessage('Please enter a valid zip code (e.g., 12345)', 'warning');
-        return;
-    }
-    
-    const results = searchByZipCode(zipCode);
-    displayResults(results, {
-        zipCode: zipCode,
-        searchType: 'zip'
-    });
-}
+// Removed handleSearch function - now using unified handleSearchWithFilters
 
 function searchByZipCode(zipCode) {
     // Normalize zip code (remove dashes and extra spaces)
@@ -253,6 +232,12 @@ function populateHousingTypeDropdown() {
             option.value = type;
             option.textContent = type;
             housingTypeSelect.appendChild(option);
+            
+            // Also populate the proximity service type dropdown
+            const proximityOption = document.createElement('option');
+            proximityOption.value = type;
+            proximityOption.textContent = type;
+            proximityServiceType.appendChild(proximityOption);
         }
     });
 }
@@ -261,6 +246,7 @@ function clearFilters() {
     zipInput.value = '';
     stateSelect.value = '';
     housingTypeSelect.value = '';
+    proximityServiceType.value = '';
     hideAllSections();
 }
 
@@ -392,7 +378,7 @@ async function handleProximitySearch() {
     const radiusSelect = getRadiusSelect();
     if (!radiusSelect) return;
     
-    const selectedHousingType = housingTypeSelect.value;
+    const selectedHousingType = proximityServiceType.value;
     const radiusMiles = parseInt(radiusSelect.value);
     
     if (isNaN(radiusMiles) || radiusMiles <= 0) {
@@ -402,26 +388,45 @@ async function handleProximitySearch() {
     
     try {
         showLoading();
+        
+        // Show a more specific loading message for location
+        const loadingElement = document.querySelector('.loading-content p');
+        if (loadingElement) {
+            loadingElement.textContent = 'Getting your location...';
+        }
+        
         const location = await getCurrentLocation();
+        
+        // Update loading message
+        if (loadingElement) {
+            loadingElement.textContent = 'Searching for nearby services...';
+        }
         
         const results = searchByProximityWithFilters(location.latitude, location.longitude, radiusMiles, selectedHousingType);
         
-        // Apply state filter if selected
-        let filteredResults = results;
-        if (selectedState) {
-            filteredResults = results.filter(org => org.state === selectedState);
-        }
-        
-        displayResults(filteredResults, {
-            state: selectedState,
+        displayResults(results, {
             housingType: selectedHousingType,
             radius: radiusMiles,
             searchType: 'proximity'
         });
     } catch (error) {
         console.error('Error getting location:', error);
-        showUserMessage('Unable to get your location. Please check your browser permissions or try searching by zip code instead.', 'error');
         hideLoading();
+        
+        // Provide more specific error messages based on the error type
+        let errorMessage = 'Unable to get your location. ';
+        
+        if (error.code === 1) {
+            errorMessage += 'Location access was denied. Please allow location access and try again.';
+        } else if (error.code === 2) {
+            errorMessage += 'Location is unavailable. Please check your internet connection and try again.';
+        } else if (error.code === 3) {
+            errorMessage += 'Location request timed out. Please try again.';
+        } else {
+            errorMessage += 'Please check your browser permissions or try searching by zip code instead.';
+        }
+        
+        showUserMessage(errorMessage, 'error');
     }
 }
 
@@ -609,17 +614,19 @@ function getCurrentLocation() {
         
         navigator.geolocation.getCurrentPosition(
             (position) => {
+                console.log('Location obtained:', position.coords.latitude, position.coords.longitude);
                 resolve({
                     latitude: position.coords.latitude,
                     longitude: position.coords.longitude
                 });
             },
             (error) => {
+                console.error('Geolocation error:', error);
                 reject(error);
             },
             {
                 enableHighAccuracy: true,
-                timeout: 10000,
+                timeout: 15000, // Increased timeout to 15 seconds
                 maximumAge: 300000 // 5 minutes
             }
         );
@@ -726,6 +733,10 @@ async function loadCoordinatesFromJSON() {
         const noCoordsCount = organizationsWithCoords.filter(org => org.coordinateSource === 'none').length;
         
         console.log(`Coordinates loaded: ${zipCount} zip-based, ${cityCount} city-based, ${noCoordsCount} no coordinates`);
+        
+        // Log a sample of organizations with coordinates for debugging
+        const sampleWithCoords = organizationsWithCoords.filter(org => org.coordinateSource !== 'none').slice(0, 3);
+        console.log('Sample organizations with coordinates:', sampleWithCoords);
         
     } catch (error) {
         console.error('Error loading coordinates from JSON:', error);

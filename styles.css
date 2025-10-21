@@ -215,30 +215,57 @@ header {
     font-style: italic;
 }
 
-/* Location Options */
-.location-options {
+/* Main Search Fields */
+.main-search-fields {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-6);
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: var(--space-4);
+    align-items: end;
 }
 
-.location-option {
+.location-search-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: var(--space-4);
+    align-items: end;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.field-group label {
+    font-weight: 600;
+    color: var(--gray-700);
+    font-size: var(--font-size-sm);
+}
+
+.field-group input,
+.field-group select {
+    padding: var(--space-3);
+    border: 2px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
     background: var(--white);
-    border-radius: var(--radius-lg);
-    padding: var(--space-5);
-    border: 2px solid var(--gray-200);
     transition: all 0.3s ease;
 }
 
-.location-option:hover {
+.field-group input:focus,
+.field-group select:focus {
+    outline: none;
     border-color: var(--primary-blue);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 0 0 3px rgb(37 99 235 / 0.1);
 }
 
-.location-option:first-child {
-    border-color: var(--primary-blue);
-    background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
+.search-button-group {
+    align-self: end;
+}
+
+.search-button-group button {
+    height: 44px; /* Match input height */
+    min-width: 140px;
 }
 
 .option-header {
@@ -778,9 +805,23 @@ header {
         font-size: var(--font-size-2xl);
     }
     
-    .location-options {
+    .main-search-fields {
         grid-template-columns: 1fr;
         gap: var(--space-4);
+    }
+    
+    .location-search-fields {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .search-button-group {
+        align-self: stretch;
+    }
+    
+    .search-button-group button {
+        width: 100%;
+        min-width: auto;
     }
     
     .search-input-group {
