@@ -554,6 +554,59 @@ header {
     text-align: center;
 }
 
+/* Contact Links */
+.contact-item {
+    background: var(--gray-50);
+    border-radius: var(--radius-sm);
+    padding: var(--space-2);
+    border-left: 3px solid var(--primary-blue);
+}
+
+.contact-link {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: 1px solid transparent;
+}
+
+.contact-link:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+    text-decoration: none;
+}
+
+.phone-link:hover {
+    background: var(--success);
+    border-color: var(--success);
+}
+
+.email-link:hover {
+    background: var(--accent-orange);
+    border-color: var(--accent-orange);
+}
+
+.contact-link:active {
+    transform: translateY(0);
+}
+
+/* Mobile-friendly contact links */
+@media (max-width: 768px) {
+    .contact-link {
+        padding: var(--space-2) var(--space-3);
+        font-size: var(--font-size-lg);
+        min-height: 44px; /* Larger touch target for mobile */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
 /* No Results */
 .no-results {
     background: var(--white);

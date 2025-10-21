@@ -176,7 +176,7 @@ function handleSearch() {
     const zipCode = zipInput.value.trim();
     
     if (!zipCode) {
-        showUserMessage('Please enter a zip code to search for services', 'warning');
+        showUserMessage('Please enter a zip code to search, or use the "Search for Services" button below to search by state or service type', 'warning');
         return;
     }
     
@@ -363,25 +363,25 @@ function handleSearchWithFilters() {
     const selectedState = stateSelect.value;
     const selectedHousingType = housingTypeSelect.value;
     
-    // Check if zip code is provided
-    if (!zipCode) {
-        showUserMessage('Please enter a zip code to find services', 'warning');
+    // Check if at least one search criteria is provided
+    if (!zipCode && !selectedState && !selectedHousingType) {
+        showUserMessage('Please enter a zip code, select a state, or choose a service type to search', 'warning');
         return;
     }
     
-    // Validate zip code
-    if (!validateZipCode(zipCode)) {
+    // Validate zip code if provided
+    if (zipCode && !validateZipCode(zipCode)) {
         showUserMessage('Please enter a valid zip code (e.g., 12345)', 'warning');
         return;
     }
     
-    // Direct zip code search with filters
+    // Perform search with filters
     const results = searchWithFilters();
     displayResults(results, {
         zipCode: zipCode,
         state: selectedState,
         housingType: selectedHousingType,
-        searchType: 'zip'
+        searchType: zipCode ? 'zip' : 'filters'
     });
 }
 
@@ -490,9 +490,11 @@ function generateNoResultsMessage(searchContext) {
         }
     } else if (zipCode) {
         filters.push(`in zip code ${zipCode}`);
+    } else if (state) {
+        filters.push(`in ${state}`);
     }
     
-    if (state) {
+    if (state && zipCode) {
         filters.push(`in ${state}`);
     }
     
@@ -543,15 +545,23 @@ function createResultCard(org) {
             </div>
             ` : ''}
             ${org.phone ? `
-            <div class="detail-item">
-                <span class="detail-label">Phone</span>
-                <span class="detail-value"><a href="tel:${org.phone}" style="color: var(--primary-blue); text-decoration: none;">${org.phone}</a></span>
+            <div class="detail-item contact-item">
+                <span class="detail-label">📞 Phone</span>
+                <span class="detail-value">
+                    <a href="tel:${org.phone}" class="contact-link phone-link" title="Click to call">
+                        ${org.phone}
+                    </a>
+                </span>
             </div>
             ` : ''}
             ${org.email ? `
-            <div class="detail-item">
-                <span class="detail-label">Email</span>
-                <span class="detail-value"><a href="mailto:${org.email}" style="color: var(--primary-blue); text-decoration: none;">${org.email}</a></span>
+            <div class="detail-item contact-item">
+                <span class="detail-label">✉️ Email</span>
+                <span class="detail-value">
+                    <a href="mailto:${org.email}" class="contact-link email-link" title="Click to send email">
+                        ${org.email}
+                    </a>
+                </span>
             </div>
             ` : ''}
         </div>
