@@ -52,7 +52,6 @@ retryBtn.addEventListener('click', retryLoadData);
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Organization Search System loaded');
     loadDataFromCSV();
 });
 
@@ -60,7 +59,6 @@ async function loadDataFromCSV() {
     showLoading();
     
     try {
-        console.log('Fetching data from:', CSV_URL);
         const response = await fetch(CSV_URL);
         
         if (!response.ok) {
@@ -68,10 +66,7 @@ async function loadDataFromCSV() {
         }
         
         const csvText = await response.text();
-        console.log('CSV data received, length:', csvText.length);
-        
         organizationsData = parseCSV(csvText);
-        console.log('Parsed organizations:', organizationsData.length);
         
         // Populate dropdowns with unique values
         populateStateDropdown();
@@ -110,7 +105,6 @@ function parseCSV(csvText) {
     
     // Get headers (first line)
     const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
-    console.log('CSV Headers:', headers);
     
     // Process data lines
     for (let i = 1; i < lines.length; i++) {
@@ -127,19 +121,17 @@ function parseCSV(csvText) {
                 org[header] = values[index] || '';
             });
             
-            // Ensure we have required fields
-            if (org.zip || org['zip code'] || org.zipcode) {
-                organizations.push({
-                    name: org.name || org.organization || org['org name'] || 'Unknown',
-                    type: org.housing_type || org.type || org.category || org['org type'] || 'Unknown',
-                    zip: String(org.zip || org['zip code'] || org.zipcode || ''),
-                    city: org.city || 'Unknown',
-                    state: org.state || org['state code'] || 'Unknown',
-                    phone: org.phone || '',
-                    email: org.email || '',
-                    address: org.address || ''
-                });
-            }
+            // Ensure we have required fields - include all records regardless of zip code
+            organizations.push({
+                name: org.name || org.organization || org['org name'] || 'Unknown',
+                type: org.housing_type || org.type || org.category || org['org type'] || 'Unknown',
+                zip: String(org.zip || org['zip code'] || org.zipcode || ''),
+                city: org.city || 'Unknown',
+                state: org.state || org['state code'] || 'Unknown',
+                phone: org.phone || '',
+                email: org.email || '',
+                address: org.address || ''
+            });
         }
     }
     
@@ -605,14 +597,12 @@ function getCurrentLocation() {
         
         navigator.geolocation.getCurrentPosition(
             (position) => {
-                console.log('Location obtained:', position.coords.latitude, position.coords.longitude);
                 resolve({
                     latitude: position.coords.latitude,
                     longitude: position.coords.longitude
                 });
             },
             (error) => {
-                console.error('Geolocation error:', error);
                 reject(error);
             },
             {
@@ -682,14 +672,6 @@ async function loadCoordinatesFromJSON() {
         if (cityResponse.ok) {
             cityCoordinatesData = await cityResponse.json();
             window.cityCoordinatesData = cityCoordinatesData;
-            console.log('City coordinates loaded:', Object.keys(cityCoordinatesData.city_coordinates || {}).length, 'cities');
-            
-            // Debug: Show sample city coordinates
-            const sampleCities = Object.keys(cityCoordinatesData.city_coordinates || {}).slice(0, 3);
-            console.log('Sample city coordinates:', sampleCities.map(city => ({
-                city: city,
-                coords: cityCoordinatesData.city_coordinates[city]
-            })));
         } else {
             console.log('City coordinates file not found - will only use zip coordinates');
         }
@@ -700,8 +682,8 @@ async function loadCoordinatesFromJSON() {
             let longitude = null;
             let coordinateSource = 'none';
             
-            // Try zip coordinates first
-            if (org.zip && zipCoordinatesData.coordinates[org.zip]) {
+            // Try zip coordinates first (but skip empty zip codes)
+            if (org.zip && org.zip.trim() !== '' && zipCoordinatesData.coordinates[org.zip]) {
                 const coords = zipCoordinatesData.coordinates[org.zip];
                 latitude = coords.latitude;
                 longitude = coords.longitude;
@@ -715,19 +697,6 @@ async function loadCoordinatesFromJSON() {
                     latitude = cityCoords.latitude;
                     longitude = cityCoords.longitude;
                     coordinateSource = 'city';
-                } else {
-                    // Debug: log organizations without city coordinates
-                    if (!org.zip) {
-                        console.log('No coordinates found for:', cityKey, 'Organization:', org.name);
-                        // Try case-insensitive search
-                        const availableCities = Object.keys(cityCoordinatesData.city_coordinates || {});
-                        const matchingCity = availableCities.find(city => 
-                            city.toLowerCase() === cityKey.toLowerCase()
-                        );
-                        if (matchingCity) {
-                            console.log('Found case-insensitive match:', matchingCity);
-                        }
-                    }
                 }
             }
             
@@ -739,24 +708,16 @@ async function loadCoordinatesFromJSON() {
             });
         });
         
-        // Log statistics
+        // Log basic statistics
         const zipCount = organizationsWithCoords.filter(org => org.coordinateSource === 'zip').length;
         const cityCount = organizationsWithCoords.filter(org => org.coordinateSource === 'city').length;
         const noCoordsCount = organizationsWithCoords.filter(org => org.coordinateSource === 'none').length;
         
         console.log(`Coordinates loaded: ${zipCount} zip-based, ${cityCount} city-based, ${noCoordsCount} no coordinates`);
         
-        // Debug: Show some examples of organizations without zip codes
-        const orgsWithoutZip = organizationsWithCoords.filter(org => !org.zip && org.city && org.state);
-        console.log('Organizations without zip codes:', orgsWithoutZip.slice(0, 5));
-        
-        // Log a sample of organizations with coordinates for debugging
-        const sampleWithCoords = organizationsWithCoords.filter(org => org.coordinateSource !== 'none').slice(0, 3);
-        console.log('Sample organizations with coordinates:', sampleWithCoords);
-        
     } catch (error) {
         console.error('Error loading coordinates from JSON:', error);
-        alert('Error loading coordinates. Please check if coordinate files exist on GitHub.');
+        showUserMessage('Error loading coordinates. Please check if coordinate files exist on GitHub.', 'error');
         throw error; // Stop execution instead of falling back
     }
 }
